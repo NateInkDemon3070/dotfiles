@@ -1,0 +1,23 @@
+# --- Compression ---
+[[mgr.prepend_keymap]]
+on   = [ "c", "a" ]
+run  = "plugin compress"
+desc = "Archive selected files"
+
+# --- Chmod ---
+[[mgr.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
+
+# --- Abrir terminal aqui ---
+[[mgr.prepend_keymap]]
+on   = [ "t" ]
+run  = "shell 'kitty --directory \"$PWD\"'"
+desc = "Open terminal here"
+
+# --- cd interactivo ---
+[[mgr.prepend_keymap]]
+on   = [ "<C-Space>" ]
+run  = "cd --interactive"
+desc = "Go to directory"

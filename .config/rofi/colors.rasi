@@ -1,0 +1,6 @@
+@import "/home/jpablo/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+    accent: @selected-normal-background;
+    cursor: @foreground;
+}

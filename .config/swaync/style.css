@@ -1,0 +1,162 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+:root {
+  --border-radius: 0px;
+  --accent-color: @color4;
+  --border-color: @color3;
+  --bg-dark: rgba(15, 15, 15, 0.65);
+  --widget-bg: rgba(15, 15, 15, 0.35);
+  --text-main: @foreground;
+}
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NFP";
+  font-weight: bold;
+  font-size: 13px;
+}
+
+scrollbar,
+scrollbar trough,
+scrollbar slider {
+  background: transparent;
+  border: none;
+  width: 0px;
+  min-width: 0px;
+  opacity: 0;
+}
+
+.control-center {
+  background: var(--bg-dark);
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius);
+  margin: 5px;
+}
+
+.notification-row {
+  outline: none;
+  margin: 8px;
+}
+
+.notification-content {
+  background: var(--widget-bg);
+  padding: 10px;
+  border-radius: 0px;
+  border: 1px solid var(--border-color);
+}
+
+.widget-title {
+  color: var(--accent-color);
+  padding: 10px;
+  margin: 5px;
+}
+
+.widget-title > button {
+  background: var(--accent-color);
+  color: @background;
+  border-radius: 0px;
+  padding: 5px 10px;
+}
+
+.widget-dnd {
+  background: var(--widget-bg);
+  padding: 8px;
+  margin: 5px 10px;
+  border-radius: 0px;
+  border: 1px solid var(--border-color);
+}
+
+.widget-buttons-grid {
+  padding: 6px;
+  margin: 5px 10px;
+  border-radius: 0px;
+  background: var(--widget-bg);
+  border: 1px solid var(--border-color);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0px;
+  color: var(--text-main);
+  font-size: 15px;
+  min-height: 40px;
+  min-width: 52px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: var(--accent-color);
+  color: @background;
+}
+
+.widget-volume, .widget-backlight {
+  background: var(--widget-bg);
+  padding: 10px;
+  margin: 5px 10px;
+  border-radius: 0px;
+  border: 1px solid var(--border-color);
+}
+
+.widget-volume label, .widget-backlight label {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  margin-right: 10px;
+}
+
+scale {
+  padding: 0;
+  margin: 0;
+}
+
+trough {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0px;
+  min-height: 10px;
+}
+
+highlight {
+  background: var(--accent-color);
+  border-radius: 0px;
+}
+
+slider {
+  background: @foreground;
+  border-radius: 0px;
+  min-height: 15px;
+  min-width: 15px;
+}
+
+.widget-mpris {
+  background: var(--widget-bg);
+  padding: 10px;
+  margin: 5px 10px;
+  border-radius: 0px;
+  border: 1px solid var(--border-color);
+}
+
+.widget-mpris-title {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.widget-buttons-grid-scripts {
+  padding: 6px;
+  margin: 5px 10px;
+  border-radius: 0px;
+  background: var(--widget-bg);
+  border: 1px solid var(--border-color);
+}
+
+.widget-buttons-grid-scripts > flowbox > flowboxchild > button {
+  margin: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0px;
+  color: var(--text-main);
+  font-size: 14px;
+  min-height: 40px;
+  min-width: 100px;
+}
+
+.widget-buttons-grid-scripts > flowbox > flowboxchild > button:hover {
+  background: var(--accent-color);
+  color: @background;
+}

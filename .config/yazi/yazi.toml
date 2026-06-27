@@ -1,0 +1,65 @@
+[mgr]
+sort_by        = "mtime"
+sort_reverse   = true
+sort_dir_first = true
+show_hidden    = true
+mouse_events = [ "click", "scroll", "touch", "move", "drag" ]
+
+[icons]
+enabled = true
+
+[opener]
+image = [
+    { run = "imv %s", for = "unix" },
+]
+video = [
+    { run = "mpv %s", for = "unix" },
+]
+audio = [
+    { run = "mpv %s", for = "unix" },
+]
+text = [
+    { run = "nvim %s", block = true, for = "unix" },
+]
+
+[open]
+rules = [
+    { mime = "image/*",     use = "image" },
+    { mime = "video/*",     use = "video" },
+    { mime = "audio/*",     use = "audio" },
+    { mime = "text/*",      use = "text" },
+    { url = "*.json",       use = "text" },
+    { url = "*.toml",       use = "text" },
+    { url = "*.yaml",       use = "text" },
+    { url = "*.yml",        use = "text" },
+    { url = "*.xml",        use = "text" },
+    { url = "*.conf",       use = "text" },
+    { url = "*.cfg",        use = "text" },
+    { url = "*.ini",        use = "text" },
+    { url = "*.env",        use = "text" },
+    { url = "*.lua",        use = "text" },
+    { url = "*.py",         use = "text" },
+    { url = "*.js",         use = "text" },
+    { url = "*.ts",         use = "text" },
+    { url = "*.html",       use = "text" },
+    { url = "*.css",        use = "text" },
+    { url = "*.sh",         use = "text" },
+    { url = "*.bash",       use = "text" },
+    { url = "*.zsh",        use = "text" },
+    { url = "*.fish",       use = "text" },
+    { url = "*.rs",         use = "text" },
+    { url = "*.go",         use = "text" },
+    { url = "*.c",          use = "text" },
+    { url = "*.h",          use = "text" },
+    { url = "*.cpp",        use = "text" },
+    { url = "*.hpp",        use = "text" },
+    { url = "*.md",         use = "text" },
+    { url = "*.txt",        use = "text" },
+    { url = "*.csv",        use = "text" },
+    { url = "Makefile",     use = "text" },
+    { url = "Dockerfile",   use = "text" },
+    { url = ".gitignore",   use = "text" },
+    { url = ".envrc",       use = "text" },
+    { mime = "*/xml",       use = "text" },
+    { mime = "*/json",      use = "text" },
+]

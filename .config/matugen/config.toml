@@ -1,0 +1,56 @@
+[config]
+prefer = "saturation"
+mode = "dark"
+type = "scheme-fidelity"
+
+[templates.waybar_swaync]
+input_path = "~/.config/matugen/templates/colors-waybar.css"
+output_path = "~/.cache/wal/colors-waybar.css"
+post_hook = "pkill -SIGUSR2 waybar; swaync-client -rs"
+
+[templates.sway_border]
+input_path = "~/.config/matugen/templates/colors-sway-border"
+output_path = "~/.cache/wal/colors-sway-border"
+post_hook = "swaymsg reload"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/colors-rofi-dark.rasi"
+output_path = "~/.cache/wal/colors-rofi-dark.rasi"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/colors-kitty.conf"
+output_path = "~/.cache/wal/colors-kitty.conf"
+post_hook = "kitty @ --to unix:/tmp/kitty.sock set-colors --all --configured ~/.cache/wal/colors-kitty.conf 2>/dev/null || killall -SIGUSR1 kitty 2>/dev/null || true"
+
+[templates.colors_sh]
+input_path = "~/.config/matugen/templates/colors.sh"
+output_path = "~/.cache/wal/colors.sh"
+
+[templates.colors_css]
+input_path = "~/.config/matugen/templates/colors.css"
+output_path = "~/.cache/wal/colors.css"
+
+[templates.starship]
+input_path = "~/.config/matugen/templates/starship.toml"
+output_path = "~/.config/starship.toml"
+
+[templates.gtk3]
+input_path = "~/.config/matugen/templates/gtk3.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk4.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
+[templates.gtk4_dark]
+input_path = "~/.config/matugen/templates/gtk4.css"
+output_path = "~/.config/gtk-4.0/gtk-dark.css"
+
+[templates.neovim]
+input_path = "~/.config/matugen/templates/nvim.lua"
+output_path = "~/.config/nvim/matugen.lua"
+post_hook = "pkill -SIGUSR1 nvim"
+
+[templates.yazi]
+input_path = "~/.config/matugen/templates/yazi.toml"
+output_path = "~/.config/yazi/theme.toml"

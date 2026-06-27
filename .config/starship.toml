@@ -1,0 +1,243 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+command_timeout = 100
+palette = "matugen"
+
+# ==================================================
+# FORMATO PRINCIPAL (Corregido el llamado al Kernel)
+# ==================================================
+format = "[┌─](fg:outline) $username$directory$time${env_var.OS_KERNEL}$git_branch$git_status$nodejs$python$c$cpp$rust$java$golang$ruby$php\n[└─](fg:outline) $character"
+
+# ==================================================
+# PALETA DE COLORES (Variables para Matugen)
+# ==================================================
+[palettes.matugen]
+primary = "#92d1d4"
+on_primary = "#003739"
+secondary = "#b2cbcc"
+on_secondary = "#1d3435"
+tertiary = "#fdb793"
+on_tertiary = "#4f250b"
+error = "#ffb4ab"
+on_error = "#690005"
+error_container = "#93000a"
+on_error_container = "#ffdad6"
+surface = "#111414"
+on_surface = "#e1e3e2"
+surface_variant = "#3f4849"
+on_surface_variant = "#bfc8c8"
+outline = "#899393"
+shadow = "#000000"
+hover = "#adeef1"
+on_hover = "#002021"
+
+# ==================================================
+# BLOQUES BÁSICOS
+# ==================================================
+[username]
+show_always = true
+style_user = "bg:surface_variant fg:primary"
+style_root = "bg:error_container fg:error"
+format = '[ $user ]($style) '
+disabled = false
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bg:primary fg:surface_variant bold"
+read_only = ' 󰌾'
+read_only_style = "bg:primary fg:error"
+format = '[ $path$read_only ]($style)  ' 
+
+[time]
+disabled = false
+time_format = "%I:%M %p"
+style = "fg:primary bold"
+format = '[$time]($style)  ' 
+
+[env_var.OS_KERNEL]
+variable = "OS_KERNEL"
+style = "bg:primary fg:surface_variant bold"
+format = '[ $env_value ]($style) '
+
+[character]
+success_symbol = "[❯](bold fg:primary)"
+error_symbol   = "[❯](bold fg:error)"
+
+# ==================================================
+# GIT
+# ==================================================
+[git_branch]
+style = "bg:tertiary fg:surface_variant"
+format = '[ $symbol$branch ]($style) '
+
+[git_status]
+style = "bg:tertiary fg:surface_variant"
+format = '([$all_status$ahead_behind]($style) )'
+
+# ==================================================
+# ENTORNOS Y LENGUAJES
+# ==================================================
+[nodejs]
+style = "bg:primary fg:surface_variant"
+format = '[ $symbol$version ]($style) '
+
+[python]
+style = "bg:primary fg:surface_variant"
+format = '[ ${symbol}${pyenv_prefix}(${version} )]($style) '
+
+[java]
+style = "bg:primary fg:surface_variant"
+format = '[ $symbol$version ]($style) '
+
+[c]
+style = "bg:primary fg:surface_variant"
+format = '[ $symbol$version ]($style) '
+
+[cpp]
+style = "bg:primary fg:surface_variant"
+format = '[ $symbol$version ]($style) '
+
+[rust]
+style = "bg:primary fg:surface_variant"
+format = '[ $symbol$version ]($style) '
+
+[golang]
+style = "bg:primary fg:surface_variant"
+format = '[ $symbol$version ]($style) '
+
+# ==================================================
+# ÍCONOS GLOBALES
+# ==================================================
+[aws]
+symbol = " "
+[buf]
+symbol = " "
+[bun]
+symbol = " "
+[cmake]
+symbol = " "
+[conda]
+symbol = " "
+[crystal]
+symbol = " "
+[dart]
+symbol = " "
+[deno]
+symbol = " "
+[docker_context]
+symbol = " "
+[elixir]
+symbol = " "
+[elm]
+symbol = " "
+[fennel]
+symbol = " "
+[fortran]
+symbol = " "
+[fossil_branch]
+symbol = " "
+[gcloud]
+symbol = " "
+[git_commit]
+tag_symbol = '  '
+[gradle]
+symbol = " "
+[guix_shell]
+symbol = " "
+[haskell]
+symbol = " "
+[haxe]
+symbol = " "
+[hg_branch]
+symbol = " "
+[hostname]
+ssh_symbol = " "
+[julia]
+symbol = " "
+[kotlin]
+symbol = " "
+[lua]
+symbol = " "
+[memory_usage]
+symbol = "󰍛 "
+[meson]
+symbol = "󰔷 "
+[nim]
+symbol = "󰆥 "
+[nix_shell]
+symbol = " "
+[ocaml]
+symbol = " "
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+[package]
+symbol = "󰏗 "
+[perl]
+symbol = " "
+[php]
+symbol = " "
+[pijul_channel]
+symbol = " "
+[pixi]
+symbol = "󰏗 "
+[rlang]
+symbol = "󰟔 "
+[ruby]
+symbol = " "
+[scala]
+symbol = " "
+[status]
+symbol = " "
+[swift]
+symbol = " "
+[xmake]
+symbol = " "
+[zig]
+symbol = " "

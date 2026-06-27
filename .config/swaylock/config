@@ -1,0 +1,11 @@
+indicator-radius=100
+indicator-thickness=10
+screenshots
+effect-blur=7x5
+effect-vignette=0.5:0.5
+ring-color=ffffffff
+inside-color=000000ff
+key-hl-color=ffffffff
+text-color=ffffffff
+line-color=00000000
+separator-color=00000000

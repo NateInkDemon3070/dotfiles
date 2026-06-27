@@ -1,0 +1,73 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 46,
+    "margin": "4 0 4 4",
+    "exclusive": true,
+    "spacing": 0,
+
+    "modules-left": [
+        "sway/workspaces"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "custom/notification",
+        "battery"
+    ],
+
+    "sway/workspaces": {
+        "orientation": "vertical",
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "{:%I\n%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󱅫",
+            "dnd-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e nmtui"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh blueman-manager"
+    },
+
+    "battery": {
+        "format": "{capacity}\n{icon}",
+        "format-charging": "{icon}\n{capacity}",
+        "format-icons": {
+            "default": ["", "", "", "", ""],
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰂅"]
+        }
+    }
+}

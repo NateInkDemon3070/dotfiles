@@ -1,0 +1,128 @@
+set $mod Mod4
+set $term kitty
+set $menu rofi -show drun -display-drun " APPS"
+
+output * resolution 1366x768 scale 1
+
+# --INPUT DEL TECLADO --
+
+input "type:keyboard" {
+    xkb_layout us
+    xkb_variant intl
+    xkb_options lv3:lalt_switch
+}
+
+input "type:touchpad" {
+    tap enabled
+    natural_scroll disabled
+}
+
+# -- PERSONALIZACIÓN DEL SISTEMA --
+default_border pixel 4
+hide_edge_borders none
+gaps inner 5
+gaps outer 10
+
+corner_radius 0
+blur enable
+blur_passes 2
+blur_radius 5
+shadows enable
+shadow_blur_radius 4
+shadow_color #1a1a1aee
+
+seat * xcursor_theme nordic_cursors_scalable_less_sizes 24
+
+# --COSAS QUE SE EJECUTAN AL INICIO--
+exec bash /home/jpablo/.config/sway/scripts/autostart.sh
+exec runsvdir /home/jpablo/.config/runit/sv
+exec bash /home/jpablo/.config/sway/scripts/sway-config-watcher.sh
+seat seat0 xcursor_theme nordic_cursors_scalable_less_sizes 24
+
+for_window [app_id="rofi_terminal"] floating enable, resize set 600 400, move position center, opacity 0.9
+for_window [app_id="floating_tui"] floating enable, resize set 700 500, move position center
+for_window [app_id="pavucontrol"] floating enable, resize set 800 600, move position center
+for_window [app_id="blueman-manager"] floating enable, resize set 600 400, move position center
+for_window [app_id="firefox"] opacity 0.85, blur enable
+for_window [app_id="vesktop"] opacity 0.85, blur enable
+for_window [app_id="zapzap"] opacity 0.85, blur enable
+
+# --- KEYBINDS ---
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+e exec $term -e yazi
+bindsym $mod+b exec firefox
+bindsym $mod+m exec $term -e rmpc
+bindsym $mod+n exec bash /home/jpablo/.config/sway/scripts/mpd-rofi.sh
+bindsym $mod+t floating toggle
+bindsym $mod+d exec $menu
+bindsym $mod+f fullscreen toggle
+bindsym $mod+c reload
+bindsym $mod+Escape exec bash ~/.config/sway/scripts/powermenu.sh
+bindsym $mod+Shift+e exec $term -e doas yazi
+
+bindsym $mod+period exec rofimoji --action copy
+bindsym $mod+w exec sh /home/jpablo/.config/sway/scripts/wallpaper.sh
+bindsym $mod+Shift+w exec bash /home/jpablo/.config/sway/scripts/wallpaper_select.sh
+bindsym $mod+o exec bash /home/jpablo/.config/waybar/scripts/switch_waybar.sh
+bindsym $mod+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+bindsym $mod+Ctrl+Left move left
+bindsym $mod+Ctrl+Right move right
+bindsym $mod+Ctrl+Up move up
+bindsym $mod+Ctrl+Down move down
+
+bindsym $mod+r mode resize
+mode resize {
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Return mode default
+    bindsym Escape mode default
+    bindsym $mod+r mode default
+}
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+
+floating_modifier $mod normal
+
+bindsym XF86AudioRaiseVolume exec /home/jpablo/.local/bin/swayosd-client --output-volume raise && pkill -RTMIN+1 waybar
+bindsym XF86AudioLowerVolume exec /home/jpablo/.local/bin/swayosd-client --output-volume lower && pkill -RTMIN+1 waybar
+bindsym XF86AudioMute exec /home/jpablo/.local/bin/swayosd-client --output-volume mute-toggle && pkill -RTMIN+1 waybar
+bindsym XF86AudioMicMute exec /home/jpablo/.local/bin/swayosd-client --input-volume mute-toggle && pkill -RTMIN+1 waybar
+bindsym XF86MonBrightnessUp exec /home/jpablo/.local/bin/swayosd-client --brightness raise && pkill -RTMIN+1 waybar
+bindsym XF86MonBrightnessDown exec /home/jpablo/.local/bin/swayosd-client --brightness lower && pkill -RTMIN+1 waybar
+
+# -- CAPTURAS DE PANTALLA --
+bindsym Print exec /home/jpablo/.config/sway/scripts/grimshot-save.sh screen
+bindsym Mod4+Print exec grimshot --notify copy screen
+bindsym Shift+Print exec /home/jpablo/.config/sway/scripts/grimshot-save.sh area
+bindsym Mod4+Shift+Print exec /home/jpablo/.config/sway/scripts/grimshot-save.sh area
+bindsym Mod4+Control+Print exec /home/jpablo/.config/sway/scripts/grimshot-save.sh active
+
+# -- COLORES DE MATUGEN --
+include ~/.cache/wal/colors-sway-border
+
+# -- Modo juego para mayor rendimiento --
+include ~/.config/sway/gamemode.conf

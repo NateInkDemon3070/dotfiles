@@ -1,0 +1,55 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+@define-color bg_bar rgba(15, 15, 20, 0.9);
+@define-color accent @color4;
+@define-color text @foreground;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 600;
+    font-size: 13px;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background: @bg_bar;
+    color: @text;
+    border-top: 2px solid @accent; 
+}
+
+#workspaces button {
+    color: rgba(255, 255, 255, 0.3);
+    padding: 0 12px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active, #workspaces button.focused {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1); 
+    border-bottom: 4px solid @accent;
+}
+
+#custom-sep {
+    color: @accent;
+    opacity: 0.5;
+    padding: 0 4px;
+}
+
+#cpu, #memory, #custom-notification, #tray, 
+#pulseaudio, #bluetooth, #network, #battery, #clock {
+    padding: 0 8px;
+}
+
+#battery.warning {
+    color: #e5c07b;
+}
+
+#battery.critical {
+    color: #ff5555;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.4; }
+}

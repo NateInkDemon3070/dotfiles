@@ -1,0 +1,97 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+@define-color bg_bar   rgba(15, 15, 20, 0.50);
+@define-color bg_hover rgba(255, 255, 255, 0.08);
+@define-color accent   @color4;
+@define-color text     @foreground;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 600;
+    font-size: 13px;
+    border: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+window#waybar {
+    background:    @bg_bar;
+    color:         @text;
+    border:        2px solid @accent;
+    border-radius: 0;
+}
+
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: rgba(255, 255, 255, 0.3);
+    padding: 0 10px;
+    margin: 4px 3px;
+    border-radius: 0px;
+    transition: all 0.2s ease;
+  }
+
+#workspaces button.active, #workspaces button.focused {
+    color: @accent;
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 4px solid @accent;
+}
+
+#cpu,
+#memory,
+#tray,
+#clock,
+#custom-audio,
+#pulseaudio,
+#bluetooth,
+#custom-notification,
+#network,
+#battery,
+#custom-power {
+    padding:    0 10px;
+    background: transparent;
+    color:      @text;
+}
+
+#cpu:hover,
+#memory:hover,
+#clock:hover,
+#custom-audio:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#custom-notification:hover,
+#network:hover,
+#battery:hover,
+#custom-power:hover {
+    background:    @bg_hover;
+    border-radius: 0;
+}
+
+#clock {
+    font-weight: 700;
+}
+
+#battery.warning {
+    color: #e5c07b;
+}
+
+#battery.critical {
+    color:     #ff5555;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.4; }
+}
+
+#custom-notification.notification {
+    color: @accent;
+}
+
+#custom-power {
+    color:   #ff5555;
+    padding: 0 12px;
+}
+

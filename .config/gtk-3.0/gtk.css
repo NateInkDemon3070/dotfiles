@@ -1,0 +1,43 @@
+@define-color theme_fg_color #e1e3e2;
+@define-color theme_text_color #e1e3e2;
+@define-color theme_bg_color #111414;
+@define-color theme_base_color #1d2020;
+@define-color theme_selected_bg_color #92d1d4;
+@define-color theme_selected_fg_color #003739;
+@define-color insensitive_bg_color #111414;
+@define-color insensitive_fg_color #bfc8c8;
+@define-color insensitive_base_color #1d2020;
+@define-color theme_unfocused_fg_color #bfc8c8;
+@define-color theme_unfocused_text_color #e1e3e2;
+@define-color theme_unfocused_bg_color #111414;
+@define-color theme_unfocused_base_color #111414;
+@define-color theme_unfocused_selected_bg_color #92d1d4;
+@define-color theme_unfocused_selected_fg_color #003739;
+@define-color borders #899393;
+@define-color unfocused_borders #3f4849;
+@define-color warning_color #fdb793;
+@define-color error_color #ffb4ab;
+@define-color success_color #b2cbcc;
+@define-color fg_color #e1e3e2;
+@define-color text_color #e1e3e2;
+@define-color bg_color #111414;
+@define-color base_color #1d2020;
+@define-color selected_bg_color #92d1d4;
+@define-color selected_fg_color #003739;
+
+@import 'colors.css';
+
+.mate-panel-menu-bar button {
+    color: transparent;
+}
+panel-toplevel.background.horizontal,
+.mate-panel-menu-bar,
+#clock-applet-button,
+#clock-applet-button:hover {
+    color: white;
+}
+#tasklist-button {
+    color: white;
+}
+
+* { border-radius: 0 !important; }
