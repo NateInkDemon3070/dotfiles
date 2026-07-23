@@ -8,7 +8,7 @@ medio=" Ahorro Medio"
 avion=" Modo Avión"
 normal=" Estado Normal"
 
-selected=$(echo -e "$maximo\n$medio\n$avion\n$normal" | rofi -dmenu -i -p "Perfil de Energía")
+selected=$(echo -e "$maximo\n$medio\n$avion\n$normal" | wofi --dmenu -i -p "Perfil de Energía" --style ~/.cache/wal/colors-wofi.css)
 
 case "$selected" in
 "$maximo")

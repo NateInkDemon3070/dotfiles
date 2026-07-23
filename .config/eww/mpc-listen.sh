@@ -1,0 +1,34 @@
+#!/bin/bash
+emit_info() {
+    local status_line=$(mpc status 2>/dev/null)
+    local title=$(mpc -f "%title%" current 2>/dev/null)
+    local artist=$(mpc -f "%artist%" current 2>/dev/null)
+    local total=$(mpc -f "%time%" current 2>/dev/null)
+    local elapsed=$(echo "$status_line" | grep -oP '\d+:\d+(?=\/)' | head -1)
+    local state=$(echo "$status_line" | grep -oP '\[(playing|paused|stopped)\]' | tr -d '[]')
+
+    [[ -z "$title" ]] && title="No Music Playing"
+    [[ -z "$artist" ]] && artist="Unknown Artist"
+    [[ -z "$state" ]] && state="stopped"
+    [[ -z "$elapsed" ]] && elapsed="0:00"
+    [[ -z "$total" ]] && total="0"
+
+    local total_sec=0
+    if [[ "$total" =~ ^([0-9]+):([0-9]+)$ ]]; then
+        total_sec=$(( ${BASH_REMATCH[1]} * 60 + ${BASH_REMATCH[2]} ))
+    fi
+
+    local elapsed_sec=0
+    if [[ "$elapsed" =~ ^([0-9]+):([0-9]+)$ ]]; then
+        elapsed_sec=$(( ${BASH_REMATCH[1]} * 60 + ${BASH_REMATCH[2]} ))
+    fi
+
+    printf '{"title":"%s","artist":"%s","status":"%s","elapsed":"%s","total":%d,"elapsed_sec":%d}\n' \
+        "$title" "$artist" "$state" "$elapsed" "$total_sec" "$elapsed_sec"
+}
+
+emit_info
+
+mpc idleloop player 2>/dev/null | while read -r event; do
+    emit_info
+done

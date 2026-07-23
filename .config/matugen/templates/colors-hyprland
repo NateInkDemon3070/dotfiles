@@ -1,0 +1,5 @@
+-- AUTOGENERADO POR MATUGEN - NO EDITAR
+return {
+    active_border   = "{{colors.primary.default.hex}}ee",
+    inactive_border = "{{base16.base03.default.hex}}aa",
+}

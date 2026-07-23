@@ -1,0 +1,243 @@
+/* _colors.css — semantic palette for pywal/wpgtk */
+
+@define-color bg_color            {{colors.surface_dim.default.hex}};     /* main window background */
+@define-color surface_color       {{colors.surface_container.default.hex}};         /* content surface (cards, views) */
+@define-color surface_color_alt   {{colors.surface_variant.default.hex}};         /* secondary/muted surface */
+
+@define-color fg_color            {{colors.on_surface.default.hex}};     /* primary text/foreground */
+@define-color text_color          {{colors.on_surface.default.hex}};     /* explicit text variants */
+@define-color fg_muted            {{colors.on_surface.default.hex}};         /* secondary/placeholder text */
+
+@define-color selected_bg_color   alpha({{colors.primary.default.hex}}, 0.50);  /* selection fill */
+@define-color selected_fg_color   {{colors.on_primary.default.hex}};     /* selection foreground */
+
+@define-color border_color        alpha({{colors.outline.default.hex}}, 0.90);  /* general borders/dividers */
+@define-color border_color_alt    alpha({{colors.surface_variant.default.hex}}, 0.91);  /* backdrop borders */
+
+@define-color warning_color       {{colors.tertiary.default.hex}};
+@define-color error_color         {{colors.error.default.hex}};
+@define-color success_color       {{colors.secondary.default.hex}};
+
+@define-color wm_title            shade({{colors.on_surface.default.hex}}, 1.8);
+@define-color wm_unfocused_title  {{colors.on_surface.default.hex}};
+@define-color wm_highlight        rgba(0, 0, 0, 0);
+@define-color wm_borders_edge     alpha(white, 0.10);
+@define-color wm_bg_a             shade({{colors.surface_dim.default.hex}}, 1.2);
+@define-color wm_bg_b             {{colors.surface_dim.default.hex}};
+@define-color wm_shadow           alpha(black, 0.35);
+@define-color wm_border           alpha(black, 0.18);
+@define-color wm_button_hover_color_a shade({{colors.surface_dim.default.hex}}, 1.3);
+@define-color wm_button_hover_color_b {{colors.surface_dim.default.hex}};
+@define-color wm_button_active_color_a shade({{colors.surface_dim.default.hex}}, 0.85);
+@define-color wm_button_active_color_b shade({{colors.surface_dim.default.hex}}, 0.89);
+@define-color wm_button_active_color_c shade({{colors.surface_dim.default.hex}}, 0.90);
+
+@define-color content_view_bg     {{colors.surface_container.default.hex}};
+@define-color text_view_bg        {{colors.surface_container.default.hex}};
+
+/* Insensitive/backdrop semantics */
+@define-color insensitive_bg_color      mix({{colors.surface_dim.default.hex}}, {{colors.surface_container.default.hex}}, 0.25);
+@define-color insensitive_base_color    {{colors.surface_container.default.hex}};
+@define-color insensitive_fg_color      mix({{colors.on_surface.default.hex}}, {{colors.on_surface.default.hex}}, 0.45);
+
+@define-color backdrop_fg               alpha({{colors.on_surface.default.hex}}, 0.70);
+@define-color backdrop_bg               {{colors.surface_dim.default.hex}};
+@define-color backdrop_base             mix({{colors.surface_container.default.hex}}, {{colors.surface_dim.default.hex}}, 0.15);
+@define-color backdrop_selected_bg      alpha({{colors.primary.default.hex}}, 0.50);
+@define-color backdrop_selected_fg      {{colors.on_surface.default.hex}};
+
+/* Placeholder hint text */
+@define-color placeholder_text_color    mix({{colors.on_surface.default.hex}}, {{colors.on_surface.default.hex}}, 0.65);
+
+/* State overlays and focus */
+@define-color accent_color              {{colors.primary.default.hex}};
+@define-color focus_ring                mix(@accent_color, @bg_color, 0.30);
+@define-color hover_overlay             alpha(@fg_color, 0.06);
+@define-color active_overlay            alpha(@fg_color, 0.12);
+
+/* Legacy aliases for broad GTK compatibility (kept for safety) */
+@define-color theme_fg_color            @fg_color;
+@define-color theme_text_color          @text_color;
+@define-color theme_bg_color            @bg_color;
+@define-color theme_base_color          @surface_color;
+@define-color theme_selected_bg_color   @selected_bg_color;
+@define-color theme_selected_fg_color   @selected_fg_color;
+
+@define-color theme_unfocused_fg_color        @insensitive_fg_color;
+@define-color theme_unfocused_text_color      @text_color;
+@define-color theme_unfocused_bg_color        @backdrop_bg;
+@define-color theme_unfocused_base_color      @backdrop_base;
+@define-color theme_unfocused_selected_bg_color @backdrop_selected_bg;
+@define-color theme_unfocused_selected_fg_color @backdrop_selected_fg;
+
+@define-color budgie_tasklist_indicator_color        @selected_bg_color;
+@define-color budgie_tasklist_indicator_color_active @selected_bg_color;
+
+@define-color button_gradient_top     shade(@surface_color_alt, 1.15);
+@define-color button_gradient_bottom  shade(@surface_color_alt, 0.85);
+
+@define-color border_color_dark    shade(@border_color, 0.75);
+@define-color success_color_alt    shade(@success_color, 0.85);
+@define-color warning_color_alt    shade(@warning_color, 0.85);
+@define-color question_color_alt   mix(@accent_color, @surface_color_alt, 0.5);
+@define-color error_color_alt      shade(@error_color, 0.85);
+
+@define-color neutral_color         mix(@fg_color, @surface_color_alt, 0.5);
+@define-color slider_color          @accent_color;
+@define-color disabled_bg_color     alpha(@surface_color, 0.4);
+@define-color osd_fill_color        alpha(@surface_color_alt, 0.85);
+@define-color slider_backdrop_color alpha(@backdrop_fg, 0.6);
+
+@define-color text_secondary        mix(@fg_color, @fg_muted, 0.5);
+@define-color disabled_fg_color     alpha(@fg_color, 0.4);
+@define-color text_backdrop         @backdrop_fg;
+@define-color disabled_fg_color_alt alpha(@fg_color, 0.25);
+
+@define-color osd_fg_color          @fg_color;
+@define-color osd_fg_color_hover    shade(@fg_color, 1.15);
+@define-color osd_hover_bg          alpha(@surface_color_alt, 0.15);
+@define-color osd_active_bg         alpha(@accent_color, 0.25);
+@define-color osd_disabled_bg       alpha(@surface_color, 0.25);
+@define-color osd_bg_color          alpha(@surface_color_alt, 0.85);
+
+@define-color question_color     mix(@accent_color, @fg_color, 0.5);
+@define-color accent_color_alt   shade(@accent_color, 0.85);
+
+@define-color panel_shadow       alpha(black, 0.35);
+@define-color fg_color_alt       shade(@fg_color, 0.85);
+@define-color button_bg          @surface_color;
+@define-color button_bg_alt      @surface_color_alt;
+@define-color sidebar_bg         @surface_color;
+@define-color disk_full_bg       mix(@error_color, @surface_color, 0.5);
+@define-color inactive_bg        alpha(@surface_color, 0.5);
+
+@define-color link_color        mix(@accent_color, @fg_color, 0.6);
+@define-color link_hover_color  shade(@accent_color, 1.15);
+
+@define-color list_bg       @surface_color;
+@define-color list_bg_alt   @surface_color_alt;
+
+@define-color menu_bg              @surface_color;
+@define-color menu_bg_alt          @surface_color_alt;
+@define-color disabled_backdrop_fg alpha(@backdrop_fg, 0.5);
+@define-color menu_border_alt      shade(@border_color_alt, 0.85);
+
+@define-color disk_unknown_bg      mix(@neutral_color, @surface_color, 0.5);
+@define-color disk_unknown_border  shade(@border_color, 0.85);
+
+@define-color disk_used_bg         mix(@error_color, @surface_color, 0.6);
+@define-color disk_used_border     shade(@error_color, 0.85);
+
+@define-color disk_free_bg         mix(@success_color, @surface_color, 0.6);
+@define-color disk_free_border     shade(@success_color, 0.85);
+
+@define-color hover_fg_color      shade(@fg_color, 1.10);
+@define-color backdrop_fg_color   alpha(@fg_color, 0.70);
+
+@define-color fg_color_light   shade(@fg_color, 1.25);
+
+@define-color bg_dark              shade(@bg_color, 0.85);
+@define-color scroll_fg            shade(@fg_color, 0.95);
+@define-color scroll_hover_fg      shade(@fg_color, 1.10);
+@define-color scroll_backdrop_fg   @backdrop_fg;
+
+@define-color sidebar_backdrop_bg   alpha(@sidebar_bg, 0.7);
+
+@define-color fg_backdrop   alpha(@fg_color, 0.70);
+
+@define-color entry_bg              @surface_color;
+@define-color disabled_fg           alpha(@fg_color, 0.4);
+@define-color entry_disabled_bg     alpha(@surface_color, 0.5);
+@define-color entry_backdrop_bg     alpha(@surface_color, 0.7);
+@define-color backdrop_disabled_fg  alpha(@backdrop_fg, 0.5);
+
+@define-color error_border          shade(@error_color, 0.85);
+@define-color warning_border        shade(@warning_color, 0.85);
+
+@define-color image_fg              mix(@fg_color, @accent_color, 0.5);
+@define-color image_backdrop_fg     alpha(@fg_color, 0.6);
+
+@define-color disabled_fg_alt       alpha(@fg_color, 0.25);
+
+@define-color toolbar_bg            @surface_color;
+@define-color toolbar_backdrop_bg   alpha(@surface_color, 0.7);
+
+@define-color border_fg_dark       shade(@border_color, 0.75);
+@define-color expander_fg          @fg_color;
+@define-color expander_backdrop_fg alpha(@fg_color, 0.6);
+@define-color entry_bg_dark        shade(@entry_bg, 0.85);
+@define-color border_fg_alt        shade(@border_color_alt, 0.9);
+@define-color hover_fg             shade(@fg_color, 1.10);
+
+@define-color unity_bg            @surface_color;
+@define-color backdrop_fg_light   alpha(@fg_color, 0.5);
+@define-color unity_side_bg       shade(@surface_color_alt, 0.9);
+
+@define-color unity_panel_bg    @unity_bg;
+@define-color osd_trough_bg     shade(@osd_bg_color, 0.85);
+
+@import url("common.css");
+@import url("action_bars.css");
+@import url("app_notifications.css");
+@import url("base_states.css");
+@import url("buttons.css");
+@import url("calendar.css");
+@import url("check_and_radio_items.css");
+@import url("color_chooser.css");
+@import url("combo_boxes.css");
+@import url("dialogs.css");
+@import url("text_entries.css");
+@import url("expanders.css");
+@import url("floating_bar.css");
+@import url("frames.css");
+@import url("popovers.css");
+@import url("welcome.css");
+@import url("source_list.css");
+@import url("text_styles.css");
+@import url("storage_bar.css");
+@import url("header_bars.css");
+@import url("gtk_info_bar.css");
+@import url("level_bar.css");
+@import url("links.css");
+@import url("lists.css");
+@import url("menus.css");
+@import url("misc.css");
+@import url("assistant.css");
+@import url("notebooks.css");
+@import url("paned.css");
+@import url("pathbars.css");
+@import url("popovers_1.css");
+@import url("progress_bars.css");
+@import url("gtk_scale.css");
+@import url("scrollbars.css");
+@import url("sidebar.css");
+@import url("gtk_spin_button.css");
+@import url("spinner.css");
+@import url("switch.css");
+@import url("toolbars.css");
+@import url("tooltips.css");
+@import url("tree_views.css");
+@import url("window_decorations.css");
+@import url("budgie.css");
+@import url("nautilus.css");
+@import url("gedit.css");
+@import url("gnucash.css");
+@import url("calendar_events.css");
+@import url("gala.css");
+@import url("notify.css");
+@import url("switchboard.css");
+@import url("slingshot.css");
+@import url("panel.css");
+@import url("calculator.css");
+@import url("cards.css");
+@import url("noise.css");
+@import url("snap.css");
+@import url("photos_shotwell.css");
+@import url("avatar.css");
+@import url("colors_in_context_menu.css");
+@import url("unity.css");
+@import url("unity_panel.css");
+@import url("geary.css");
+@import url("lightdm.css");
+@import url("caja_sidebar.css");
+@import url("caja_pathbar.css");

@@ -16,7 +16,7 @@
     selected-active-background: {{colors.error_container.default.hex}};
     selected-active-foreground: @foreground;
     selected-normal-background: {{colors.primary_container.default.hex}};
-    selected-normal-foreground: @foreground;
+    selected-normal-foreground: #FFFFFF;
     selected-urgent-background: {{colors.tertiary.default.hex}};
     selected-urgent-foreground: @foreground;
 

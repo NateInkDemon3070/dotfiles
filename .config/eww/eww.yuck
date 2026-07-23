@@ -1,0 +1,69 @@
+;; --- MPD Listener ---
+(deflisten song_json :initial "{\"title\":\"No Music Playing\",\"artist\":\"Unknown Artist\",\"status\":\"stopped\",\"elapsed\":\"0:00\",\"total\":0,\"elapsed_sec\":0}"
+  "bash $HOME/.config/eww/mpc-listen.sh")
+
+(defpoll cover_art_path :interval "2s" "$HOME/.config/eww/get-cover.sh")
+(defpoll volume_percent :interval "1s" "$HOME/.config/eww/volumecontroller.sh get")
+
+(deflisten cava :initial "" "bash $HOME/.config/eww/cava.sh")
+
+;; --- Widget Definition ---
+
+(defwidget music-widget []
+  (box :class "music-widget" :orientation "h" :space-evenly false
+
+    ;; Left: Cover Art
+    (box :class "cover-art" :style "background-image: url('${cover_art_path}');")
+
+    ;; Middle: Info & Controls
+    (box :class "music-info" :orientation "v" :space-evenly false :valign "center"
+      (label :class "song-title" :text {song_json.title} :halign "start")
+      (label :class "artist" :text {song_json.artist} :halign "start")
+
+      (box :class "progress-container" :orientation "v" :space-evenly false
+        (label :class "position" :text {song_json.elapsed} :halign "start")
+      )
+
+      (box :class "controls" :orientation "h" :space-evenly false :halign "center" :spacing 15
+        (button :onclick "mpc prev" :tooltip "Previous" "󰒮")
+        (button :onclick "mpc toggle" :tooltip "Play/Pause" :class "play-btn" {song_json.status == "playing" ? "󰏤" : "󰐊"})
+        (button :onclick "mpc next" :tooltip "Next" "󰒭")
+      )
+
+      (box :class "visualizer-container" :halign "start"
+        (label :class "cava-visualizer" :text cava)
+      )
+    )
+
+    ;; Right: Volume Column
+    (box :class "volume_bar" :orientation "v" :space-evenly false :valign "center" :halign "center"
+      (button :onclick "$HOME/.config/eww/volumecontroller.sh mute"
+              :class "vol_icon"
+              {volume_percent == 0 ? "󰝟" : ""})
+      (scale :flipped true
+             :orientation "v"
+             :max 100
+             :min 0
+             :value {volume_percent}
+             :onchange "$HOME/.config/eww/volumecontroller.sh set {}")
+    )
+  )
+)
+
+;; --- Window Definition ---
+
+(defwindow music-widget
+  :monitor 0
+  :geometry (
+    geometry :x "50%"
+             :y "50%"
+             :width "460px"
+             :height "160px"
+             :anchor "center center"
+  )
+  :stacking "overlay"
+  :focusable true
+  :wm-ignore true
+  :namespace "eww-music"
+  (music-widget)
+)

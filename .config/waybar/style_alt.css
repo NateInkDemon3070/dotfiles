@@ -11,8 +11,8 @@
     font-size: 13px;
     border: none;
     border-radius: 0px;
-    transition: all 0.2s ease-in-out;
-}
+    transition: background 0.2s ease, color 0.2s ease;
+  }
 
 window#waybar {
     background: transparent;
@@ -42,7 +42,6 @@ window#waybar {
     color: rgba(255, 255, 255, 0.3);
     padding: 0 12px;
     margin: 3px 2px;
-    transition: all 0.2s ease; 
 }
 
 #workspaces button.active, #workspaces button.focused {

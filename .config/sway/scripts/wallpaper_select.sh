@@ -84,7 +84,7 @@ killall swaybg 2>/dev/null
 swaybg -i "$image_fullname_path" -m fill &
 
 sleep 0.3
-echo "$image_fullname_path" > "$HOME/.cache/wal/wal"
+echo "$image_fullname_path" >"$HOME/.cache/wal/wal"
 for f in "$HOME/.config/gtk-4.0/gtk.css" "$HOME/.config/gtk-4.0/gtk-dark.css"; do
   [ -L "$f" ] && rm -f "$f" && touch "$f"
 done

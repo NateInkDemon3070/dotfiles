@@ -1,0 +1,157 @@
+@import '/home/jpablo/.cache/wal/colors-eww.scss';
+
+$font-family: "JetBrains Mono Nerd Font", sans-serif;
+$padding: 16px;
+
+* {
+  all: unset;
+  font-family: $font-family;
+}
+
+.music-widget {
+  background-color: rgba($bg-color, 0.85);
+  border-radius: 0;
+  padding: $padding;
+  border: 1px solid rgba($border-color, 0.3);
+}
+
+.cover-art {
+  background-size: cover;
+  background-position: center;
+  min-width: 140px;
+  min-height: 140px;
+  border-radius: 0;
+  margin-right: 20px;
+  border: 1px solid rgba($border-color, 0.2);
+}
+
+.music-info {
+  margin-right: 15px;
+}
+
+.song-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: $text-primary;
+  margin-bottom: 4px;
+}
+
+.artist {
+  font-size: 13px;
+  font-weight: 500;
+  color: $primary-accent;
+  margin-bottom: 12px;
+}
+
+.visualizer-container {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  background-color: rgba($bg-color, 0.5);
+  border: 1px solid rgba($border-color, 0.2);
+  border-radius: 0;
+  padding: 6px 10px;
+  min-height: 18px;
+}
+
+.cava-visualizer {
+  font-family: "monospace";
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: $text-primary;
+}
+
+.progress-container {
+  margin-bottom: 12px;
+}
+
+.position {
+  font-size: 11px;
+  color: $text-secondary;
+  margin-bottom: 4px;
+}
+
+.progress-bar {
+  padding: 0;
+}
+
+.progress-bar trough {
+  background-color: rgba($bg-color, 0.6);
+  border-radius: 0;
+  min-height: 8px;
+  min-width: 200px;
+  border: 1px solid rgba($border-color, 0.2);
+}
+
+.progress-bar highlight {
+  background-color: $primary-accent;
+  border-radius: 0;
+}
+
+.controls {
+  margin-bottom: 10px;
+}
+
+.controls button {
+  color: $text-primary;
+  background-color: rgba($bg-color, 0.5);
+  border: 1px solid rgba($border-color, 0.2);
+  border-radius: 0;
+  font-size: 16px;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.controls button:hover {
+  color: $primary-accent;
+  background-color: rgba($primary-accent, 0.1);
+  border: 1px solid rgba($primary-accent, 0.3);
+}
+
+.controls .play-btn {
+  font-size: 22px;
+  color: $primary-accent;
+  background-color: rgba($primary-accent, 0.08);
+  border: 1px solid rgba($primary-accent, 0.2);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.controls .play-btn:hover {
+  color: $text-primary;
+  background-color: rgba($primary-accent, 0.15);
+  border: 1px solid rgba($primary-accent, 0.4);
+}
+
+.volume_bar {
+  margin-left: 10px;
+  background-color: rgba($bg-color, 0.5);
+  padding: 12px 8px;
+  border-radius: 0;
+  border: 1px solid rgba($border-color, 0.2);
+}
+
+.vol_icon {
+  font-size: 18px;
+  color: $text-secondary;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+
+.vol_icon:hover {
+  color: $primary-accent;
+}
+
+.volume_bar scale trough {
+  background-color: rgba($bg-color, 0.6);
+  border-radius: 0;
+  min-height: 90px;
+  min-width: 8px;
+  border: 1px solid rgba($border-color, 0.2);
+}
+
+.volume_bar scale trough highlight {
+  background-color: $secondary-accent;
+  border-radius: 0;
+}

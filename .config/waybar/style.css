@@ -49,8 +49,9 @@ window#waybar {
 #custom-notification,
 #network,
 #battery,
-#custom-power {
-    padding:    0 10px;
+#custom-power,
+#custom-sep {
+    padding:    0 12px;
     background: transparent;
     color:      @text;
 }

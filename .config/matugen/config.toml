@@ -17,6 +17,10 @@ post_hook = "swaymsg reload"
 input_path = "~/.config/matugen/templates/colors-rofi-dark.rasi"
 output_path = "~/.cache/wal/colors-rofi-dark.rasi"
 
+[templates.wofi]
+input_path = "~/.config/matugen/templates/colors-wofi.css"
+output_path = "~/.cache/wal/colors-wofi.css"
+
 [templates.kitty]
 input_path = "~/.config/matugen/templates/colors-kitty.conf"
 output_path = "~/.cache/wal/colors-kitty.conf"
@@ -34,9 +38,9 @@ output_path = "~/.cache/wal/colors.css"
 input_path = "~/.config/matugen/templates/starship.toml"
 output_path = "~/.config/starship.toml"
 
-[templates.gtk3]
-input_path = "~/.config/matugen/templates/gtk3.css"
-output_path = "~/.config/gtk-3.0/gtk.css"
+[templates.dynamic_gtk3]
+input_path = "~/.config/matugen/templates/dynamic-gtk.css"
+output_path = "~/.themes/Dynamic-GTK/gtk-3.0/gtk.css"
 
 [templates.gtk4]
 input_path = "~/.config/matugen/templates/gtk4.css"
@@ -46,11 +50,21 @@ output_path = "~/.config/gtk-4.0/gtk.css"
 input_path = "~/.config/matugen/templates/gtk4.css"
 output_path = "~/.config/gtk-4.0/gtk-dark.css"
 
-[templates.neovim]
-input_path = "~/.config/matugen/templates/nvim.lua"
-output_path = "~/.config/nvim/matugen.lua"
-post_hook = "pkill -SIGUSR1 nvim"
-
 [templates.yazi]
 input_path = "~/.config/matugen/templates/yazi.toml"
 output_path = "~/.config/yazi/theme.toml"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/colors-cava.conf"
+output_path = "~/.config/cava/config"
+
+[templates.eww]
+input_path = "~/.config/matugen/templates/colors-eww.scss"
+output_path = "~/.cache/wal/colors-eww.scss"
+post_hook = "eww reload"
+
+[templates.rmpc]
+input_path = "~/.config/matugen/templates/rmpc.ron"
+output_path = "~/.config/rmpc/theme.ron"
+post_hook = "touch ~/.config/rmpc/theme.ron"
+

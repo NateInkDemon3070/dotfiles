@@ -42,9 +42,9 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-icons": { "default": ["", "", ""] },
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh pavucontrol"
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e ncpamixer"
     },
-    "bluetooth": { "format": "",         "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh blueman-manager" },
+    "bluetooth": { "format": "",         "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e bluetui" },
     "network": { "format-wifi": "", "format-ethernet": "󰈀", "format-disconnected": "󰖪",         "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e nmtui" },
     "battery": {
         "format": "{icon} {capacity}%",

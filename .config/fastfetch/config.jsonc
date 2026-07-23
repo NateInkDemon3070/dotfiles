@@ -1,25 +1,110 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "/home/jpablo/.config/fastfetch/rei.png",
-        "width": 38,
-        "padding": { "top": 0, "right": 2 }
-    },
-    "display": {
-        "separator": "  "
+    	"source": "~/.config/fastfetch/rei.png",
+    	"type": "kitty-direct",
+    	"width": 39,
+    	"height": 17,
+    	"padding": {
+    		"top": 3,
+    		"left": 3
+    	}
     },
     "modules": [
-        "title",
-        { "type": "os", "key": "󰣇 OS", "keycolor": "33" },
-        { "type": "host", "key": "󰌢 Host", "keyColor": "33" },
-        { "type": "kernel", "key": "󰒋 Kernel", "keyColor": "33" },
-        { "type": "packages", "key": "󰏖 Packages", "keyColor": "33" },
-        { "type": "shell", "key": " Shell", "keyColor": "33" },
-        { "type": "wm", "key": " WM", "keyColor": "33" },
-        { "type": "terminal", "key": " Terminal", "keyColor": "33" },
-        { "type": "cpu", "key": " CPU", "keyColor": "33" },
-        { "type": "gpu", "key": "󰾲 GPU", "keyColor": "33" },
-        { "type": "memory", "key": "󰍛 RAM", "keyColor": "33" },
-        { "type": "battery", "key": " Battery", "keyColor": "33" }
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
+        },
+        {
+            "type": "host",
+            "key": "{icon} PC",
+            "keyColor": "green"
+        },
+        {
+            "type": "cpu",
+            "key": "│ ├",
+            "keyColor": "green"
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├󰍛",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "│ ├󰍛",
+            "keyColor": "green"
+        },
+        {
+            "type": "disk",
+            "key": "└ └",
+            "keyColor": "green"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
+        },
+        {
+            "type": "os",
+            "key": "{icon} OS",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "bios",
+            "key": "│ ├",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "packages",
+            "key": "│ ├󰏖",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "shell",
+            "key": "└ └",
+            "keyColor": "yellow"
+        },
+        "break",
+        {
+            "type": "de",
+            "key": " DE",
+            "keyColor": "blue"
+        },
+        {
+            "type": "lm",
+            "key": "│ ├",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "│ ├",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wmtheme",
+            "key": "│ ├󰉼",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "└ └",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+        },
+        "break",
     ]
 }

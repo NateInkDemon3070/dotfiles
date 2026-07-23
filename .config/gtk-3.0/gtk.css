@@ -1,43 +1,23 @@
-@define-color theme_fg_color #e1e3e2;
-@define-color theme_text_color #e1e3e2;
-@define-color theme_bg_color #111414;
-@define-color theme_base_color #1d2020;
-@define-color theme_selected_bg_color #92d1d4;
-@define-color theme_selected_fg_color #003739;
-@define-color insensitive_bg_color #111414;
-@define-color insensitive_fg_color #bfc8c8;
-@define-color insensitive_base_color #1d2020;
-@define-color theme_unfocused_fg_color #bfc8c8;
-@define-color theme_unfocused_text_color #e1e3e2;
-@define-color theme_unfocused_bg_color #111414;
-@define-color theme_unfocused_base_color #111414;
-@define-color theme_unfocused_selected_bg_color #92d1d4;
-@define-color theme_unfocused_selected_fg_color #003739;
-@define-color borders #899393;
-@define-color unfocused_borders #3f4849;
-@define-color warning_color #fdb793;
-@define-color error_color #ffb4ab;
-@define-color success_color #b2cbcc;
-@define-color fg_color #e1e3e2;
-@define-color text_color #e1e3e2;
-@define-color bg_color #111414;
-@define-color base_color #1d2020;
-@define-color selected_bg_color #92d1d4;
-@define-color selected_fg_color #003739;
+@define-color accent_color #c2c1ff;
+@define-color accent_fg_color #2a2a60;
+@define-color accent_bg_color #c2c1ff;
+@define-color window_bg_color #131317;
+@define-color window_fg_color #e5e1e7;
+@define-color headerbar_bg_color #131317;
+@define-color headerbar_fg_color #e5e1e7;
+@define-color popover_bg_color #131317;
+@define-color popover_fg_color #e5e1e7;
+@define-color view_bg_color #131317;
+@define-color view_fg_color #e5e1e7;
+@define-color card_bg_color #131317;
+@define-color card_fg_color #e5e1e7;
+@define-color sidebar_bg_color @window_bg_color;
+@define-color sidebar_fg_color @window_fg_color;
+@define-color sidebar_border_color @window_bg_color;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color theme_selected_bg_color alpha(@accent_color, 0.15);
+@define-color theme_selected_fg_color @primary;
 
-@import 'colors.css';
-
-.mate-panel-menu-bar button {
-    color: transparent;
-}
-panel-toplevel.background.horizontal,
-.mate-panel-menu-bar,
-#clock-applet-button,
-#clock-applet-button:hover {
-    color: white;
-}
-#tasklist-button {
-    color: white;
-}
+@import "thunar.css";
 
 * { border-radius: 0 !important; }

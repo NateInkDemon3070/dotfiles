@@ -1,4 +1,5 @@
 [mgr]
+trash          = true
 sort_by        = "mtime"
 sort_reverse   = true
 sort_dir_first = true
@@ -17,6 +18,9 @@ video = [
 ]
 audio = [
     { run = "mpv %s", for = "unix" },
+]
+pdf = [
+    { run = "zathura %s", for = "unix" },
 ]
 text = [
     { run = "nvim %s", block = true, for = "unix" },
@@ -62,4 +66,5 @@ rules = [
     { url = ".envrc",       use = "text" },
     { mime = "*/xml",       use = "text" },
     { mime = "*/json",      use = "text" },
+    { mime = "application/pdf", use = "pdf" },
 ]

@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 46,
-    "margin-left": 15,
-    "margin-right": 15,
-    "margin-top": 10,
+    "margin-left": 2,
+    "margin-right": 2,
+    "margin-top": 0,
     "margin-bottom": 0,
     "spacing": 0,
 
@@ -30,7 +30,7 @@
         "spacing": 10
     },
 
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "on-click": "activate",
         "format": "{name}",
         "all-outputs": true,
@@ -74,14 +74,14 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-icons": { "default": ["", "", ""] },
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh pavucontrol",
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e ncpamixer",
         "tooltip": false
     },
 
     "bluetooth": {
-        "format": "",
+        "format": "",
         "format-connected": "󰂱",
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh blueman-manager"
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e bluetui"
     },
 
     "network": {

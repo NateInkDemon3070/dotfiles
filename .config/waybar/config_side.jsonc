@@ -18,6 +18,8 @@
         "network",
         "bluetooth",
         "custom/notification",
+        "tray",
+        "pulseaudio",
         "battery"
     ],
 
@@ -30,6 +32,16 @@
     "clock": {
         "format": "{:%I\n%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}\n{volume}%",
+        "format-muted": "󰝟\n0%",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e ncpamixer",
+        "scroll-step": 5
     },
 
     "custom/notification": {
@@ -59,7 +71,7 @@
         "format": "",
         "format-connected": "󰂱",
         "format-disabled": "󰂲",
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh blueman-manager"
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e bluetui"
     },
 
     "battery": {

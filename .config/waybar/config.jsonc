@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 38,
-    "margin-left": 15,
-    "margin-right": 15,
-    "margin-top": 10,
+    "margin-left": 4,
+    "margin-right": 4,
+    "margin-top": 4,
     "margin-bottom": 0,
     "spacing": 0,
 
@@ -53,14 +53,14 @@
         "interval": 5,
         "signal": 1,
         "format": "󰕾 {}",
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh pavucontrol"
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e ncpamixer"
     },
 
     "bluetooth": {
-        "format": "",
+        "format": "",
         "format-connected": "󰂱",
         "format-disabled": "󰂲",
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh blueman-manager"
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e bluetui"
     },
 
     "network": {
@@ -77,5 +77,5 @@
             "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
             "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰂉", "󰂊", "󰂋", "󰂅"]
         }
-    },
+    }
 }

@@ -21,13 +21,6 @@ if ! pgrep -x "waybar" >/dev/null; then
   echo "[$(date)] waybar iniciado"
 fi
 
-# ── swaync (una sola instancia) ──────────────────────────────────
-for pid in $(pgrep -x swaync); do
-  [ "$pid" != "$$" ] && kill "$pid" 2>/dev/null && sleep 0.3
-done
-swaync &
-echo "[$(date)] swaync iniciado"
-
 # ── swayosd ──────────────────────────────────────────────────────
 if ! pgrep -x "swayosd-server" >/dev/null; then
   /usr/bin/swayosd-server -s /home/jpablo/.config/swayosd/style.css >/dev/null 2>&1 &
@@ -62,11 +55,33 @@ if command -v nm-applet >/dev/null; then
   echo "[$(date)] nm-applet programado"
 fi
 
+# ── blueman-applet (sin tray) ──────────────────────────────────
+if command -v blueman-applet >/dev/null; then
+  (
+    sleep 3 && blueman-applet &
+    disown
+  ) &
+  # mata el tray que spawnea el StatusIcon plugin automáticamente
+  (
+    sleep 4
+    for i in 1 2 3; do
+      killall -q blueman-tray 2>/dev/null
+      sleep 1
+    done
+  ) &
+  echo "[$(date)] blueman-applet programado (sin tray)"
+fi
+
 # ── cliphist ─────────────────────────────────────────────────────
 if ! pgrep -f "wl-paste.*cliphist.*store" >/dev/null; then
   wl-paste --type text --watch cliphist store &
   wl-paste --type image --watch cliphist store &
   echo "[$(date)] cliphist iniciado"
+fi
+
+# ── cgroup para Spotify (limita CPU/RAM en background) ──────────
+if [ ! -d /sys/fs/cgroup/spotify-limited ]; then
+  doas ~/spotify-limit.sh >/dev/null 2>&1 &
 fi
 
 echo "[$(date)] === AUTOSTART COMPLETADO ==="
