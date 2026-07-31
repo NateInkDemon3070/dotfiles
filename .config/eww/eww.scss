@@ -43,23 +43,6 @@ $padding: 16px;
   margin-bottom: 12px;
 }
 
-.visualizer-container {
-  margin-top: 10px;
-  margin-bottom: 4px;
-  background-color: rgba($bg-color, 0.5);
-  border: 1px solid rgba($border-color, 0.2);
-  border-radius: 0;
-  padding: 6px 10px;
-  min-height: 18px;
-}
-
-.cava-visualizer {
-  font-family: "monospace";
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: $text-primary;
-}
-
 .progress-container {
   margin-bottom: 12px;
 }

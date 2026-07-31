@@ -5,8 +5,6 @@
 (defpoll cover_art_path :interval "2s" "$HOME/.config/eww/get-cover.sh")
 (defpoll volume_percent :interval "1s" "$HOME/.config/eww/volumecontroller.sh get")
 
-(deflisten cava :initial "" "bash $HOME/.config/eww/cava.sh")
-
 ;; --- Widget Definition ---
 
 (defwidget music-widget []
@@ -28,10 +26,6 @@
         (button :onclick "mpc prev" :tooltip "Previous" "󰒮")
         (button :onclick "mpc toggle" :tooltip "Play/Pause" :class "play-btn" {song_json.status == "playing" ? "󰏤" : "󰐊"})
         (button :onclick "mpc next" :tooltip "Next" "󰒭")
-      )
-
-      (box :class "visualizer-container" :halign "start"
-        (label :class "cava-visualizer" :text cava)
       )
     )
 
