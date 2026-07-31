@@ -4,17 +4,6 @@ echo "[$(date)] === INICIO AUTOSTART ==="
 
 source ~/.profile 2>/dev/null || true
 
-# Iniciar sesión D-Bus única si no existe
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-  eval $(dbus-launch --exit-with-session --sh-syntax)
-  export DBUS_SESSION_BUS_ADDRESS
-  export DBUS_SESSION_BUS_PID
-  dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Sway XCURSOR_THEME XCURSOR_SIZE
-fi
-# Guardar dirección para wrappers
-echo "$DBUS_SESSION_BUS_ADDRESS" >/tmp/sway-dbus-address
-echo "[$(date)] D-Bus session: $DBUS_SESSION_BUS_ADDRESS"
-
 # ── Waybar ───────────────────────────────────────────────────────
 if ! pgrep -x "waybar" >/dev/null; then
   waybar &

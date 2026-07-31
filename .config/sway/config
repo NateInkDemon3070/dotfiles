@@ -1,6 +1,6 @@
 set $mod Mod4
 set $term kitty
-set $menu wofi --show drun --style ~/.cache/wal/colors-wofi.css
+set $menu rofi -show drun
 
 output * resolution 1366x768 scale 1
 
@@ -31,6 +31,30 @@ shadows enable
 shadow_blur_radius 4
 shadow_color #1a1a1aee
 
+layer_effects "rofi" {
+    blur enable;
+    blur_xray disable;
+    blur_ignore_transparent enable;
+}
+
+layer_effects "eww-music" {
+    blur enable;
+    blur_xray disable;
+    blur_ignore_transparent enable;
+}
+
+layer_effects "swaync-control-center" {
+    blur enable;
+    blur_xray disable;
+    blur_ignore_transparent enable;
+}
+
+layer_effects "swaync-notification-window" {
+    blur enable;
+    blur_xray disable;
+    blur_ignore_transparent enable;
+}
+
 seat * xcursor_theme Miku-VSThemesORG 22
 
 # --COSAS QUE SE EJECUTAN AL INICIO--
@@ -42,11 +66,12 @@ seat seat0 xcursor_theme Miku-VSThemesORG 22
 for_window [app_id="floating_tui"] floating enable, resize set 700 500, move position center
 for_window [app_id="pavucontrol"] floating enable, resize set 800 600, move position center
 for_window [app_id="blueman-manager"] floating enable, resize set 600 400, move position center
-for_window [app_id="vesktop"] opacity 0.85, blur enable
+for_window [app_id="librewolf" title="LibreWolf - Choose User Profile"] floating enable, resize set 600 450, move position center
 for_window [app_id="zapzap"] opacity 0.85, blur enable
 for_window [app_id="thunar"] opacity 0.85, blur enable
-for_window [app_id="firefox"] opacity 0.85, blur enable
+for_window [app_id="librewolf"] opacity 0.85, blur enable
 for_window [app_id="com.github.th-ch.youtube-music"] opacity 0.85, blur enable
+for_window [app_id="vesktop"] opacity 0.85, blur enable
 
 # --- KEYBINDS ---
 
@@ -54,7 +79,7 @@ for_window [app_id="com.github.th-ch.youtube-music"] opacity 0.85, blur enable
 bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+e exec $term -e yazi
-bindsym $mod+b exec firefox
+bindsym $mod+b exec librewolf
 bindsym $mod+m exec $term -e rmpc
 bindsym $mod+n exec eww open music-widget --toggle
 bindsym $mod+t floating toggle
@@ -64,11 +89,11 @@ bindsym $mod+c reload
 bindsym $mod+Escape exec bash ~/.config/sway/scripts/powermenu.sh
 bindsym $mod+Shift+e exec $term -e doas yazi
 
-bindsym $mod+period exec rofimoji --action copy --selector wofi --selector-args "--style ~/.cache/wal/colors-wofi.css"
+bindsym $mod+period exec rofimoji --action copy --selector rofi --selector-args "-theme ~/.config/rofi/config.rasi"
 bindsym $mod+w exec sh /home/jpablo/.config/sway/scripts/wallpaper.sh
 bindsym $mod+Shift+w exec bash /home/jpablo/.config/sway/scripts/wallpaper_select.sh
 bindsym $mod+o exec bash /home/jpablo/.config/waybar/scripts/switch_waybar.sh
-bindsym $mod+v exec cliphist list | wofi --dmenu --style ~/.cache/wal/colors-wofi.css | cliphist decode | wl-copy
+bindsym $mod+v exec cliphist list | rofi -dmenu -p "Portapapeles" -theme ~/.config/rofi/config.rasi | cliphist decode | wl-copy
 
 # -- LABURO --
 bindsym Ctrl+Alt+Shift+$mod+l exec zen-browser https://linkedin.com
@@ -123,11 +148,11 @@ bindsym XF86MonBrightnessUp exec /home/jpablo/.local/bin/swayosd-client --bright
 bindsym XF86MonBrightnessDown exec /home/jpablo/.local/bin/swayosd-client --brightness lower && pkill -RTMIN+1 waybar
 
 # -- CAPTURAS DE PANTALLA --
-bindsym Print exec /home/jpablo/.config/sway/scripts/grimshot-save.sh screen
-bindsym Mod4+Print exec grimshot --notify copy screen
-bindsym Shift+Print exec /home/jpablo/.config/sway/scripts/grimshot-save.sh area
-bindsym Mod4+Shift+Print exec /home/jpablo/.config/sway/scripts/grimshot-save.sh area
-bindsym Mod4+Control+Print exec /home/jpablo/.config/sway/scripts/grimshot-save.sh active
+bindsym Print exec flameshot full -p /home/jpablo/Imagenes/Capturas/
+bindsym Mod4+Print exec flameshot full -c
+bindsym Shift+Print exec flameshot gui -p /home/jpablo/Imagenes/Capturas
+bindsym Mod4+Shift+Print exec flameshot gui -c
+bindsym Mod4+Control+Print exec flameshot gui -p /home/jpablo/Imagenes/Capturas -d 500
 
 # -- COLORES DE MATUGEN --
 include ~/.cache/wal/colors-sway-border
