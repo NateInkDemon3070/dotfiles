@@ -1,110 +1,73 @@
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-    	"source": "~/.config/fastfetch/rei.png",
-    	"type": "kitty-direct",
-    	"width": 39,
-    	"height": 17,
-    	"padding": {
-    		"top": 3,
-    		"left": 3
-    	}
+  "modules": [
+    "title",
+    "separator",
+    { "key": "   OS",       "type": "os" },
+    { "key": "  󰛸 Kernel",   "type": "kernel" },
+    { "key": "  󰏗 Packages", "type": "packages" },
+    { "key": "  󰍹 Display",  "type": "display" },
+    { "key": "  󰖲 WM",       "type": "wm" },
+    { "key": "  󰆍 Shell", "type": "shell" },
+    { "key": "  󰻐 CPU",      "type": "cpu" },
+    { "key": "  󰍛 GPU",      "type": "gpu" },
+    {
+      "type": "memory",
+      "key": "  󰘚 RAM",
+      "percent": { "type": ["bar", "bar-monochrome"] }
     },
-    "modules": [
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
-        },
-        {
-            "type": "host",
-            "key": "{icon} PC",
-            "keyColor": "green"
-        },
-        {
-            "type": "cpu",
-            "key": "│ ├",
-            "keyColor": "green"
-        },
-        {
-            "type": "gpu",
-            "key": "│ ├󰍛",
-            "keyColor": "green"
-        },
-        {
-            "type": "memory",
-            "key": "│ ├󰍛",
-            "keyColor": "green"
-        },
-        {
-            "type": "disk",
-            "key": "└ └",
-            "keyColor": "green"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
-        },
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
-        },
-        {
-            "type": "os",
-            "key": "{icon} OS",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "kernel",
-            "key": "│ ├",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "bios",
-            "key": "│ ├",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "packages",
-            "key": "│ ├󰏖",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "shell",
-            "key": "└ └",
-            "keyColor": "yellow"
-        },
-        "break",
-        {
-            "type": "de",
-            "key": " DE",
-            "keyColor": "blue"
-        },
-        {
-            "type": "lm",
-            "key": "│ ├",
-            "keyColor": "blue"
-        },
-        {
-            "type": "wm",
-            "key": "│ ├",
-            "keyColor": "blue"
-        },
-        {
-            "type": "wmtheme",
-            "key": "│ ├󰉼",
-            "keyColor": "blue"
-        },
-        {
-            "type": "terminal",
-            "key": "└ └",
-            "keyColor": "blue"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
-        },
-        "break",
-    ]
+    { "key": "  󰋊 Disk",     "type": "disk" },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 12,
+      "circle": {
+        "radius": 30,
+        "width": 5,
+        "range": [
+          0,
+          15
+        ]
+      }
+    }
+  ],
+  "logo": {
+    "source": "~/.config/fastfetch/miku_hd.png",
+    "type": "sixel",
+    "width": 28,
+    "color": {
+      "1-2": "#c6fbff",
+      "3-4": "#9bd0d4",
+      "5-6": "#fff0d1",
+      "7-8": "#00696f",
+      "9-13": "#755b00"
+    },
+    "padding": {
+      "top": 0,
+      "left": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "color": {
+      "keys": "#c6fbff",
+      "title": "#dde4e4",
+      "separator": "#859394"
+    },
+    "bar": {
+      "border": {
+        "left": "\uee00",
+        "leftElapsed": "\uee03",
+        "right": "\uee02",
+        "rightElapsed": "\uee05"
+      },
+      "char": {
+        "total": "\uee01",
+        "elapsed": "\uee04"
+      },
+      "color": {
+        "total": null
+      }
+    }
+  }
 }
