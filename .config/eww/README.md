@@ -17,7 +17,7 @@ To use this widget, you need the following software installed:
 - `playerctl`: To control MPRIS-compatible music players.
 - `pamixer`: For audio volume control (works with PulseAudio/PipeWire).
 - `curl`: To fetch album art from URLs.
-- **A Nerd Font**: Required for the icons used in the widget. The default configuration uses "JetBrains Mono Nerd Font".
+- **A Nerd Font**: Required for the icons used in the widget. The default configuration uses "Terminess Nerd Font".
 
 ## Demo
 
@@ -33,11 +33,11 @@ To use this widget, you need the following software installed:
 1.  **Install Dependencies**:
     - **On Arch Linux**:
       ```bash
-      sudo pacman -S eww playerctl pamixer curl ttf-jetbrains-mono-nerd
+      sudo pacman -S eww playerctl pamixer curl ttf-terminus-nerd
       ```
     - **On Debian/Ubuntu**:
       ```bash
-      sudo apt install playerctl libpam-dev curl fonts-jetbrains-mono
+      sudo apt install playerctl libpam-dev curl fonts-terminus
       # eww and pamixer may need to be installed manually if not in the official repositories.
       ```
 

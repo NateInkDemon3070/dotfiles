@@ -23,8 +23,13 @@ emit_info() {
         elapsed_sec=$(( ${BASH_REMATCH[1]} * 60 + ${BASH_REMATCH[2]} ))
     fi
 
-    printf '{"title":"%s","artist":"%s","status":"%s","elapsed":"%s","total":%d,"elapsed_sec":%d}\n' \
-        "$title" "$artist" "$state" "$elapsed" "$total_sec" "$elapsed_sec"
+    local repeat_state=$(echo "$status_line" | grep -oP 'repeat:\s*\K\w+')
+    local random_state=$(echo "$status_line" | grep -oP 'random:\s*\K\w+')
+    [[ "$repeat_state" == "on" ]] && repeat_state="true" || repeat_state="false"
+    [[ "$random_state" == "on" ]] && random_state="true" || random_state="false"
+
+    printf '{"title":"%s","artist":"%s","status":"%s","elapsed":"%s","total":%d,"elapsed_sec":%d,"repeat":%s,"random":%s}\n' \
+        "$title" "$artist" "$state" "$elapsed" "$total_sec" "$elapsed_sec" "$repeat_state" "$random_state"
 }
 
 emit_info

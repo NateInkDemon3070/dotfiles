@@ -1,0 +1,73 @@
+{
+  "modules": [
+    "title",
+    "separator",
+    { "key": "   OS",       "type": "os" },
+    { "key": "  󰛸 Kernel",   "type": "kernel" },
+    { "key": "  󰏗 Packages", "type": "packages" },
+    { "key": "  󰍹 Display",  "type": "display" },
+    { "key": "  󰖲 WM",       "type": "wm" },
+    { "key": "  󰆍 Shell", "type": "shell" },
+    { "key": "  󰻐 CPU",      "type": "cpu" },
+    { "key": "  󰍛 GPU",      "type": "gpu" },
+    {
+      "type": "memory",
+      "key": "  󰘚 RAM",
+      "percent": { "type": ["bar", "bar-monochrome"] }
+    },
+    { "key": "  󰋊 Disk",     "type": "disk" },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 12,
+      "circle": {
+        "radius": 30,
+        "width": 5,
+        "range": [
+          0,
+          15
+        ]
+      }
+    }
+  ],
+  "logo": {
+    "source": "~/.config/fastfetch/miku_hd.png",
+    "type": "sixel",
+    "width": 28,
+    "color": {
+      "1-2": "{{colors.primary.default.hex}}",
+      "3-4": "{{colors.secondary.default.hex}}",
+      "5-6": "{{colors.tertiary.default.hex}}",
+      "7-8": "{{colors.primary.light.hex}}",
+      "9-13": "{{colors.tertiary.light.hex}}"
+    },
+    "padding": {
+      "top": 0,
+      "left": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "color": {
+      "keys": "{{colors.primary.default.hex}}",
+      "title": "{{colors.on_surface.default.hex}}",
+      "separator": "{{colors.outline.default.hex}}"
+    },
+    "bar": {
+      "border": {
+        "left": "\uee00",
+        "leftElapsed": "\uee03",
+        "right": "\uee02",
+        "rightElapsed": "\uee05"
+      },
+      "char": {
+        "total": "\uee01",
+        "elapsed": "\uee04"
+      },
+      "color": {
+        "total": null
+      }
+    }
+  }
+}

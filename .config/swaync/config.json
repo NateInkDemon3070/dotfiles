@@ -62,11 +62,11 @@
         },
         {
           "label": "󰖩",
-          "command": "kitty --class floating_tui -e nmtui"
+          "command": "/home/jpablo/.config/sway/scripts/launch-float.sh foot nmtui"
         },
         {
           "label": "󰂯",
-          "command": "blueman-manager"
+          "command": "/home/jpablo/.config/sway/scripts/launch-float.sh foot bluetui"
         },
         {
           "label": "󰕾",
@@ -78,7 +78,7 @@
         },
         {
           "label": "󰒔",
-          "command": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e nvim /home/jpablo/.config/sway/config"
+          "command": "/home/jpablo/.config/sway/scripts/launch-float.sh foot nvim /home/jpablo/.config/sway/config"
         }
       ]
     },
@@ -94,7 +94,7 @@
         },
         {
           "label": "󰄨 Info",
-          "command": "kitty --class big_tui -e btop"
+          "command": "/home/jpablo/.config/sway/scripts/launch-float.sh foot htop"
         }
       ]
     }

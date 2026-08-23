@@ -11,8 +11,6 @@
         "sway/workspaces"
     ],
     "modules-right": [
-        "cpu",
-        "memory",
         "custom/notification",
         "tray",
         "pulseaudio",
@@ -29,8 +27,6 @@
         "on-click": "activate"
     },
 
-    "cpu": { "format": "󰍛 {usage}%" },
-    "memory": { "format": "󰾆 {percentage}%" },
     "clock": { "format": " {:%I:%M %p}" },
     "tray": { "icon-size": 18, "spacing": 10 },
     "custom/notification": {
@@ -42,10 +38,15 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-icons": { "default": ["", "", ""] },
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e ncpamixer"
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot ncpamixer"
     },
-    "bluetooth": { "format": "",         "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e bluetui" },
-    "network": { "format-wifi": "", "format-ethernet": "󰈀", "format-disconnected": "󰖪",         "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e nmtui" },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot bluetui"
+    },
+    "network": { "format-wifi": "", "format-ethernet": "󰈀", "format-disconnected": "󰖪",         "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot nmtui" },
     "battery": {
         "format": "{icon} {capacity}%",
         "format-charging": "{icon} {capacity}%",

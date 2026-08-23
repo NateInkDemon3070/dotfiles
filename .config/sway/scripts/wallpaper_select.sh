@@ -6,6 +6,8 @@ fi
 
 wallpapers_dir="$HOME/Wallpapers"
 
+TRANSITION_STEP=30
+
 transitions=("grow")
 rand_anim=${transitions[$RANDOM % ${#transitions[@]}]}
 
@@ -18,7 +20,7 @@ done | rofi -dmenu -p " " \
     * {
         bg-base: rgba(15, 17, 20, 0.85);
         accent-alt: @selected-normal-background;
-        font: "JetBrainsMono Nerd Font 11";
+        font: "Terminess Nerd Font 11";
         background-color: transparent;
         text-color: @foreground;
     }
@@ -80,10 +82,16 @@ done | rofi -dmenu -p " " \
 
 image_fullname_path=$(find "$wallpapers_dir" -type f -name "$selected_wallpaper.*" | head -n 1)
 
-killall swaybg 2>/dev/null
-swaybg -i "$image_fullname_path" -m fill &
+if ! awww query >/dev/null 2>&1; then
+  awww-daemon >/dev/null 2>&1 &
+  disown
+  for _ in $(seq 1 20); do
+    awww query >/dev/null 2>&1 && break
+    sleep 0.1
+  done
+fi
+awww img --transition-step "$TRANSITION_STEP" "$image_fullname_path"
 
-sleep 0.3
 echo "$image_fullname_path" >"$HOME/.cache/wal/wal"
 for f in "$HOME/.config/gtk-4.0/gtk.css" "$HOME/.config/gtk-4.0/gtk-dark.css"; do
   [ -L "$f" ] && rm -f "$f" && touch "$f"

@@ -7,28 +7,28 @@ palette = "matugen"
 # ==================================================
 # FORMATO PRINCIPAL (Corregido el llamado al Kernel)
 # ==================================================
-format = "[┌─](fg:outline) $username$directory$time${env_var.OS_KERNEL}$git_branch$git_status$nodejs$python$c$cpp$rust$java$golang$ruby$php\n[└─](fg:outline) $character"
+format = "[┌─](fg:outline) $username$directory$time${env_var.OS_KERNEL}$git_branch$git_status$nodejs$python$rust$java$golang$ruby$php\n[└─](fg:outline) $character"
 
 # ==================================================
 # PALETA DE COLORES (Variables para Matugen)
 # ==================================================
 [palettes.matugen]
-primary = "#b2d0ee"
-on_primary = "#13334b"
-secondary = "#bdc8d5"
-on_secondary = "#27313c"
-tertiary = "#f1c591"
-on_tertiary = "#452b04"
+primary = "#c6fbff"
+on_primary = "#00373a"
+secondary = "#9bd0d4"
+on_secondary = "#00373a"
+tertiary = "#fff0d1"
+on_tertiary = "#3e2e00"
 error = "#ffb4ab"
 on_error = "#690005"
-surface = "#121315"
-on_surface = "#e3e2e4"
-surface_variant = "#43474d"
-on_surface_variant = "#c3c7cd"
-outline = "#8d9197"
+surface = "#0e1515"
+on_surface = "#dde4e4"
+surface_variant = "#3b494a"
+on_surface_variant = "#bac9ca"
+outline = "#859394"
 shadow = "#000000"
-hover = "#cee5ff"
-on_hover = "#001d32"
+hover = "#71f5ff"
+on_hover = "#002022"
 
 # ==================================================
 # BLOQUES BÁSICOS

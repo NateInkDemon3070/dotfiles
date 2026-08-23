@@ -15,4 +15,8 @@ fi
 rm -rf ~/.cache/thumbnails/*
 rm -rf ~/.cache/gamemode_enabled
 
-notify-send "Limpieza Completa" "Caché de paquetes y huérfanos eliminados." -i terminal
+echo ":: Liberando RAM (caché de página, dentries e inodos)..."
+sync
+doas sh -c 'echo 3 > /proc/sys/vm/drop_caches'
+
+notify-send "Limpieza Completa" "Caché de paquetes, huérfanos y RAM liberados." -i terminal

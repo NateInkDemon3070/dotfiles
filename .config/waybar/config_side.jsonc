@@ -40,7 +40,7 @@
         "format-icons": {
             "default": ["󰕿", "󰖀", "󰕾"]
         },
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e ncpamixer",
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot ncpamixer",
         "scroll-step": 5
     },
 
@@ -64,14 +64,14 @@
         "format-wifi": " ",
         "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e nmtui"
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot nmtui"
     },
 
     "bluetooth": {
-        "format": "",
+        "format": "󰂯",
         "format-connected": "󰂱",
         "format-disabled": "󰂲",
-        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh kitty -e bluetui"
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot bluetui"
     },
 
     "battery": {

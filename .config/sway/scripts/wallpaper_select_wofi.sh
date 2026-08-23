@@ -6,6 +6,8 @@ fi
 
 wallpapers_dir="$HOME/Wallpapers"
 
+TRANSITION_STEP=30
+
 tmpdir=$(mktemp -d)
 trap 'rm -rf "$tmpdir"' EXIT
 
@@ -30,7 +32,7 @@ window {
     background-color: rgba(15, 17, 20, 0.85);
     border: 2px solid @color4;
     border-radius: 0px;
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "Terminess Nerd Font";
     font-size: 11px;
 }
 
@@ -111,10 +113,16 @@ selected_wallpaper=$(echo "$selected_line" | sed -e 's/<[^>]*>//g' | xargs)
 
 image_fullname_path=$(find "$wallpapers_dir" -type f -name "$selected_wallpaper.*" | head -n 1)
 
-killall swaybg 2>/dev/null
-swaybg -i "$image_fullname_path" -m fill &
+if ! awww query >/dev/null 2>&1; then
+  awww-daemon >/dev/null 2>&1 &
+  disown
+  for _ in $(seq 1 20); do
+    awww query >/dev/null 2>&1 && break
+    sleep 0.1
+  done
+fi
+awww img --transition-step "$TRANSITION_STEP" "$image_fullname_path"
 
-sleep 0.3
 echo "$image_fullname_path" >"$HOME/.cache/wal/wal"
 for f in "$HOME/.config/gtk-4.0/gtk.css" "$HOME/.config/gtk-4.0/gtk-dark.css"; do
   [ -L "$f" ] && rm -f "$f" && touch "$f"

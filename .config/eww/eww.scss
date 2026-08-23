@@ -1,6 +1,6 @@
 @import '/home/jpablo/.cache/wal/colors-eww.scss';
 
-$font-family: "JetBrains Mono Nerd Font", sans-serif;
+$font-family: "Terminess Nerd Font", sans-serif;
 $padding: 16px;
 
 * {
@@ -9,7 +9,7 @@ $padding: 16px;
 }
 
 .music-widget {
-  background-color: rgba($bg-color, 0.85);
+  background-color: rgba($bg-color, 0.8);
   border-radius: 0;
   padding: $padding;
   border: 1px solid rgba($border-color, 0.3);
@@ -26,7 +26,6 @@ $padding: 16px;
 }
 
 .music-info {
-  margin-right: 15px;
 }
 
 .song-title {
@@ -107,8 +106,27 @@ $padding: 16px;
   border: 1px solid rgba($primary-accent, 0.4);
 }
 
+.controls .random-btn,
+.controls .repeat-btn {
+  font-size: 16px;
+  color: $text-secondary;
+}
+
+.controls .random-btn:hover,
+.controls .repeat-btn:hover {
+  color: $primary-accent;
+  background-color: rgba($primary-accent, 0.1);
+  border: 1px solid rgba($primary-accent, 0.3);
+}
+
+.controls .random-btn.active,
+.controls .repeat-btn.active {
+  color: $secondary-accent;
+  background-color: rgba($secondary-accent, 0.1);
+  border: 1px solid rgba($secondary-accent, 0.35);
+}
+
 .volume_bar {
-  margin-left: 10px;
   background-color: rgba($bg-color, 0.5);
   padding: 12px 8px;
   border-radius: 0;

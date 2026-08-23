@@ -2,21 +2,12 @@
 
 CONFIG_DIR="/home/jpablo/.config/waybar"
 STATE_FILE="$CONFIG_DIR/scripts/.current_bar"
+SERVICE="$HOME/.config/runit/sv/waybar"
 
 if [ "$1" == "random" ]; then
     NEXT=$(( ( RANDOM % 4 ) + 1 ))
     echo "$NEXT" > "$STATE_FILE"
-    case $NEXT in
-        1) waybar -c "$CONFIG_DIR/config_alt.jsonc" -s "$CONFIG_DIR/style_alt.css" &>/dev/null &
-        ;;
-        2) waybar -c "$CONFIG_DIR/config_win.jsonc" -s "$CONFIG_DIR/style_solid.css" &>/dev/null &
-        ;;
-        3) waybar -c "$CONFIG_DIR/config.jsonc" -s "$CONFIG_DIR/style.css" &>/dev/null &
-        ;;
-        4) waybar -c "$CONFIG_DIR/config_side.jsonc" -s "$CONFIG_DIR/style_side.css" &>/dev/null &
-        ;;
-    esac
-    disown
+    sv restart "$SERVICE" 2>/dev/null || true
     exit 0
 fi
 
@@ -36,21 +27,4 @@ esac
 
 echo "$NEXT" > "$STATE_FILE"
 
-pkill -x waybar 2>/dev/null
-for i in $(seq 1 20); do
-    pgrep -x waybar >/dev/null || break
-    sleep 0.05
-done
-
-case $NEXT in
-    1) waybar -c "$CONFIG_DIR/config_alt.jsonc" -s "$CONFIG_DIR/style_alt.css" &>/dev/null &
-    ;;
-    2) waybar -c "$CONFIG_DIR/config_win.jsonc" -s "$CONFIG_DIR/style_solid.css" &>/dev/null &
-    ;;
-    3) waybar -c "$CONFIG_DIR/config.jsonc" -s "$CONFIG_DIR/style.css" &>/dev/null &
-    ;;
-    4) waybar -c "$CONFIG_DIR/config_side.jsonc" -s "$CONFIG_DIR/style_side.css" &>/dev/null &
-    ;;
-esac
-
-disown
+sv restart "$SERVICE" 2>/dev/null || true

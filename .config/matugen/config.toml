@@ -6,7 +6,7 @@ type = "scheme-fidelity"
 [templates.waybar_swaync]
 input_path = "~/.config/matugen/templates/colors-waybar.css"
 output_path = "~/.cache/wal/colors-waybar.css"
-post_hook = "pkill -SIGUSR2 waybar; swaync-client -rs"
+post_hook = "pkill -SIGUSR2 waybar; timeout 5 swaync-client -rs || true"
 
 [templates.sway_border]
 input_path = "~/.config/matugen/templates/colors-sway-border"
@@ -16,15 +16,6 @@ post_hook = "swaymsg reload"
 [templates.rofi]
 input_path = "~/.config/matugen/templates/colors-rofi-dark.rasi"
 output_path = "~/.cache/wal/colors-rofi-dark.rasi"
-
-[templates.wofi]
-input_path = "~/.config/matugen/templates/colors-wofi.css"
-output_path = "~/.cache/wal/colors-wofi.css"
-
-[templates.kitty]
-input_path = "~/.config/matugen/templates/colors-kitty.conf"
-output_path = "~/.cache/wal/colors-kitty.conf"
-post_hook = "kitty @ --to unix:/tmp/kitty.sock set-colors --all --configured ~/.cache/wal/colors-kitty.conf 2>/dev/null || killall -SIGUSR1 kitty 2>/dev/null || true"
 
 [templates.colors_sh]
 input_path = "~/.config/matugen/templates/colors.sh"
@@ -37,10 +28,6 @@ output_path = "~/.cache/wal/colors.css"
 [templates.starship]
 input_path = "~/.config/matugen/templates/starship.toml"
 output_path = "~/.config/starship.toml"
-
-[templates.dynamic_gtk3]
-input_path = "~/.config/matugen/templates/dynamic-gtk.css"
-output_path = "~/.themes/Dynamic-GTK/gtk-3.0/gtk.css"
 
 [templates.gtk4]
 input_path = "~/.config/matugen/templates/gtk4.css"
@@ -61,10 +48,15 @@ output_path = "~/.config/cava/config"
 [templates.eww]
 input_path = "~/.config/matugen/templates/colors-eww.scss"
 output_path = "~/.cache/wal/colors-eww.scss"
-post_hook = "eww reload"
+post_hook = "timeout 5 eww reload || true"
 
-[templates.rmpc]
-input_path = "~/.config/matugen/templates/rmpc.ron"
-output_path = "~/.config/rmpc/theme.ron"
-post_hook = "touch ~/.config/rmpc/theme.ron"
+[templates.violite]
+input_path = "~/.config/matugen/templates/violite.ron"
+output_path = "~/.config/rmpc/violite.ron"
+post_hook = "touch ~/.config/rmpc/violite.ron"
+
+[templates.fastfetch]
+input_path = "~/.config/matugen/templates/fastfetch.jsonc"
+output_path = "~/.config/fastfetch/config.jsonc"
+post_hook = "fastfetch"
 

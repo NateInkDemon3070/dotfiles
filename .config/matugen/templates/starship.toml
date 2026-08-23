@@ -7,7 +7,7 @@ palette = "matugen"
 # ==================================================
 # FORMATO PRINCIPAL (Corregido el llamado al Kernel)
 # ==================================================
-format = "[┌─](fg:outline) $username$directory$time${env_var.OS_KERNEL}$git_branch$git_status$nodejs$python$c$cpp$rust$java$golang$ruby$php\n[└─](fg:outline) $character"
+format = "[┌─](fg:outline) $username$directory$time${env_var.OS_KERNEL}$git_branch$git_status$nodejs$python$rust$java$golang$ruby$php\n[└─](fg:outline) $character"
 
 # ==================================================
 # PALETA DE COLORES (Variables para Matugen)

@@ -13,7 +13,7 @@ desc = "Chmod on selected files"
 # --- Abrir terminal aqui ---
 [[mgr.prepend_keymap]]
 on   = [ "t" ]
-run  = "shell 'kitty --directory \"$PWD\"'"
+run  = "shell 'foot -D \"$PWD\"'"
 desc = "Open terminal here"
 
 # --- cd interactivo ---

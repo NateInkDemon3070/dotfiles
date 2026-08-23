@@ -1,5 +1,5 @@
 ;; --- MPD Listener ---
-(deflisten song_json :initial "{\"title\":\"No Music Playing\",\"artist\":\"Unknown Artist\",\"status\":\"stopped\",\"elapsed\":\"0:00\",\"total\":0,\"elapsed_sec\":0}"
+(deflisten song_json :initial "{\"title\":\"No Music Playing\",\"artist\":\"Unknown Artist\",\"status\":\"stopped\",\"elapsed\":\"0:00\",\"total\":0,\"elapsed_sec\":0,\"repeat\":false,\"random\":false}"
   "bash $HOME/.config/eww/mpc-listen.sh")
 
 (defpoll cover_art_path :interval "2s" "$HOME/.config/eww/get-cover.sh")
@@ -23,9 +23,11 @@
       )
 
       (box :class "controls" :orientation "h" :space-evenly false :halign "center" :spacing 15
+        (button :onclick "mpc random" :tooltip "Random" :class {song_json.random ? "random-btn active" : "random-btn"} "")
         (button :onclick "mpc prev" :tooltip "Previous" "󰒮")
         (button :onclick "mpc toggle" :tooltip "Play/Pause" :class "play-btn" {song_json.status == "playing" ? "󰏤" : "󰐊"})
         (button :onclick "mpc next" :tooltip "Next" "󰒭")
+        (button :onclick "mpc repeat" :tooltip "Repeat" :class {song_json.repeat ? "repeat-btn active" : "repeat-btn"} "󰕇")
       )
     )
 
@@ -51,13 +53,14 @@
   :geometry (
     geometry :x "50%"
              :y "50%"
-             :width "460px"
+             :width "390px"
              :height "160px"
              :anchor "center center"
   )
   :stacking "overlay"
   :focusable true
   :wm-ignore true
+  :transparent true
   :namespace "eww-music"
   (music-widget)
 )

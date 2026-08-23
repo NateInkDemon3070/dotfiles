@@ -2,86 +2,76 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    // config de mpd
-    address: "/home/jpablo/.config/mpd/socket",
+    address: "127.0.0.1:6600",
     password: None,
-
-    // caché para descargas de YouTube
-    cache_dir: Some("/home/jpablo/.cache/rmpc"),
-
-    // selección de tema
-    theme: "theme.ron",
-
-    // configuración general
-    rewind_to_start_sec: 5,
-    keep_state_on_song_change: true,
-    duration_format: "%m:%S",
-    normal_timeout_ms: 1000,
-    insert_timeout_ms: 1000,
-    volume_step: 5,
-    max_fps: 144,
-    scrolloff: 3,
+    theme: Some("violite"),
+    cache_dir: None,
+    on_song_change: None,
+    volume_step: 2,
+    max_fps: 120,
+    scrolloff: 0,
     wrap_navigation: true,
     enable_mouse: true,
     scroll_amount: 1,
+    enable_config_hot_reload: true,
+    enable_lyrics_hot_reload: false,
+    enable_lyrics_index: true,
+    lyrics_dir: "/home/jpablo/.lyrics",
     status_update_interval_ms: 1000,
+    rewind_to_start_sec: 5,
+    keep_state_on_song_change: true,
+    reflect_changes_to_playlist: false,
     select_current_song_on_change: true,
-    center_current_song_on_change: true,
-    browser_song_sort: [Artist, Album, Title],
+    ignore_leading_the: false,
+    browser_song_sort: [Disc, Track, Artist, Title],
     directories_sort: SortFormat(group_by_type: true, reverse: false),
-
-    // configuración de cava
+    auto_open_downloads: true,
+    album_art: (
+        method: Auto,
+        max_size_px: (width: 1200, height: 1200),
+        disabled_protocols: ["http://", "https://"],
+        vertical_align: Center,
+        horizontal_align: Center,
+    ),
     cava: (
-        framerate: 144,
-        autosens: true,
-        sensitivity: 120,
-        lower_cutoff_freq: 20,
-        higher_cutoff_freq: 20000,
+        framerate: 160, // default 60
+        autosens: true, // default true
+        sensitivity: 100, // default 100
+        lower_cutoff_freq: 50, // not passed to cava if not provided
+        higher_cutoff_freq: 16000, // not passed to cava if not provided
         input: (
             method: Fifo,
             source: "/tmp/mpd.fifo",
             sample_rate: 44100,
             channels: 2,
-            sample_bits: 16,
+            samble_bits: 16,
         ),
         smoothing: (
-            noise_reduction: 40,
-            monstercat: false,
-            waves: false,
+            noise_reduction: 0, // default 10
+            monstercat: false, // default false
+            waves: false, // default false
         ),
+        output: (
+            channels: stereo,
+        ),
+        // this is a list of floating point numbers thats directly passed to cava
+        // they are passed in order that they are defined
+        eq: []
     ),
-
-    // configuración de pestañas
-    search: (
-        case_sensitive: false,
-        ignore_diacritics: false,
-        search_button: false,
-        mode: Contains,
-        tags: [
-            (value: "any",         label: "Cualquier etiqueta"),
-            (value: "artist",      label: "Artista"),
-            (value: "album",       label: "Álbum"),
-            (value: "albumartist", label: "Artista del álbum"),
-            (value: "title",       label: "Título"),
-            (value: "filename",    label: "Nombre de archivo"),
-        ],
-    ),
-
-    // atajos de teclado
     keybinds: (
         global: {
             "q":          Quit,
-            "?":          ShowHelp,
+            "~":          ShowHelp,
             ":":          CommandMode,
             "oI":         ShowCurrentSongInfo,
             "oo":         ShowOutputs,
             "op":         ShowDecoders,
             "od":         ShowDownloads,
             "oP":         Partition(),
-            "z":          ToggleRepeat,
-            "x":          ToggleRandom,
-            "c":          ToggleConsume,
-            "v":          ToggleSingle,
+            "x":          ToggleRepeat,
+            "c":          ToggleRandom,
+            "v":          ToggleConsumeOnOff,
+            "z":          ToggleSingleOnOff,
             "p":          TogglePause,
             "s":          Stop,
             ">":          NextTrack,
@@ -94,40 +84,40 @@
             "gt":         NextTab,
             "<S-Tab>":    PreviousTab,
             "gT":         PreviousTab,
-            "1":          SwitchToTab(" Cola"),
-            "2":          SwitchToTab("󰲸 Playlists"),
-            "3":          SwitchToTab(" Directorios"),
-            "4":          SwitchToTab(" Búsqueda"),
+            "1":          SwitchToTab("Cola"),
+            "2":          SwitchToTab("Álbumes"),
+            "3":          SwitchToTab("Artistas"),
+            "4":          SwitchToTab("Listas"),
+            "5":          SwitchToTab("Directorios"),
+            "6":          SwitchToTab("Búsqueda"),
+            "7":          SwitchToTab("Letras"),
+            "?":          SwitchToTab("Búsqueda"),
             "<C-u>":      Update,
             "<C-U>":      Rescan,
-            "R":          AddRandom,
-            "E":          ExternalCommand(
-                command: ["bash", "-c", "mpc clear 2>/dev/null; mpc add / 2>/dev/null; mpc random on 2>/dev/null; mpc play 2>/dev/null"],
-                description: Some("Reproducir toda la biblioteca aleatoriamente"),
-            ),
+         // "R":          AddRandom,
         },
         navigation: {
             "<C-c>":      Close,
             "<Esc>":      Close,
             "<CR>":       Confirm,
-            "k":          Up,
+            "e":          Up,
             "<Up>":       Up,
-            "j":          Down,
+            "n":          Down,
             "<Down>":     Down,
             "h":          Left,
             "<Left>":     Left,
-            "l":          Right,
+            "i":          Right,
             "<Right>":    Right,
-            "<C-w>k":     PaneUp,
+            "<C-w>i":     PaneUp,
             "<C-Up>":     PaneUp,
-            "<C-w>j":     PaneDown,
+            "<C-w>n":     PaneDown,
             "<C-Down>":   PaneDown,
             "<C-w>h":     PaneLeft,
             "<C-Left>":   PaneLeft,
-            "<C-w>l":     PaneRight,
+            "<C-w>i":     PaneRight,
             "<C-Right>":  PaneRight,
-            "K":          MoveUp,
-            "J":          MoveDown,
+            "E":          MoveUp,
+            "N":          MoveDown,
             "<C-u>":      UpHalf,
             "<C-d>":      DownHalf,
             "<C-b>":      PageUp,
@@ -139,80 +129,131 @@
             "<Space>":    Select,
             "<C-Space>":  InvertSelection,
             "/":          EnterSearch,
-            "n":          NextResult,
-            "N":          PreviousResult,
+            "k":          NextResult,
+            "K":          PreviousResult,
             "a":          Add,
             "A":          AddAll,
+            "r":          AddReplace,
+            "R":          AddAllReplace,
             "D":          Delete,
             "<C-r>":      Rename,
-            "i":          FocusInput,
+            "l":          FocusInput,
             "oi":         ShowInfo,
             "<C-z>":      ContextMenu(),
             "<C-s>s":     Save(kind: Modal(all: false, duplicates_strategy: Ask)),
             "<C-s>a":     Save(kind: Modal(all: true, duplicates_strategy: Ask)),
-            "r":          Rate(),
+         // "r":          Rate(),
         },
         queue: {
             "d":          Delete,
             "D":          DeleteAll,
             "<CR>":       Play,
-            "C":          JumpToCurrent,
-            "X":          Shuffle,
+            "Z":          JumpToCurrent,
+            "C":          Shuffle,
         },
     ),
-
-    // configuración de posición de pestañas
+    search: (
+        case_sensitive: false,
+        ignore_diacritics: false,
+        search_button: false,
+        mode: Contains,
+        tags: [
+            (value: "any",         label: "Cualquier etiqueta"),
+            (value: "artist",      label: "Artista"),
+            (value: "album",       label: "Álbum"),
+            (value: "albumartist", label: "Artista del álbum"),
+            (value: "title",       label: "Título"),
+            (value: "filename",    label: "Nombre de archivo"),
+            // (value: "genre",       label: "Género"),
+        ],
+    ),
+    artists: (
+        album_display_mode: SplitByDate,
+        album_sort_by: Date,
+        album_date_tags: [Date],
+    ),
     tabs: [
         (
-            name: " Cola",
+            name: "Cola",
             pane: Split(
-                direction: Horizontal,
+                direction: Vertical,
+                // borders: "ALL",
+                // border_symbols: Rounded, // bugged in current version, adding borders to inside objects as workaround
                 panes: [
-                    (
-                        size: "44%",
-                        borders: "RIGHT",
-                        pane: Pane(AlbumArt)
-                    ),
-                    (
-                        size: "56%",
-                        pane: Split(
-                            direction: Vertical,
-                            panes: [
-                                (
-                                    size: "2",
-                                    borders: "BOTTOM",
-                                    pane: Split(
-                                        direction: Horizontal,
-                                        panes: [
-                                            (size: "1", pane: Pane(Empty())),
-                                            (size: "100%", pane: Pane(QueueHeader())),
-                                        ]
-                                    )
-                                ),
-                                (
-                                    size: "50%",
-                                    borders: "BOTTOM",
-                                    pane: Split(
-                                        direction: Horizontal,
-                                        panes: [
-                                            (size: "1", pane: Pane(Empty())),
-                                            (size: "100%", pane: Pane(Queue)),
-                                            (size: "1", pane: Pane(Empty())),
-                                        ]
-                                    )
-                                ),
-                                (
-                                    size: "50%",
-                                    pane: Pane(Cava)
-                                )
-                            ],
-                        )
-                    ),
-                ],
-            ),
+                (
+                    pane: Pane(Queue),
+                    size: "20",
+                    borders: "ALL",
+                    border_symbols: Inherited(parent: Thick, bottom_left: "┣", bottom_right: "┫"),
+                ), 
+                (
+                    pane: Pane(Cava),
+                    size: "100%",
+                    borders: "LEFT | RIGHT | BOTTOM",
+                    border_symbols: Thick,
+                )
+                    ],
+            )
         ),
-        (name: "󰲸 Playlists", pane: Pane(Playlists)),
-        (name: " Directorios", pane: Pane(Directories)),
-        (name: " Búsqueda", pane: Pane(Search)),
+        (
+            name: "Álbumes",
+            borders: "ALL",
+            border_symbols: Thick,
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Albums), size: "100%", borders: "ALL", border_symbols: Thick)],
+            )
+        ),
+        (
+            name: "Artistas",
+            borders: "ALL",
+            border_symbols: Thick,
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(AlbumArtists), size: "100%", borders: "ALL", border_symbols: Thick)],
+            )
+        ),
+        (
+            name: "Listas",
+            borders: "ALL",
+            border_symbols: Thick,
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Playlists), size: "100%", borders: "ALL", border_symbols: Thick)],
+            )
+        ),
+        (
+            name: "Directorios",
+            borders: "ALL",
+            border_symbols: Thick,
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Directories), size: "100%", borders: "ALL", border_symbols: Thick)],
+            )
+        ),
+        (
+            name: "Búsqueda",
+            borders: "ALL",
+            border_symbols: Thick,
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Search), size: "100%", borders: "ALL", border_symbols: Thick)],
+            )
+        ),
+        (
+            name: "Letras",
+            borders: "ALL",
+            border_symbols: Thick,
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Lyrics), size: "100%", borders: "ALL", border_symbols: Thick)],
+            )
+        ),
     ],
 )

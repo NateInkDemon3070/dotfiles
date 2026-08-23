@@ -1,8 +1,11 @@
 set $mod Mod4
-set $term kitty
+set $term foot
 set $menu rofi -show drun
 
 output * resolution 1366x768 scale 1
+
+focus_follows_mouse always
+mouse_warping none
 
 # --INPUT DEL TECLADO --
 
@@ -11,6 +14,10 @@ input "type:keyboard" {
     xkb_variant intl
     xkb_options lv3:lalt_switch
 }
+
+# Recuperación: si un modificador queda pegado (tipes números y salen ¡²³¤¼€½),
+# presiona Scroll Lock para reconstruir el estado del teclado y soltarlo.
+bindsym Scroll_Lock exec swaymsg input "type:keyboard" xkb_options lv3:lalt_switch
 
 input "type:touchpad" {
     tap enabled
@@ -23,6 +30,7 @@ hide_edge_borders none
 gaps inner 2
 gaps outer 4
 
+animation_duration_ms 200
 corner_radius 0
 blur enable
 blur_passes 2
@@ -55,39 +63,46 @@ layer_effects "swaync-notification-window" {
     blur_ignore_transparent enable;
 }
 
-seat * xcursor_theme Miku-VSThemesORG 22
+seat seat0 xcursor_theme Miku-VSThemesORG 22
 
 # --COSAS QUE SE EJECUTAN AL INICIO--
 exec bash /home/jpablo/.config/sway/scripts/autostart.sh
-exec runsvdir /home/jpablo/.config/runit/sv
+exec bash /home/jpablo/.config/sway/scripts/session-supervisor.sh
 exec bash /home/jpablo/.config/sway/scripts/sway-config-watcher.sh
-seat seat0 xcursor_theme Miku-VSThemesORG 22
+exec autotiling
 
+for_window [app_id="nwg-look"] floating enable, resize set 700 500, move position center
+for_window [app_id="lxqt-policykit-agent"] floating enable, resize set 700 500, move position center
 for_window [app_id="floating_tui"] floating enable, resize set 700 500, move position center
 for_window [app_id="pavucontrol"] floating enable, resize set 800 600, move position center
 for_window [app_id="blueman-manager"] floating enable, resize set 600 400, move position center
-for_window [app_id="librewolf" title="LibreWolf - Choose User Profile"] floating enable, resize set 600 450, move position center
 for_window [app_id="zapzap"] opacity 0.85, blur enable
 for_window [app_id="thunar"] opacity 0.85, blur enable
-for_window [app_id="librewolf"] opacity 0.85, blur enable
+for_window [app_id="zen"] opacity 0.85, blur enable
 for_window [app_id="com.github.th-ch.youtube-music"] opacity 0.85, blur enable
 for_window [app_id="vesktop"] opacity 0.85, blur enable
 
 # --- KEYBINDS ---
 
 # --- GENERALES ---
-bindsym $mod+Return exec $term
-bindsym $mod+q kill
-bindsym $mod+e exec $term -e yazi
-bindsym $mod+b exec librewolf
-bindsym $mod+m exec $term -e rmpc
+bindsym --inhibited $mod+Return exec $term
+bindsym --inhibited $mod+q kill
+# Minimizar (scratchpad) la ventana enfocada; sigue corriendo en 2do plano
+bindsym --inhibited $mod+Shift+q move scratchpad
+# Restaurar la última ventana minimizada y devolverla al tiling
+bindsym --inhibited $mod+Shift+s scratchpad show, floating toggle
+bindsym $mod+e exec $term yazi
+bindsym $mod+b exec zen-browser
+bindsym $mod+m exec $term rmpc
 bindsym $mod+n exec eww open music-widget --toggle
 bindsym $mod+t floating toggle
-bindsym $mod+d exec $menu
-bindsym $mod+f fullscreen toggle
-bindsym $mod+c reload
+bindsym --inhibited $mod+d exec $menu
+bindsym --inhibited $mod+f fullscreen toggle
+bindsym --inhibited $mod+c reload
+bindsym --inhibited $mod+Shift+Escape kill
 bindsym $mod+Escape exec bash ~/.config/sway/scripts/powermenu.sh
-bindsym $mod+Shift+e exec $term -e doas yazi
+bindsym $mod+Shift+e exec $term doas yazi
+bindsym --inhibited $mod+Shift+c exec killall -9 sway
 
 bindsym $mod+period exec rofimoji --action copy --selector rofi --selector-args "-theme ~/.config/rofi/config.rasi"
 bindsym $mod+w exec sh /home/jpablo/.config/sway/scripts/wallpaper.sh
@@ -99,20 +114,15 @@ bindsym $mod+v exec cliphist list | rofi -dmenu -p "Portapapeles" -theme ~/.conf
 bindsym Ctrl+Alt+Shift+$mod+l exec zen-browser https://linkedin.com
 
 # -- WORKSPACES --
-bindsym $mod+Left focus left
-bindsym $mod+Right focus right
-bindsym $mod+Up focus up
-bindsym $mod+Down focus down
+bindsym --inhibited $mod+Left focus left
+bindsym --inhibited $mod+Right focus right
+bindsym --inhibited $mod+Up focus up
+bindsym --inhibited $mod+Down focus down
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Right move right
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Down move down
-
-bindsym $mod+Ctrl+Left move left
-bindsym $mod+Ctrl+Right move right
-bindsym $mod+Ctrl+Up move up
-bindsym $mod+Ctrl+Down move down
+bindsym --inhibited $mod+Shift+Left move left
+bindsym --inhibited $mod+Shift+Right move right
+bindsym --inhibited $mod+Shift+Up move up
+bindsym --inhibited $mod+Shift+Down move down
 
 bindsym $mod+r mode resize
 mode resize {
@@ -125,27 +135,34 @@ mode resize {
     bindsym $mod+r mode default
 }
 
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
+bindsym --inhibited $mod+1 workspace number 1
+bindsym --inhibited $mod+2 workspace number 2
+bindsym --inhibited $mod+3 workspace number 3
+bindsym --inhibited $mod+4 workspace number 4
+bindsym --inhibited $mod+5 workspace number 5
 
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
+bindsym --inhibited $mod+Shift+1 move container to workspace number 1
+bindsym --inhibited $mod+Shift+2 move container to workspace number 2
+bindsym --inhibited $mod+Shift+3 move container to workspace number 3
+bindsym --inhibited $mod+Shift+4 move container to workspace number 4
+bindsym --inhibited $mod+Shift+5 move container to workspace number 5
 
 floating_modifier $mod normal
 
 # -- CONTROL DE VOLUMEN --
-bindsym XF86AudioRaiseVolume exec /home/jpablo/.local/bin/swayosd-client --output-volume raise && pkill -RTMIN+1 waybar
-bindsym XF86AudioLowerVolume exec /home/jpablo/.local/bin/swayosd-client --output-volume lower && pkill -RTMIN+1 waybar
-bindsym XF86AudioMute exec /home/jpablo/.local/bin/swayosd-client --output-volume mute-toggle && pkill -RTMIN+1 waybar
-bindsym XF86AudioMicMute exec /home/jpablo/.local/bin/swayosd-client --input-volume mute-toggle && pkill -RTMIN+1 waybar
-bindsym XF86MonBrightnessUp exec /home/jpablo/.local/bin/swayosd-client --brightness raise && pkill -RTMIN+1 waybar
-bindsym XF86MonBrightnessDown exec /home/jpablo/.local/bin/swayosd-client --brightness lower && pkill -RTMIN+1 waybar
+# --inhibited: funcionan incluso con el keyboard grab de los juegos (XWayland fullscreen)
+bindsym --inhibited XF86AudioRaiseVolume exec /home/jpablo/.local/bin/swayosd-client --output-volume raise && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86AudioLowerVolume exec /home/jpablo/.local/bin/swayosd-client --output-volume lower && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86AudioMute exec /home/jpablo/.local/bin/swayosd-client --output-volume mute-toggle && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86AudioMicMute exec /home/jpablo/.local/bin/swayosd-client --input-volume mute-toggle && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86MonBrightnessUp exec /home/jpablo/.local/bin/swayosd-client --brightness raise && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86MonBrightnessDown exec /home/jpablo/.local/bin/swayosd-client --brightness lower && pkill -RTMIN+1 waybar
+
+# -- CONTROL DE MUSICA (MPD) --
+bindsym $mod+Alt+Up exec ~/.config/eww/volumecontroller.sh up
+bindsym $mod+Alt+Down exec ~/.config/eww/volumecontroller.sh down
+bindsym $mod+Alt+Left exec mpc seek -5
+bindsym $mod+Alt+Right exec mpc seek +5
 
 # -- CAPTURAS DE PANTALLA --
 bindsym Print exec flameshot full -p /home/jpablo/Imagenes/Capturas/
@@ -156,6 +173,3 @@ bindsym Mod4+Control+Print exec flameshot gui -p /home/jpablo/Imagenes/Capturas 
 
 # -- COLORES DE MATUGEN --
 include ~/.cache/wal/colors-sway-border
-
-# -- Modo juego para mayor rendimiento --
-include ~/.config/sway/gamemode.conf
