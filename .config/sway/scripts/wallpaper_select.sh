@@ -93,6 +93,8 @@ fi
 awww img --transition-step "$TRANSITION_STEP" "$image_fullname_path"
 
 echo "$image_fullname_path" >"$HOME/.cache/wal/wal"
+mkdir -p "$HOME/.cache/wallpaper"
+cp "$image_fullname_path" "$HOME/.cache/wallpaper/current"
 for f in "$HOME/.config/gtk-4.0/gtk.css" "$HOME/.config/gtk-4.0/gtk-dark.css"; do
   [ -L "$f" ] && rm -f "$f" && touch "$f"
 done

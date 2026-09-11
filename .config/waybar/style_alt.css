@@ -3,7 +3,7 @@
 @define-color bg_pill rgba(30, 30, 46, 0.85);
 @define-color bg_hover rgba(255, 255, 255, 0.1);
 @define-color accent @color4;
-@define-color text @foreground;
+@define-color text #FFFFFF;
 
 * {
     font-family: "Terminess Nerd Font", "Terminess NFP";
@@ -51,11 +51,11 @@ window#waybar {
 }
 
 #battery.warning {
-    color: #e5c07b;
+    color: #FFFFFF;
 }
 
 #battery.critical {
-    color: #ff5555;
+    color: #FFFFFF;
     animation: blink 1s step-start infinite;
 }
 

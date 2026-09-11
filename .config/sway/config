@@ -1,3 +1,4 @@
+
 set $mod Mod4
 set $term foot
 set $menu rofi -show drun
@@ -15,8 +16,6 @@ input "type:keyboard" {
     xkb_options lv3:lalt_switch
 }
 
-# Recuperación: si un modificador queda pegado (tipes números y salen ¡²³¤¼€½),
-# presiona Scroll Lock para reconstruir el estado del teclado y soltarlo.
 bindsym Scroll_Lock exec swaymsg input "type:keyboard" xkb_options lv3:lalt_switch
 
 input "type:touchpad" {
@@ -30,7 +29,7 @@ hide_edge_borders none
 gaps inner 2
 gaps outer 4
 
-animation_duration_ms 200
+animation_duration_ms 210
 corner_radius 0
 blur enable
 blur_passes 2
@@ -63,7 +62,7 @@ layer_effects "swaync-notification-window" {
     blur_ignore_transparent enable;
 }
 
-seat seat0 xcursor_theme Miku-VSThemesORG 22
+seat seat0 xcursor_theme Hatsune-Miku-cursors 22
 
 # --COSAS QUE SE EJECUTAN AL INICIO--
 exec bash /home/jpablo/.config/sway/scripts/autostart.sh
@@ -87,9 +86,9 @@ for_window [app_id="vesktop"] opacity 0.85, blur enable
 # --- GENERALES ---
 bindsym --inhibited $mod+Return exec $term
 bindsym --inhibited $mod+q kill
-# Minimizar (scratchpad) la ventana enfocada; sigue corriendo en 2do plano
+# Minimizar ventana
 bindsym --inhibited $mod+Shift+q move scratchpad
-# Restaurar la última ventana minimizada y devolverla al tiling
+# Restaurar ventana minimizada
 bindsym --inhibited $mod+Shift+s scratchpad show, floating toggle
 bindsym $mod+e exec $term yazi
 bindsym $mod+b exec zen-browser
@@ -111,7 +110,7 @@ bindsym $mod+o exec bash /home/jpablo/.config/waybar/scripts/switch_waybar.sh
 bindsym $mod+v exec cliphist list | rofi -dmenu -p "Portapapeles" -theme ~/.config/rofi/config.rasi | cliphist decode | wl-copy
 
 # -- LABURO --
-bindsym Ctrl+Alt+Shift+$mod+l exec zen-browser https://linkedin.com
+bindsym Ctrl+Alt+Shift+$mod+l firefox https://linkedin.com
 
 # -- WORKSPACES --
 bindsym --inhibited $mod+Left focus left
@@ -151,18 +150,12 @@ floating_modifier $mod normal
 
 # -- CONTROL DE VOLUMEN --
 # --inhibited: funcionan incluso con el keyboard grab de los juegos (XWayland fullscreen)
-bindsym --inhibited XF86AudioRaiseVolume exec /home/jpablo/.local/bin/swayosd-client --output-volume raise && pkill -RTMIN+1 waybar
-bindsym --inhibited XF86AudioLowerVolume exec /home/jpablo/.local/bin/swayosd-client --output-volume lower && pkill -RTMIN+1 waybar
-bindsym --inhibited XF86AudioMute exec /home/jpablo/.local/bin/swayosd-client --output-volume mute-toggle && pkill -RTMIN+1 waybar
-bindsym --inhibited XF86AudioMicMute exec /home/jpablo/.local/bin/swayosd-client --input-volume mute-toggle && pkill -RTMIN+1 waybar
-bindsym --inhibited XF86MonBrightnessUp exec /home/jpablo/.local/bin/swayosd-client --brightness raise && pkill -RTMIN+1 waybar
-bindsym --inhibited XF86MonBrightnessDown exec /home/jpablo/.local/bin/swayosd-client --brightness lower && pkill -RTMIN+1 waybar
-
-# -- CONTROL DE MUSICA (MPD) --
-bindsym $mod+Alt+Up exec ~/.config/eww/volumecontroller.sh up
-bindsym $mod+Alt+Down exec ~/.config/eww/volumecontroller.sh down
-bindsym $mod+Alt+Left exec mpc seek -5
-bindsym $mod+Alt+Right exec mpc seek +5
+bindsym --inhibited XF86AudioRaiseVolume exec /usr/bin/swayosd-client --output-volume raise && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86AudioLowerVolume exec /usr/bin/swayosd-client --output-volume lower && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86AudioMute exec /usr/bin/swayosd-client --output-volume mute-toggle && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86AudioMicMute exec /usr/bin/swayosd-client --input-volume mute-toggle && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86MonBrightnessUp exec /usr/bin/swayosd-client --brightness raise && pkill -RTMIN+1 waybar
+bindsym --inhibited XF86MonBrightnessDown exec /usr/bin/swayosd-client --brightness lower && pkill -RTMIN+1 waybar
 
 # -- CAPTURAS DE PANTALLA --
 bindsym Print exec flameshot full -p /home/jpablo/Imagenes/Capturas/

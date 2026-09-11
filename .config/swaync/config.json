@@ -29,7 +29,6 @@
     "buttons-grid",
     "buttons-grid#scripts",
     "backlight",
-    "volume",
     "mpris",
     "notifications"
   ],
@@ -48,11 +47,8 @@
     },
     "backlight": {
       "label": "󰃠",
-      "device": "intel_backlight"
-    },
-    "volume": {
-      "label": "󰕾",
-      "show-per-app": true
+      "device": "intel_backlight",
+      "min": 5
     },
     "buttons-grid": {
       "actions": [

@@ -22,8 +22,8 @@ configuration {
 @import "/home/jpablo/.cache/wal/colors-rofi-dark.rasi"
 
 * {
-    bg-base:     rgba(15, 17, 20, 0.85); 
-    accent-alt:  @selected-normal-background; 
+    bg-base:     rgba(15, 17, 20, 0.85);
+    accent-alt:  @selected-normal-background;
     font: "Terminess Nerd Font 10";
     background-color: transparent;
     text-color: #FFFFFF;

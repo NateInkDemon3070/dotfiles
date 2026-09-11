@@ -62,7 +62,7 @@
 
     "network": {
         "format-wifi": " ",
-        "format-ethernet": "󰈀",
+        "format-ethernet": "󰈁",
         "format-disconnected": "󰖪",
         "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot nmtui"
     },

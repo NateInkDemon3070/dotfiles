@@ -14,9 +14,9 @@ selected=$(echo -e "$lock\n$suspend_usb\n$hibernate\n$logout\n$reboot\n$shutdown
 case "$selected" in
 "$shutdown") loginctl poweroff ;;
 "$reboot") loginctl reboot ;;
-"$lock") swaylock ;;
+"$lock") hyprlock ;;
 "$hibernate")
-  swaylock &
+  hyprlock &
   sleep 1
   loginctl hibernate
   ;;

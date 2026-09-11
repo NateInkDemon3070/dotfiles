@@ -180,3 +180,19 @@ rules = [
 ]
 
 # : ]]]
+
+
+# : Iconos personalizados XDG dirs en español + Juegos [[[
+[icon]
+prepend_dirs = [
+    { name = "Escritorio", text = "", fg = "{{colors.primary.default.hex}}" },
+    { name = "Descargas", text = "", fg = "{{colors.primary.default.hex}}" },
+    { name = "Documentos", text = "", fg = "{{colors.primary.default.hex}}" },
+    { name = "Música", text = "", fg = "{{colors.primary.default.hex}}" },
+    { name = "Imagenes", text = "", fg = "{{colors.primary.default.hex}}" },
+    { name = "Vídeos", text = "", fg = "{{colors.primary.default.hex}}" },
+    { name = "Plantillas", text = "", fg = "{{colors.primary.default.hex}}" },
+    { name = "Público", text = "", fg = "{{colors.primary.default.hex}}" },
+    { name = "Juegos", text = "", fg = "{{colors.primary.default.hex}}" },
+]
+# : ]]]

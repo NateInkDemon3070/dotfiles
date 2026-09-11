@@ -55,6 +55,10 @@ input_path = "~/.config/matugen/templates/violite.ron"
 output_path = "~/.config/rmpc/violite.ron"
 post_hook = "touch ~/.config/rmpc/violite.ron"
 
+[templates.foot]
+input_path = "~/.config/matugen/templates/colors-foot.conf"
+output_path = "~/.cache/wal/colors-foot.conf"
+
 [templates.fastfetch]
 input_path = "~/.config/matugen/templates/fastfetch.jsonc"
 output_path = "~/.config/fastfetch/config.jsonc"

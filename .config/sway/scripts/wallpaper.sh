@@ -19,6 +19,8 @@ if [ -f "$WALLPAPER" ]; then
   awww img --transition-step "$TRANSITION_STEP" "$WALLPAPER"
 
   echo "$WALLPAPER" > "$HOME/.cache/wal/wal"
+  mkdir -p "$HOME/.cache/wallpaper"
+  cp "$WALLPAPER" "$HOME/.cache/wallpaper/current"
   for f in "$HOME/.config/gtk-4.0/gtk.css" "$HOME/.config/gtk-4.0/gtk-dark.css"; do
     [ -L "$f" ] && rm -f "$f" && touch "$f"
   done

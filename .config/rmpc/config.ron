@@ -85,10 +85,10 @@
             "<S-Tab>":    PreviousTab,
             "gT":         PreviousTab,
             "1":          SwitchToTab("Cola"),
-            "2":          SwitchToTab("Álbumes"),
-            "3":          SwitchToTab("Artistas"),
-            "4":          SwitchToTab("Listas"),
-            "5":          SwitchToTab("Directorios"),
+            "2":          SwitchToTab("Listas"),
+            "3":          SwitchToTab("Directorios"),
+            "4":          SwitchToTab("Artistas"),
+            "5":          SwitchToTab("Álbumes"),
             "6":          SwitchToTab("Búsqueda"),
             "7":          SwitchToTab("Letras"),
             "?":          SwitchToTab("Búsqueda"),
@@ -196,26 +196,6 @@
             )
         ),
         (
-            name: "Álbumes",
-            borders: "ALL",
-            border_symbols: Thick,
-            pane: Split(
-                size: "100%",
-                direction: Vertical,
-                panes: [(pane: Pane(Albums), size: "100%", borders: "ALL", border_symbols: Thick)],
-            )
-        ),
-        (
-            name: "Artistas",
-            borders: "ALL",
-            border_symbols: Thick,
-            pane: Split(
-                size: "100%",
-                direction: Vertical,
-                panes: [(pane: Pane(AlbumArtists), size: "100%", borders: "ALL", border_symbols: Thick)],
-            )
-        ),
-        (
             name: "Listas",
             borders: "ALL",
             border_symbols: Thick,
@@ -233,6 +213,26 @@
                 size: "100%",
                 direction: Vertical,
                 panes: [(pane: Pane(Directories), size: "100%", borders: "ALL", border_symbols: Thick)],
+            )
+        ),
+        (
+            name: "Artistas",
+            borders: "ALL",
+            border_symbols: Thick,
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(AlbumArtists), size: "100%", borders: "ALL", border_symbols: Thick)],
+            )
+        ),
+        (
+            name: "Álbumes",
+            borders: "ALL",
+            border_symbols: Thick,
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Albums), size: "100%", borders: "ALL", border_symbols: Thick)],
             )
         ),
         (

@@ -18,7 +18,7 @@ for dev in /sys/bus/usb/devices/*/power/control; do
 done
 
 # Bloquear pantalla y apagar el monitor para ahorrar energía
-swaylock &
+hyprlock &
 sleep 1
 swaymsg output "*" dpms off 2>/dev/null || true
 

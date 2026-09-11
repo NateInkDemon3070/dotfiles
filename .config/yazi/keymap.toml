@@ -21,3 +21,9 @@ desc = "Open terminal here"
 on   = [ "<C-Space>" ]
 run  = "cd --interactive"
 desc = "Go to directory"
+
+# --- Abrir archivo con fzf (nvim) ---
+[[mgr.prepend_keymap]]
+on   = [ "z" ]
+run  = "shell --block 'sh /home/jpablo/.config/yazi/fzf-open.sh \"$(fzf --preview \"sh /home/jpablo/.config/yazi/fzf-preview.sh {}\")\"'"
+desc = "Open file with fzf in nvim"

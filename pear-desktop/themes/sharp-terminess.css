@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+  font-family: "Terminess Nerd Font", "Terminess Nerd Font Mono", monospace !important;
+}
+
+html,
+body,
+ytmusic-app,
+ytmusic-app-layout {
+  font-family: "Terminess Nerd Font", "Terminess Nerd Font Mono", monospace !important;
+  --ytmusic-border-radius: 0px !important;
+  --iron-corner-radius: 0px !important;
+}
+
+ytmusic-player-bar,
+ytmusic-nav-bar,
+ytmusic-guide-section-renderer,
+ytmusic-guide-entry-renderer,
+ytmusic-thumbnail-renderer,
+ytmusic-shelf-renderer,
+ytmusic-carousel,
+ytmusic-suggestion-chip-renderer,
+ytmusic-chip-cloud-renderer,
+ytmusic-play-button-renderer,
+ytmusic-like-button-renderer,
+ytmusic-dislike-button-renderer,
+ytmusic-toggle-button-renderer,
+ytmusic-button-renderer,
+ytmusic-menu-popup-renderer,
+ytmusic-menu-service-item-renderer,
+ytmusic-menu-navigation-item-renderer,
+ytmusic-setting-host,
+tp-yt-paper-dialog,
+paper-dialog,
+paper-listbox,
+paper-item,
+paper-tooltip,
+paper-progress,
+hp-slider,
+touch-slider,
+iron-image,
+ytmusic-queue-item-renderer,
+ytmusic-playlist-panel-video-renderer,
+ytmusic-search-box,
+tp-yt-paper-icon-button,
+yt-button-shape,
+yt-icon-button {
+  --iron-corner-radius: 0px !important;
+  border-radius: 0 !important;
+}
+
+ytmusic-thumbnail-renderer img,
+yt-img-shadow img,
+img,
+video,
+#av-container,
+#player-container,
+#movie_player,
+.ytmusic-player-page,
+.ytp-progress-bar-container,
+.ytp-play-progress,
+.ytp-load-progress,
+.ytp-scrubber-container,
+#items {
+  border-radius: 0 !important;
+  --ytmusic-player-border-radius: 0px !important;
+}
+
+.ytmusic-player-bar .progress-bar,
+.ytmusic-player-bar paper-slider,
+paper-slider,
+#slider-container,
+#paper-slider-range,
+.volume-slider {
+  border-radius: 0 !important;
+}
+
+.ytmusic-browse-response ytmusic-tab-renderer,
+.ytmusic-tab-renderer,
+ytmusic-pivot-bar-renderer,
+#pivot-bar,
+#tabsContent,
+.ytmusic-search-box,
+ytd-searchbox {
+  border-radius: 0 !important;
+}
+
+button,
+a,
+input,
+select,
+textarea,
+[role="button"],
+[role="tab"],
+[role="menuitem"] {
+  border-radius: 0 !important;
+}

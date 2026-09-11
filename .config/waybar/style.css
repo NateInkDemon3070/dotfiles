@@ -3,7 +3,7 @@
 @define-color bg_bar   rgba(15, 15, 20, 0.50);
 @define-color bg_hover rgba(255, 255, 255, 0.08);
 @define-color accent   @color4;
-@define-color text     @foreground;
+@define-color text    #FFFFFF;
 
 * {
     font-family: "Terminess Nerd Font";
@@ -33,7 +33,7 @@ window#waybar {
   }
 
 #workspaces button.active, #workspaces button.focused {
-    color: @accent;
+    color: @text;
     border-radius: 0px;
     background: rgba(255, 255, 255, 0.1);
     border-bottom: 4px solid @accent;
@@ -75,11 +75,11 @@ window#waybar {
 }
 
 #battery.warning {
-    color: #e5c07b;
+    color: #FFFFFF;
 }
 
 #battery.critical {
-    color:     #ff5555;
+    color:     #FFFFFF;
     animation: blink 1s step-start infinite;
 }
 
@@ -88,11 +88,11 @@ window#waybar {
 }
 
 #custom-notification.notification {
-    color: @accent;
+    color: @text;
 }
 
 #custom-power {
-    color:   #ff5555;
+    color:   @text;
     padding: 0 12px;
 }
 
