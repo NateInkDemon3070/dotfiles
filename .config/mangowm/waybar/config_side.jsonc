@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 46,
+    "margin": "4 0 4 4",
+    "exclusive": true,
+    "spacing": 0,
+
+    "modules-left": [
+        "mango/workspaces"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "custom/notification",
+        "tray",
+        "pulseaudio",
+        "battery"
+    ],
+
+    "mango/workspaces": {
+        "format": "{value}",
+        "hide-empty": true,
+        "on-click": "activate",
+        "on-click-right": "toggle",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%I\n%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e calcurse"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}\n{volume}%",
+        "format-muted": " 󰝟\n0%",
+        "format-icons": {
+            "default": [" 󰕿", " 󰖀", " 󰕾"]
+        },
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e ncpamixer",
+        "scroll-step": 5
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "\u00a0\u00a0󱅫",
+            "none": "\u00a0\u00a0󰂚",
+            "dnd-notification": "\u00a0\u00a0󱅫",
+            "dnd-none": "\u00a0\u00a0󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈁",
+        "format-disconnected": "󰖪",
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e nmtui"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e bluetui"
+    },
+
+     "battery": {
+        "format": "{capacity}%\n{icon}",
+        "format-charging": "{capacity}%\n{icon}",
+        "format-icons": {
+        "default": [" ", " ", " ", " ", " "],
+        "charging": [" 󰢜", " 󰂆", " 󰂇", " 󰂈", " 󰂅"]
+        }
+    }
+}

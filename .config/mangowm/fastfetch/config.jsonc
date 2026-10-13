@@ -1,0 +1,80 @@
+{
+  "modules": [
+    {
+      "type": "title",
+      "format": "      {user-name}@{host-name}"
+    },
+    {
+      "type": "separator",
+      "string": "      ---------------------      "
+    },
+    { "key": "   OS",       "type": "os" },
+    { "key": "  󰛸 Kernel",   "type": "kernel" },
+    { "key": "  󰏗 Packages", "type": "packages" },
+    { "key": "  󰍹 Display",  "type": "display" },
+    { "key": "  󰖲 WM",       "type": "wm" },
+    { "key": "  󰆍 Shell",    "type": "shell" },
+    { "key": "  󰻐 CPU",      "type": "cpu" },
+    { "key": "  󰍛 GPU",      "type": "gpu" },
+    {
+      "type": "memory",
+      "key": "  󰘚 RAM",
+      "percent": { "type": ["bar", "bar-monochrome"] }
+    },
+    { "key": "  󰋊 Disk",     "type": "disk" },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 12,
+      "circle": {
+        "radius": 30,
+        "width": 5,
+        "range": [
+          0,
+          15
+        ]
+      }
+    }
+  ],
+  "logo": {
+    "source": "~/.config/fastfetch/artix_small.ascii",
+    "type": "file",
+    "width": 28,
+    "color": {
+      "1-2": "#bcc6e3",
+      "3-4": "#c3c6d3",
+      "5-6": "#dec397",
+      "7-8": "#525c75",
+      "9-13": "#6d5935"
+    },
+    "padding": {
+      "top": 0,
+      "left": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "color": {
+      "keys": "#bcc6e3",
+      "title": "#e4e2e4",
+      "separator": "#8f9097"
+    },
+    "bar": {
+      "border": {
+        "left": "\uee00",
+        "leftElapsed": "\uee03",
+        "right": "\uee02",
+        "rightElapsed": "\uee05"
+      },
+      "char": {
+        "total": "\uee01",
+        "elapsed": "\uee04"
+      },
+      "color": {
+        "total": null
+      }
+    }
+  }
+}
+

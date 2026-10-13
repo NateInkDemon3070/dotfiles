@@ -1,0 +1,6 @@
+:root {
+    --color1: {{ colors.primary.hex }};
+    --background: {{ colors.surface.hex }};
+    --foreground: {{ colors.on_surface.hex }};
+    --color4: {{ colors.primary.hex }};
+}

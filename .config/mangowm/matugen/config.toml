@@ -1,0 +1,66 @@
+[config]
+prefer = "saturation"
+mode = "dark"
+type = "scheme-fidelity"
+
+[templates.waybar_swaync]
+input_path = "~/.config/matugen/templates/colors-waybar.css"
+output_path = "~/.cache/wal/colors-waybar.css"
+post_hook = "pkill -SIGUSR2 waybar; timeout 5 swaync-client -rs || true"
+
+[templates.mango_border]
+input_path = "~/.config/matugen/templates/colors-mango-border"
+output_path = "~/.config/mango/colors.conf"
+post_hook = "mmsg dispatch reload_config"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/colors-rofi-dark.rasi"
+output_path = "~/.cache/wal/colors-rofi-dark.rasi"
+
+[templates.colors_sh]
+input_path = "~/.config/matugen/templates/colors.sh"
+output_path = "~/.cache/wal/colors.sh"
+
+[templates.colors_css]
+input_path = "~/.config/matugen/templates/colors.css"
+output_path = "~/.cache/wal/colors.css"
+
+[templates.starship]
+input_path = "~/.config/matugen/templates/starship.toml"
+output_path = "~/.config/starship.toml"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk4.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
+[templates.gtk4_dark]
+input_path = "~/.config/matugen/templates/gtk4.css"
+output_path = "~/.config/gtk-4.0/gtk-dark.css"
+
+[templates.yazi]
+input_path = "~/.config/matugen/templates/yazi.toml"
+output_path = "~/.config/yazi/theme.toml"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/colors-cava.conf"
+output_path = "~/.config/cava/config"
+
+[templates.eww]
+input_path = "~/.config/matugen/templates/colors-eww.scss"
+output_path = "~/.cache/wal/colors-eww.scss"
+post_hook = "timeout 5 eww reload || true"
+
+[templates.violite]
+input_path = "~/.config/matugen/templates/violite.ron"
+output_path = "~/.config/rmpc/violite.ron"
+post_hook = "touch ~/.config/rmpc/violite.ron"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/colors-kitty.conf"
+output_path = "~/.cache/wal/colors-kitty.conf"
+
+[templates.fastfetch]
+input_path = "~/.config/matugen/templates/fastfetch.jsonc"
+output_path = "~/.config/fastfetch/config.jsonc"
+post_hook = "fastfetch"
+

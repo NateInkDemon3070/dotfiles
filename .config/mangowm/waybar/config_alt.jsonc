@@ -1,0 +1,89 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 46,
+    "margin-left": 2,
+    "margin-right": 2,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "spacing": 0,
+
+    "modules-left": [
+        "mango/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/notification",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "battery",
+        "tray"
+    ],
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "mango/workspaces": {
+        "format": "{value}",
+        "hide-empty": true,
+        "on-click": "activate",
+        "on-click-right": "toggle",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip": false,
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e calcurse"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󱅫",
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e ncpamixer",
+        "tooltip": false
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e bluetui"
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈁",
+        "format-disconnected": "󰖪 ",
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e nmtui"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}%",
+        "format-icons": {
+            "default": ["", "", "", "", ""],
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰂅"]
+        }
+    }
+}
