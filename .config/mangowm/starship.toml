@@ -13,22 +13,22 @@ format = "[┌─](fg:outline) $username$directory$time${env_var.OS_KERNEL}$git_
 # PALETA DE COLORES (Variables para Matugen)
 # ==================================================
 [palettes.matugen]
-primary = "#bcc6e3"
-on_primary = "#263047"
-secondary = "#c3c6d3"
-on_secondary = "#2d303a"
-tertiary = "#dec397"
-on_tertiary = "#3e2e0e"
+primary = "#f3b2e5"
+on_primary = "#4d1e48"
+secondary = "#debdd4"
+on_secondary = "#3f293b"
+tertiary = "#b3d186"
+on_tertiary = "#213600"
 error = "#ffb4ab"
 on_error = "#690005"
-surface = "#131315"
-on_surface = "#e4e2e4"
-surface_variant = "#45464d"
-on_surface_variant = "#c6c6cd"
-outline = "#8f9097"
+surface = "#171215"
+on_surface = "#eae0e4"
+surface_variant = "#4f444b"
+on_surface_variant = "#d2c2cb"
+outline = "#9b8d95"
 shadow = "#000000"
-hover = "#d9e2ff"
-on_hover = "#111b31"
+hover = "#ffd7f3"
+on_hover = "#350731"
 
 # ==================================================
 # BLOQUES BÁSICOS

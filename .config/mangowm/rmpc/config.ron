@@ -34,7 +34,7 @@
         horizontal_align: Center,
     ),
     cava: (
-        framerate: 160, // default 60
+        framerate: 60, // default 60
         autosens: true, // default true
         sensitivity: 100, // default 100
         lower_cutoff_freq: 50, // not passed to cava if not provided
@@ -44,15 +44,12 @@
             source: "/tmp/mpd.fifo",
             sample_rate: 44100,
             channels: 2,
-            samble_bits: 16,
+            sample_bits: 16,
         ),
         smoothing: (
-            noise_reduction: 0, // default 10
-            monstercat: false, // default false
+            noise_reduction: 77, // default 77
+            monstercat: true, // default false
             waves: false, // default false
-        ),
-        output: (
-            channels: stereo,
         ),
         // this is a list of floating point numbers thats directly passed to cava
         // they are passed in order that they are defined

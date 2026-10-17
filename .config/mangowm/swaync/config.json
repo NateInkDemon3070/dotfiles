@@ -18,17 +18,16 @@
   "transition-time": 250,
   "hide-on-clear": true,
   "hide-on-action": true,
-
   "notification-visibility": {
     "keybind-indicator": false
   },
-
   "widgets": [
     "title",
     "dnd",
     "buttons-grid",
     "buttons-grid#scripts",
     "backlight",
+    "volume",
     "mpris",
     "notifications"
   ],
@@ -93,6 +92,10 @@
           "command": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e htop"
         }
       ]
+    },
+    "volume": {
+      "label": "󰕾",
+      "show-per-app": true
     }
   }
 }

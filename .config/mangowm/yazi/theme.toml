@@ -1,26 +1,26 @@
 # : Manager [[[
 
 [mgr]
-cwd = { fg = "#e4e2e4" }
+cwd = { fg = "#eae0e4" }
 
 # Find
-find_keyword  = { fg = "#dec397", bold = true, italic = true, underline = true }
-find_position = { fg = "#dec397", bold = true, italic = true }
+find_keyword  = { fg = "#b3d186", bold = true, italic = true, underline = true }
+find_position = { fg = "#b3d186", bold = true, italic = true }
 
 # Marker
-marker_copied   = { fg = "#bcc6e3", bg = "#bcc6e3" }
-marker_cut      = { fg = "#c3c6d3", bg = "#c3c6d3" }
+marker_copied   = { fg = "#f3b2e5", bg = "#f3b2e5" }
+marker_cut      = { fg = "#debdd4", bg = "#debdd4" }
 marker_marked   = { fg = "#ffb4ab", bg = "#ffb4ab" }
-marker_selected = { fg = "#dec397", bg = "#dec397" }
+marker_selected = { fg = "#b3d186", bg = "#b3d186" }
 
 # Count
-count_copied   = { fg = "#263047", bg = "#bcc6e3" }
-count_cut      = { fg = "#2d303a", bg = "#c3c6d3" }
-count_selected = { fg = "#3e2e0e", bg = "#dec397" }
+count_copied   = { fg = "#4d1e48", bg = "#f3b2e5" }
+count_cut      = { fg = "#3f293b", bg = "#debdd4" }
+count_selected = { fg = "#213600", bg = "#b3d186" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "#8f9097" }
+border_style  = { fg = "#9b8d95" }
 
 # : ]]]
 
@@ -36,8 +36,8 @@ padding = { open = "", close = "" }
 # : Tabs [[[
 
 [tabs]
-active    = { fg = "#bcc6e3", bold = true, bg = "#131315" }
-inactive  = { fg = "#c6c6cd", bg = "#131315" }
+active    = { fg = "#f3b2e5", bold = true, bg = "#171215" }
+inactive  = { fg = "#d2c2cb", bg = "#171215" }
 sep_inner = { open = "[", close = "]" }
 
 # : ]]]
@@ -47,16 +47,16 @@ sep_inner = { open = "[", close = "]" }
 
 [mode]
 # Mode
-normal_main = { bg = "#bcc6e3", fg = "#263047", bold = true }
-normal_alt  = { bg = "#45464d", fg = "#c6c6cd" }
+normal_main = { bg = "#f3b2e5", fg = "#4d1e48", bold = true }
+normal_alt  = { bg = "#4f444b", fg = "#d2c2cb" }
 
 # Select mode
-select_main = { bg = "#c3c6d3", fg = "#2d303a", bold = true }
-select_alt  = { bg = "#45464d", fg = "#c6c6cd" }
+select_main = { bg = "#debdd4", fg = "#3f293b", bold = true }
+select_alt  = { bg = "#4f444b", fg = "#d2c2cb" }
 
 # Unset mode
-unset_main = { bg = "#dec397", fg = "#3e2e0e", bold = true }
-unset_alt  = { bg = "#45464d", fg = "#c6c6cd" }
+unset_main = { bg = "#b3d186", fg = "#213600", bold = true }
+unset_alt  = { bg = "#4f444b", fg = "#d2c2cb" }
 
 # : ]]]
 
@@ -68,16 +68,16 @@ sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 # Permissions
-perm_type  = { fg = "#dec397" }
-perm_write = { fg = "#bcc6e3" }
+perm_type  = { fg = "#b3d186" }
+perm_write = { fg = "#f3b2e5" }
 perm_read  = { fg = "#ffb4ab" }
-perm_exec  = { fg = "#c3c6d3" }
-perm_sep   = { fg = "#8f9097" }
+perm_exec  = { fg = "#debdd4" }
+perm_sep   = { fg = "#9b8d95" }
 
 # Progress
 progress_label  = { bold = true }
-progress_normal = { fg = "#bcc6e3", bg = "#45464d" }
-progress_error  = { fg = "#ffb4ab", bg = "#45464d" }
+progress_normal = { fg = "#f3b2e5", bg = "#4f444b" }
+progress_error  = { fg = "#ffb4ab", bg = "#4f444b" }
 
 # : ]]]
 
@@ -86,12 +86,12 @@ progress_error  = { fg = "#ffb4ab", bg = "#45464d" }
 
 [which]
 cols = 3
-mask = { bg = "#45464d" }
-cand = { fg = "#bcc6e3" }
+mask = { bg = "#4f444b" }
+cand = { fg = "#f3b2e5" }
 rest = { fg = "#000000" }
-desc = { fg = "#e4e2e4" }
+desc = { fg = "#eae0e4" }
 separator = " ▶ "
-separator_style = { fg = "#e4e2e4" }
+separator_style = { fg = "#eae0e4" }
 
 # : ]]]
 
@@ -99,8 +99,8 @@ separator_style = { fg = "#e4e2e4" }
 # : Notify [[[
 
 [notify]
-title_info  = { fg = "#c3c6d3" }
-title_warn  = { fg = "#dec397" }
+title_info  = { fg = "#debdd4" }
+title_warn  = { fg = "#b3d186" }
 title_error = { fg = "#ffb4ab" }
 
 # : ]]]
@@ -109,8 +109,8 @@ title_error = { fg = "#ffb4ab" }
 # : Picker [[[
 
 [pick]
-border = { fg = "#8f9097" }
-active = { fg = "#bcc6e3", bold = true }
+border = { fg = "#9b8d95" }
+active = { fg = "#f3b2e5", bold = true }
 inactive = {}
 
 # : ]]]
@@ -119,8 +119,8 @@ inactive = {}
 # : Input [[[
 
 [input]
-border = { fg = "#8f9097" }
-value  = { fg = "#e4e2e4" }
+border = { fg = "#9b8d95" }
+value  = { fg = "#eae0e4" }
 
 # : ]]]
 
@@ -128,7 +128,7 @@ value  = { fg = "#e4e2e4" }
 # : Completion [[[
 
 [cmp]
-border = { fg = "#8f9097", bg = "#131315" }
+border = { fg = "#9b8d95", bg = "#171215" }
 
 # : ]]]
 
@@ -136,9 +136,9 @@ border = { fg = "#8f9097", bg = "#131315" }
 # : Tasks [[[
 
 [tasks]
-border  = { fg = "#8f9097" }
+border  = { fg = "#9b8d95" }
 title   = {}
-hovered = { fg = "#bcc6e3", underline = true }
+hovered = { fg = "#f3b2e5", underline = true }
 
 # : ]]]
 
@@ -146,9 +146,9 @@ hovered = { fg = "#bcc6e3", underline = true }
 # : Help [[[
 
 [help]
-on     = { fg = "#e4e2e4" }
-run    = { fg = "#e4e2e4" }
-footer = { fg = "#2d303a", bg = "#c3c6d3" }
+on     = { fg = "#eae0e4" }
+run    = { fg = "#eae0e4" }
+footer = { fg = "#3f293b", bg = "#debdd4" }
 
 # : ]]]
 
@@ -159,24 +159,24 @@ footer = { fg = "#2d303a", bg = "#c3c6d3" }
 
 rules = [
     # Images
-    { mime = "image/*", fg = "#dec397" },
+    { mime = "image/*", fg = "#b3d186" },
 
     # Media
-    { mime = "{audio,video}/*", fg = "#c3c6d3" },
+    { mime = "{audio,video}/*", fg = "#debdd4" },
 
     # Archives
     { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ffb4ab" },
 
     # Documents
-    { mime = "application/{pdf,doc,rtf}", fg = "#bcc6e3" },
+    { mime = "application/{pdf,doc,rtf}", fg = "#f3b2e5" },
 
     # Special files
     { url = "*", is = "orphan", bg = "#93000a" },
     { url = "*", is = "exec", fg = "#ffb4ab" },
 
     # Fallback
-    { url = "*", fg = "#e4e2e4" },
-    { url = "*/", fg = "#bcc6e3" },
+    { url = "*", fg = "#eae0e4" },
+    { url = "*/", fg = "#f3b2e5" },
 ]
 
 # : ]]]
@@ -185,14 +185,14 @@ rules = [
 # : Iconos personalizados XDG dirs en español + Juegos [[[
 [icon]
 prepend_dirs = [
-    { name = "Escritorio", text = "", fg = "#bcc6e3" },
-    { name = "Descargas", text = "", fg = "#bcc6e3" },
-    { name = "Documentos", text = "", fg = "#bcc6e3" },
-    { name = "Música", text = "", fg = "#bcc6e3" },
-    { name = "Imagenes", text = "", fg = "#bcc6e3" },
-    { name = "Vídeos", text = "", fg = "#bcc6e3" },
-    { name = "Plantillas", text = "", fg = "#bcc6e3" },
-    { name = "Público", text = "", fg = "#bcc6e3" },
-    { name = "Juegos", text = "", fg = "#bcc6e3" },
+    { name = "Escritorio", text = "", fg = "#f3b2e5" },
+    { name = "Descargas", text = "", fg = "#f3b2e5" },
+    { name = "Documentos", text = "", fg = "#f3b2e5" },
+    { name = "Música", text = "", fg = "#f3b2e5" },
+    { name = "Imagenes", text = "", fg = "#f3b2e5" },
+    { name = "Vídeos", text = "", fg = "#f3b2e5" },
+    { name = "Plantillas", text = "", fg = "#f3b2e5" },
+    { name = "Público", text = "", fg = "#f3b2e5" },
+    { name = "Juegos", text = "", fg = "#f3b2e5" },
 ]
 # : ]]]
