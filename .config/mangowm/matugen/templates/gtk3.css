@@ -25,17 +25,4 @@
 @define-color selected_bg_color {{colors.primary.default.hex}};
 @define-color selected_fg_color {{colors.on_primary.default.hex}};
 
-.mate-panel-menu-bar button {
-    color: transparent;
-}
-panel-toplevel.background.horizontal,
-.mate-panel-menu-bar,
-#clock-applet-button,
-#clock-applet-button:hover {
-    color: white;
-}
-#tasklist-button {
-    color: white;
-}
-
 * { border-radius: 0 !important; }

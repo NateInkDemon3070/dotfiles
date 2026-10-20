@@ -42,11 +42,11 @@
     "type": "file",
     "width": 28,
     "color": {
-      "1-2": "#f3b2e5",
-      "3-4": "#debdd4",
-      "5-6": "#b3d186",
-      "7-8": "#7f4a76",
-      "9-13": "#4b6426"
+      "1-2": "#c1c6d6",
+      "3-4": "#c5c6cd",
+      "5-6": "#d7c4aa",
+      "7-8": "#181e29",
+      "9-13": "#271c0c"
     },
     "padding": {
       "top": 0,
@@ -56,9 +56,9 @@
   },
   "display": {
     "color": {
-      "keys": "#f3b2e5",
-      "title": "#eae0e4",
-      "separator": "#9b8d95"
+      "keys": "#c1c6d6",
+      "title": "#e5e2e3",
+      "separator": "#8f9096"
     },
     "bar": {
       "border": {

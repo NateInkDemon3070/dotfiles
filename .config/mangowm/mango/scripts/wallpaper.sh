@@ -1,6 +1,9 @@
 #!/bin/bash
 
-TRANSITION_STEP=30
+TRANSITION_STEP=120
+TRANSITION_TYPE=center
+TRANSITION_DURATION=1
+TRANSITION_FPS=30
 WALLPAPER=$(find ~/Wallpapers -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" -o -name "*.webp" \) | shuf -n 1)
 
 ensure_awww() {
@@ -16,7 +19,7 @@ ensure_awww() {
 
 if [ -f "$WALLPAPER" ]; then
   ensure_awww
-  awww img --transition-step "$TRANSITION_STEP" "$WALLPAPER"
+  awww img --transition-type "$TRANSITION_TYPE" --transition-step "$TRANSITION_STEP" --transition-duration "$TRANSITION_DURATION" --transition-fps "$TRANSITION_FPS" "$WALLPAPER"
 
   echo "$WALLPAPER" > "$HOME/.cache/wal/wal"
   mkdir -p "$HOME/.cache/wallpaper"

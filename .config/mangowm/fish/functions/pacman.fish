@@ -5,6 +5,9 @@ function pacman --description 'Gestor de paquetes: buscar/usar pacman o subcoman
         case uninstall
             if test -n "$argv[2]"
                 sudo (command -s pacman) -Rns $argv[2..-1]
+                if command -v clean-desktop-orphans >/dev/null 2>&1
+                    clean-desktop-orphans
+                end
             else
                 set -l pkg (command pacman -Qq | fzf \
                     --multi \
@@ -21,6 +24,9 @@ function pacman --description 'Gestor de paquetes: buscar/usar pacman o subcoman
                     --prompt 'Paquete: ')
                 if test -n "$pkg"
                     sudo (command -s pacman) -Rns $pkg
+                    if command -v clean-desktop-orphans >/dev/null 2>&1
+                        clean-desktop-orphans
+                    end
                 end
             end
         case '*'

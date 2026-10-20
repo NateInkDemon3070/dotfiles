@@ -139,4 +139,17 @@ if [ -f "$HOME/.local/state/mangogamma/last" ]; then
   fi
 fi
 
+# ── swayidle (bloqueo + apagar pantalla tras 10 min de inactividad) ─
+# Usa ext-idle-notify (soportado por mangowm). Al volver de la
+# suspensión o actividad también desbloquea el monitor con wlopm.
+if ! pgrep -x swayidle >/dev/null; then
+  nohup swayidle -w \
+    timeout 600 'pgrep -x hyprlock >/dev/null || hyprlock & sleep 1; wlopm --off "*"' \
+    resume 'wlopm --on "*"' \
+    before-sleep 'pgrep -x hyprlock >/dev/null || hyprlock' \
+    >/dev/null 2>&1 &
+  disown
+  echo "[$(date)] swayidle iniciado (10 min idle)"
+fi
+
 echo "[$(date)] === AUTOSTART COMPLETADO ==="

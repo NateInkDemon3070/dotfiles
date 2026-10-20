@@ -6,9 +6,11 @@ fi
 
 wallpapers_dir="$HOME/Wallpapers"
 
-TRANSITION_STEP=30
+TRANSITION_STEP=120
+TRANSITION_DURATION=1
+TRANSITION_FPS=30
 
-transitions=("grow")
+transitions=("center")
 rand_anim=${transitions[$RANDOM % ${#transitions[@]}]}
 
 selected_wallpaper=$(for a in "$wallpapers_dir"/*; do
@@ -90,7 +92,7 @@ if ! awww query >/dev/null 2>&1; then
     sleep 0.1
   done
 fi
-awww img --transition-step "$TRANSITION_STEP" "$image_fullname_path"
+awww img --transition-type "$rand_anim" --transition-step "$TRANSITION_STEP" --transition-duration "$TRANSITION_DURATION" --transition-fps "$TRANSITION_FPS" "$image_fullname_path"
 
 echo "$image_fullname_path" >"$HOME/.cache/wal/wal"
 mkdir -p "$HOME/.cache/wallpaper"
