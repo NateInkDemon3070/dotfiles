@@ -1,0 +1,301 @@
+/**
+ * @name Matugen
+ * @description Paleta de Discord generada desde el wallpaper con Matugen.
+ * @author jpablo
+ * @version 1.0.0
+ */
+
+:root,
+.theme-dark,
+.theme-darker,
+.theme-midnight {
+	--mt-bg: {{colors.background.dark.hex}};
+	--mt-bg-2: {{colors.surface_container_low.dark.hex}};
+	--mt-bg-3: {{colors.surface_container.dark.hex}};
+	--mt-bg-4: {{colors.surface_container_high.dark.hex}};
+	--mt-bg-5: {{colors.surface_container_highest.dark.hex}};
+	--mt-hover: {{colors.surface_bright.dark.hex}};
+	--mt-active: {{colors.surface_container_highest.dark.hex}};
+	--mt-text: {{colors.on_surface.dark.hex}};
+	--mt-text-muted: {{colors.on_surface_variant.dark.hex}};
+	--mt-text-faint: {{colors.outline.dark.hex}};
+	--mt-border: {{colors.outline_variant.dark.hex}};
+	--mt-accent: {{colors.primary.dark.hex}};
+	--mt-on-accent: {{colors.on_primary.dark.hex}};
+	--mt-accent-soft: {{colors.primary_container.dark.hex}};
+	--mt-on-accent-soft: {{colors.on_primary_container.dark.hex}};
+	--mt-secondary: {{colors.secondary_container.dark.hex}};
+	--mt-on-secondary: {{colors.on_secondary_container.dark.hex}};
+	--mt-danger: {{colors.error.dark.hex}};
+	--mt-on-danger: {{colors.on_error.dark.hex}};
+	--mt-warning: {{colors.tertiary.dark.hex}};
+	--mt-on-warning: {{colors.on_tertiary.dark.hex}};
+	--mt-info: {{colors.secondary.dark.hex}};
+	--mt-on-info: {{colors.on_secondary.dark.hex}};
+	--mt-positive: {{colors.primary.dark.hex}};
+	--mt-on-positive: {{colors.on_primary.dark.hex}};
+}
+
+.theme-light {
+	--mt-bg: {{colors.background.light.hex}};
+	--mt-bg-2: {{colors.surface_container_low.light.hex}};
+	--mt-bg-3: {{colors.surface_container.light.hex}};
+	--mt-bg-4: {{colors.surface_container_high.light.hex}};
+	--mt-bg-5: {{colors.surface_container_highest.light.hex}};
+	--mt-hover: {{colors.surface_dim.light.hex}};
+	--mt-active: {{colors.surface_container_high.light.hex}};
+	--mt-text: {{colors.on_surface.light.hex}};
+	--mt-text-muted: {{colors.on_surface_variant.light.hex}};
+	--mt-text-faint: {{colors.outline.light.hex}};
+	--mt-border: {{colors.outline_variant.light.hex}};
+	--mt-accent: {{colors.primary.light.hex}};
+	--mt-on-accent: {{colors.on_primary.light.hex}};
+	--mt-accent-soft: {{colors.primary_container.light.hex}};
+	--mt-on-accent-soft: {{colors.on_primary_container.light.hex}};
+	--mt-secondary: {{colors.secondary_container.light.hex}};
+	--mt-on-secondary: {{colors.on_secondary_container.light.hex}};
+	--mt-danger: {{colors.error.light.hex}};
+	--mt-on-danger: {{colors.on_error.light.hex}};
+	--mt-warning: {{colors.tertiary.light.hex}};
+	--mt-on-warning: {{colors.on_tertiary.light.hex}};
+	--mt-info: {{colors.secondary.light.hex}};
+	--mt-on-info: {{colors.on_secondary.light.hex}};
+	--mt-positive: {{colors.primary.light.hex}};
+	--mt-on-positive: {{colors.on_primary.light.hex}};
+}
+
+:root,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.theme-light {
+	--app-bg: var(--mt-bg) !important;
+	--app-frame-background: var(--mt-bg) !important;
+
+	--background-primary: var(--mt-bg) !important;
+	--background-primary-alt: var(--mt-bg) !important;
+	--background-secondary: var(--mt-bg-2) !important;
+	--background-secondary-alt: var(--mt-bg-2) !important;
+	--background-tertiary: var(--mt-bg-3) !important;
+	--background-accent: var(--mt-bg-3) !important;
+	--background-floating: var(--mt-bg-4) !important;
+	--background-nested-floating: var(--mt-bg-4) !important;
+	--background-mobile-primary: var(--mt-bg) !important;
+	--background-mobile-secondary: var(--mt-bg-2) !important;
+
+	--background-base-lowest: var(--mt-bg) !important;
+	--background-base-lower: var(--mt-bg-2) !important;
+	--background-base-low: var(--mt-bg-3) !important;
+	--background-surface-high: var(--mt-bg-4) !important;
+	--background-surface-higher: var(--mt-bg-5) !important;
+	--background-surface-highest: var(--mt-bg-5) !important;
+
+	--bg-base-primary: var(--mt-bg) !important;
+	--bg-base-secondary: var(--mt-bg-2) !important;
+	--bg-base-tertiary: var(--mt-bg-3) !important;
+	--bg-overlay-chat: var(--mt-bg) !important;
+	--bg-surface-overlay: var(--mt-bg-4) !important;
+	--bg-surface-raised: var(--mt-bg-3) !important;
+
+	--home-background: var(--mt-bg) !important;
+	--deprecated-store-bg: var(--mt-bg) !important;
+	--channeltextarea-background: var(--mt-bg-2) !important;
+	--input-background: var(--mt-bg-2) !important;
+	--input-background-default: var(--mt-bg-2) !important;
+	--input-border-default: var(--mt-border) !important;
+	--modal-background: var(--mt-bg-4) !important;
+
+	--background-gradient-low: var(--mt-bg-3) !important;
+	--background-gradient-lower: var(--mt-bg-2) !important;
+	--background-gradient-lowest: var(--mt-bg) !important;
+	--background-gradient-chat: var(--mt-bg) !important;
+	--background-gradient-app-frame: var(--mt-bg) !important;
+	--background-gradient-high: var(--mt-bg-4) !important;
+	--background-gradient-highest: var(--mt-bg-3) !important;
+	--chat-background-default: var(--mt-bg-3) !important;
+
+	--background-mod-subtle: color-mix(in srgb, var(--mt-text) 4%, transparent) !important;
+	--background-mod-normal: color-mix(in srgb, var(--mt-text) 8%, transparent) !important;
+	--background-mod-strong: color-mix(in srgb, var(--mt-text) 14%, transparent) !important;
+	--background-modifier-hover: color-mix(in srgb, var(--mt-text) 6%, transparent) !important;
+	--background-modifier-active: color-mix(in srgb, var(--mt-text) 10%, transparent) !important;
+	--background-modifier-selected: color-mix(in srgb, var(--mt-text) 14%, transparent) !important;
+	--background-modifier-accent: var(--mt-border) !important;
+	--background-message-hover: color-mix(in srgb, var(--mt-text) 4%, transparent) !important;
+	--message-background-hover: color-mix(in srgb, var(--mt-text) 4%, transparent) !important;
+
+	--background-mentioned: color-mix(in srgb, var(--mt-accent) 10%, transparent) !important;
+	--background-mentioned-hover: color-mix(in srgb, var(--mt-accent) 16%, transparent) !important;
+	--message-mentioned-background: color-mix(in srgb, var(--mt-accent) 10%, transparent) !important;
+	--message-mentioned-background-hover: color-mix(in srgb, var(--mt-accent) 16%, transparent) !important;
+	--mention-foreground: var(--mt-on-accent-soft) !important;
+	--mention-background: var(--mt-accent-soft) !important;
+
+	--background-feedback-critical: color-mix(in srgb, var(--mt-danger) 14%, transparent) !important;
+	--background-feedback-warning: color-mix(in srgb, var(--mt-warning) 14%, transparent) !important;
+	--background-feedback-positive: color-mix(in srgb, var(--mt-positive) 14%, transparent) !important;
+	--background-feedback-info: color-mix(in srgb, var(--mt-info) 14%, transparent) !important;
+	--background-help-warning: color-mix(in srgb, var(--mt-warning) 14%, transparent) !important;
+	--background-help-info: color-mix(in srgb, var(--mt-info) 14%, transparent) !important;
+
+	--badge-background-default: var(--mt-accent) !important;
+	--card-background-default: var(--mt-bg-3) !important;
+	--card-secondary-bg: var(--mt-bg-2) !important;
+	--user-profile-background-hover: color-mix(in srgb, var(--mt-text) 6%, transparent) !important;
+	--user-profile-border: var(--mt-border) !important;
+
+	--text-normal: var(--mt-text) !important;
+	--text-primary: var(--mt-text) !important;
+	--text-default: var(--mt-text) !important;
+	--text-strong: var(--mt-text) !important;
+	--header-primary: var(--mt-text) !important;
+	--header-secondary: var(--mt-text-muted) !important;
+	--text-secondary: var(--mt-text-muted) !important;
+	--text-muted: var(--mt-text-muted) !important;
+	--text-subtle: var(--mt-text-faint) !important;
+	--text-link: var(--mt-accent) !important;
+	--text-link-low-saturation: var(--mt-accent) !important;
+	--text-brand: var(--mt-accent) !important;
+	--text-positive: var(--mt-positive) !important;
+	--text-warning: var(--mt-warning) !important;
+	--text-danger: var(--mt-danger) !important;
+	--text-feedback-critical: var(--mt-danger) !important;
+	--text-feedback-warning: var(--mt-warning) !important;
+	--text-feedback-positive: var(--mt-positive) !important;
+	--text-feedback-info: var(--mt-info) !important;
+
+	--interactive-normal: var(--mt-text-muted) !important;
+	--interactive-hover: var(--mt-text) !important;
+	--interactive-active: var(--mt-text) !important;
+	--interactive-muted: var(--mt-text-faint) !important;
+	--interactive-icon-default: var(--mt-text-muted) !important;
+	--interactive-icon-hover: var(--mt-text) !important;
+	--interactive-icon-active: var(--mt-text) !important;
+	--channels-default: var(--mt-text-muted) !important;
+	--channel-icon: var(--mt-text-muted) !important;
+	--icon-muted: var(--mt-text-faint) !important;
+	--icon-status-idle: var(--mt-warning) !important;
+	--icon-status-offline: var(--mt-text-faint) !important;
+	--icon-feedback-critical: var(--mt-danger) !important;
+	--icon-feedback-warning: var(--mt-warning) !important;
+	--icon-feedback-positive: var(--mt-positive) !important;
+	--icon-feedback-info: var(--mt-info) !important;
+
+	--brand-experiment: var(--mt-accent) !important;
+	--brand-500: var(--mt-accent) !important;
+	--brand-560: color-mix(in srgb, var(--mt-accent) 90%, var(--mt-text) 10%) !important;
+	--brand-600: color-mix(in srgb, var(--mt-accent) 80%, var(--mt-text) 20%) !important;
+	--brand-360: color-mix(in srgb, var(--mt-accent) 55%, var(--mt-text) 45%) !important;
+	--brand-260: color-mix(in srgb, var(--mt-accent) 35%, var(--mt-bg) 65%) !important;
+	--brand-160: color-mix(in srgb, var(--mt-accent) 20%, var(--mt-bg) 80%) !important;
+	--brand-130: color-mix(in srgb, var(--mt-accent) 15%, var(--mt-bg) 85%) !important;
+	--brand-experiment-560: var(--brand-560) !important;
+	--brand-experiment-600: var(--brand-600) !important;
+	--brand-experiment-360: var(--brand-360) !important;
+	--brand-experiment-260: var(--brand-260) !important;
+	--brand-experiment-160: var(--brand-160) !important;
+	--brand-experiment-130: var(--brand-130) !important;
+	--brand-experiment-05a: color-mix(in srgb, var(--mt-accent) 5%, transparent) !important;
+	--brand-experiment-10a: color-mix(in srgb, var(--mt-accent) 10%, transparent) !important;
+	--brand-experiment-15a: color-mix(in srgb, var(--mt-accent) 15%, transparent) !important;
+	--brand-experiment-20a: color-mix(in srgb, var(--mt-accent) 20%, transparent) !important;
+	--brand-experiment-24a: color-mix(in srgb, var(--mt-accent) 24%, transparent) !important;
+	--brand-experiment-30a: color-mix(in srgb, var(--mt-accent) 30%, transparent) !important;
+	--primary-400: var(--mt-accent) !important;
+	--custom-folder-color: var(--mt-accent) !important;
+
+	--button-primary-background: var(--mt-accent) !important;
+	--button-primary-background-hover: color-mix(in srgb, var(--mt-accent) 85%, var(--mt-text) 15%) !important;
+	--button-primary-background-active: color-mix(in srgb, var(--mt-accent) 75%, var(--mt-text) 25%) !important;
+	--button-primary-text: var(--mt-on-accent) !important;
+	--button-secondary-background: var(--mt-bg-3) !important;
+	--button-secondary-background-hover: var(--mt-bg-4) !important;
+	--button-secondary-background-active: var(--mt-bg-5) !important;
+	--button-secondary-text: var(--mt-text) !important;
+	--button-danger-background: var(--mt-danger) !important;
+	--button-danger-background-hover: color-mix(in srgb, var(--mt-danger) 85%, var(--mt-text) 15%) !important;
+	--button-danger-background-active: color-mix(in srgb, var(--mt-danger) 75%, var(--mt-text) 25%) !important;
+	--button-danger-text: var(--mt-on-danger) !important;
+	--button-positive-background: var(--mt-positive) !important;
+	--button-positive-background-hover: color-mix(in srgb, var(--mt-positive) 85%, var(--mt-text) 15%) !important;
+	--button-positive-background-active: color-mix(in srgb, var(--mt-positive) 75%, var(--mt-text) 25%) !important;
+	--button-positive-text: var(--mt-on-positive) !important;
+
+	--control-primary-background-default: var(--mt-accent) !important;
+	--control-primary-background-hover: color-mix(in srgb, var(--mt-accent) 85%, var(--mt-text) 15%) !important;
+	--control-primary-border-default: var(--mt-accent) !important;
+	--control-primary-border-hover: color-mix(in srgb, var(--mt-accent) 85%, var(--mt-text) 15%) !important;
+	--control-primary-text-default: var(--mt-on-accent) !important;
+	--control-primary-text-hover: var(--mt-on-accent) !important;
+	--control-secondary-background-default: var(--mt-bg-3) !important;
+	--control-secondary-background-hover: var(--mt-bg-4) !important;
+	--control-secondary-border-default: var(--mt-border) !important;
+	--control-secondary-border-hover: var(--mt-border) !important;
+	--control-secondary-text-default: var(--mt-text) !important;
+	--control-secondary-text-hover: var(--mt-text) !important;
+	--control-critical-primary-background-default: var(--mt-danger) !important;
+	--control-critical-primary-background-hover: color-mix(in srgb, var(--mt-danger) 85%, var(--mt-text) 15%) !important;
+	--control-critical-primary-border-default: var(--mt-danger) !important;
+	--control-critical-primary-border-hover: color-mix(in srgb, var(--mt-danger) 85%, var(--mt-text) 15%) !important;
+	--control-critical-primary-text-default: var(--mt-on-danger) !important;
+	--control-critical-primary-text-hover: var(--mt-on-danger) !important;
+	--control-critical-secondary-background-default: var(--mt-bg-3) !important;
+	--control-critical-secondary-background-hover: var(--mt-bg-4) !important;
+	--control-critical-secondary-border-default: var(--mt-danger) !important;
+	--control-critical-secondary-border-hover: var(--mt-danger) !important;
+	--control-critical-secondary-text-default: var(--mt-danger) !important;
+	--control-critical-secondary-text-hover: var(--mt-danger) !important;
+	--control-overlay-primary-background-default: var(--mt-bg-4) !important;
+	--control-overlay-primary-background-hover: var(--mt-bg-5) !important;
+	--control-overlay-primary-border-default: var(--mt-border) !important;
+	--control-overlay-primary-border-hover: var(--mt-border) !important;
+	--control-overlay-primary-text-default: var(--mt-text) !important;
+	--control-overlay-primary-text-hover: var(--mt-text) !important;
+	--control-icon-only-background-active: color-mix(in srgb, var(--mt-text) 14%, transparent) !important;
+	--control-icon-only-background-hover: color-mix(in srgb, var(--mt-text) 6%, transparent) !important;
+	--control-icon-only-border-active: var(--mt-border) !important;
+	--control-icon-only-border-hover: var(--mt-border) !important;
+	--control-icon-only-icon-default: var(--mt-text-muted) !important;
+	--control-icon-only-icon-hover: var(--mt-text) !important;
+	--control-connected-background-default: var(--mt-positive) !important;
+	--control-connected-background-hover: color-mix(in srgb, var(--mt-positive) 85%, var(--mt-text) 15%) !important;
+
+	--status-online: var(--mt-positive) !important;
+	--status-idle: var(--mt-warning) !important;
+	--status-dnd: var(--mt-danger) !important;
+	--status-offline: var(--mt-text-faint) !important;
+	--status-streaming: var(--mt-accent) !important;
+	--status-speaking: var(--mt-positive) !important;
+	--status-positive: var(--mt-positive) !important;
+	--status-warning: var(--mt-warning) !important;
+	--status-danger: var(--mt-danger) !important;
+	--status-info: var(--mt-info) !important;
+	--color-online: var(--mt-positive) !important;
+	--color-voice: var(--mt-positive) !important;
+	--color-total: var(--mt-text-muted) !important;
+	--online-indicator: var(--mt-positive) !important;
+	--idle-indicator: var(--mt-warning) !important;
+	--dnd-indicator: var(--mt-danger) !important;
+	--streaming-indicator: var(--mt-accent) !important;
+	--green-360: var(--mt-positive) !important;
+	--green-430: var(--mt-positive) !important;
+	--green-460: var(--mt-positive) !important;
+	--yellow-300: var(--mt-warning) !important;
+	--spotify: var(--mt-positive) !important;
+	--vc-spotify-green: var(--mt-positive) !important;
+
+	--border-subtle: var(--mt-border) !important;
+	--border-normal: var(--mt-border) !important;
+	--border-muted: var(--mt-border) !important;
+	--border-strong: color-mix(in srgb, var(--mt-border) 55%, var(--mt-text) 45%) !important;
+	--border-faint: color-mix(in srgb, var(--mt-border) 60%, transparent) !important;
+	--border-focus: var(--mt-accent) !important;
+	--focus-primary: var(--mt-accent) !important;
+
+	--scrollbar-thin-thumb: color-mix(in srgb, var(--mt-text) 25%, transparent) !important;
+	--scrollbar-thin-track: transparent !important;
+	--scrollbar-auto-thumb: color-mix(in srgb, var(--mt-text) 25%, transparent) !important;
+	--scrollbar-auto-track: transparent !important;
+	--scrollbar-auto-scrollbar-color-thumb: color-mix(in srgb, var(--mt-text) 25%, transparent) !important;
+	--scrollbar-auto-scrollbar-color-track: transparent !important;
+}

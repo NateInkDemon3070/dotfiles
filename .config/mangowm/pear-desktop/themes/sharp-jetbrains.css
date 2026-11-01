@@ -2,14 +2,14 @@
 *::before,
 *::after {
   border-radius: 0 !important;
-  font-family: "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font Mono", monospace !important;
+  font-family: "Iosevka Nerd Font", "Iosevka Nerd Font Mono", monospace !important;
 }
 
 html,
 body,
 ytmusic-app,
 ytmusic-app-layout {
-  font-family: "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font Mono", monospace !important;
+  font-family: "Iosevka Nerd Font", "Iosevka Nerd Font Mono", monospace !important;
   --ytmusic-border-radius: 0px !important;
   --iron-corner-radius: 0px !important;
 }

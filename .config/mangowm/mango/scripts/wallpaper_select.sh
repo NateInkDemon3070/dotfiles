@@ -22,7 +22,7 @@ done | rofi -dmenu -p " " \
     * {
         bg-base: rgba(15, 17, 20, 0.85);
         accent-alt: @selected-normal-background;
-        font: "JetBrainsMono Nerd Font 10.5";
+        font: "Iosevka Nerd Font 10.5";
         background-color: transparent;
         text-color: @foreground;
     }

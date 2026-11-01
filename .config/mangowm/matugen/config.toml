@@ -68,3 +68,12 @@ input_path = "~/.config/matugen/templates/fastfetch.jsonc"
 output_path = "~/.config/fastfetch/config.jsonc"
 post_hook = "fastfetch"
 
+[templates.limusic]
+input_path = "~/.config/matugen/templates/limusic.css"
+output_path = "~/.config/limusic/matugen.css"
+
+[templates.vesktop]
+input_path = "~/.config/matugen/templates/vesktop.css"
+output_path = "~/.config/vesktop/themes/matugen.theme.css"
+
+

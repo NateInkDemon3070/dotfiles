@@ -71,7 +71,7 @@ window {
 }
 
 /* =====================================================================
-   FUENTE UI: JetBrains Mono Nerd Font
+   FUENTE UI: Iosevka Nerd Font
    ===================================================================== */
 #main-window,
 window,
@@ -112,5 +112,5 @@ popupnotification,
 .subviewbutton,
 .subviewbutton-label,
 menuitem label {
-  font-family: "JetBrainsMono Nerd Font", sans-serif !important;
+  font-family: "Iosevka Nerd Font", sans-serif !important;
 }
