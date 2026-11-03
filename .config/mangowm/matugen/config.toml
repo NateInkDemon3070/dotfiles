@@ -76,4 +76,8 @@ output_path = "~/.config/limusic/matugen.css"
 input_path = "~/.config/matugen/templates/vesktop.css"
 output_path = "~/.config/vesktop/themes/matugen.theme.css"
 
+[templates.nvim]
+input_path = "~/.config/matugen/templates/nvim.lua"
+output_path = "~/.config/nvim/colors/matugen.lua"
+
 
