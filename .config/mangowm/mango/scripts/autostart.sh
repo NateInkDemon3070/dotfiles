@@ -128,4 +128,9 @@ if ! pgrep -x hypridle >/dev/null; then
   echo "[$(date)] hypridle iniciado (10 min idle)"
 fi
 
+# ── llavero GNOME: desbloquear colección Default (sin contraseña) ─
+python3 "$HOME/.config/mango/scripts/unlock-keyring.py" >/dev/null 2>&1 \
+  && echo "[$(date)] llavero Default desbloqueado" \
+  || echo "[$(date)] ERROR desbloqueando llavero"
+
 echo "[$(date)] === AUTOSTART COMPLETADO ==="
