@@ -25,10 +25,6 @@ output_path = "~/.cache/wal/colors.sh"
 input_path = "~/.config/matugen/templates/colors.css"
 output_path = "~/.cache/wal/colors.css"
 
-[templates.starship]
-input_path = "~/.config/matugen/templates/starship.toml"
-output_path = "~/.config/starship.toml"
-
 [templates.gtk3]
 input_path = "~/.config/matugen/templates/gtk3.css"
 output_path = "~/.config/gtk-3.0/gtk.css"
@@ -62,6 +58,7 @@ post_hook = "touch ~/.config/rmpc/violite.ron"
 [templates.kitty]
 input_path = "~/.config/matugen/templates/colors-kitty.conf"
 output_path = "~/.cache/wal/colors-kitty.conf"
+post_hook = "bash $HOME/.config/matugen/scripts/reload-kitty.sh"
 
 [templates.fastfetch]
 input_path = "~/.config/matugen/templates/fastfetch.jsonc"

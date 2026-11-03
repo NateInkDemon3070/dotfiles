@@ -195,4 +195,8 @@ prepend_dirs = [
     { name = "Público", text = "", fg = "{{colors.primary.default.hex}}" },
     { name = "Juegos", text = "", fg = "{{colors.primary.default.hex}}" },
 ]
+prepend_conds = [
+    { if = "dir & hovered", text = "", fg = "{{colors.primary.default.hex}}" },
+    { if = "dir", text = "", fg = "{{colors.primary.default.hex}}" },
+]
 # : ]]]

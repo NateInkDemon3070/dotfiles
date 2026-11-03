@@ -9,16 +9,16 @@ require('base16-colorscheme').setup({
   base03 = "{{colors.outline_variant.default.hex}}",
   base04 = "{{colors.on_surface_variant.default.hex}}",
   base05 = "{{colors.on_surface.default.hex}}",
-  base06 = "{{colors.inverse_on_surface.default.hex}}",
-  base07 = "{{colors.surface_bright.default.hex}}",
+  base06 = "{{colors.inverse_on_surface.default.hex | set_lightness: 75}}",
+  base07 = "{{colors.surface_bright.default.hex | set_lightness: 80}}",
 
   base08 = "{{colors.tertiary.default.hex | lighten: -5}}",
   base09 = "{{colors.tertiary.default.hex}}",
   base0A = "{{colors.secondary.default.hex}}",
   base0B = "{{colors.primary.default.hex}}",
-  base0C = "{{colors.tertiary_container.default.hex}}",
-  base0D = "{{colors.primary_container.default.hex}}",
-  base0E = "{{colors.secondary_container.default.hex}}",
+  base0C = "{{colors.tertiary_container.default.hex | set_lightness: 75}}",
+  base0D = "{{colors.primary_container.default.hex | set_lightness: 75}}",
+  base0E = "{{colors.secondary_container.default.hex | set_lightness: 75}}",
   base0F = "{{colors.secondary.default.hex | lighten: -10}}",
 })
 
@@ -51,5 +51,5 @@ set_hl({ 'TSFunction', 'Function' }, {
 })
 
 set_hl({ 'Keyword', 'TSKeyword', 'TSKeywordFunction', 'TSRepeat' }, {
-  fg = '{{colors.inverse_primary.default.hex}}',
+  fg = '{{colors.inverse_primary.default.hex | set_lightness: 80}}',
 })

@@ -58,7 +58,7 @@ done | rofi -dmenu -p " " \
         background-color: rgba(255, 255, 255, 0.05);
         border: 2px;
         border-color: @accent-alt;
-        text-color: @accent-alt;
+        text-color: @accent-text;
     }
 
     element-icon {

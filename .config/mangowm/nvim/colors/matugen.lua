@@ -3,28 +3,28 @@
 vim.g.colors_name = "matugen"
 
 require('base16-colorscheme').setup({
-  base00 = "#131411",
-  base01 = "#0e0e0c",
-  base02 = "#1b1c19",
-  base03 = "#45483f",
-  base04 = "#c6c7bd",
-  base05 = "#e4e2de",
-  base06 = "#30302e",
-  base07 = "#393937",
+  base00 = "#141314",
+  base01 = "#0f0e0f",
+  base02 = "#1c1b1d",
+  base03 = "#48464c",
+  base04 = "#cac5cc",
+  base05 = "#e6e1e3",
+  base06 = "#c0bfc0",
+  base07 = "#cccccc",
 
-  base08 = "#deb2cb",
-  base09 = "#e6c4d7",
-  base0A = "#c4c8b9",
-  base0B = "#c5d2b1",
-  base0C = "#c9a9bb",
-  base0D = "#aab697",
-  base0E = "#464b3f",
-  base0F = "#acb29c",
+  base08 = "#cbbb93",
+  base09 = "#d3c6a4",
+  base0A = "#cac4ce",
+  base0B = "#cbc3d9",
+  base0C = "#f6db89",
+  base0D = "#b5acd3",
+  base0E = "#bebbc3",
+  base0F = "#b1a8b7",
 })
 
 vim.api.nvim_set_hl(0, 'Visual', {
-  bg = '#aab697',
-  fg = '#202914',
+  bg = '#161222',
+  fg = '#a59eb3',
 })
 
 local function set_hl(groups, value)
@@ -34,22 +34,22 @@ local function set_hl(groups, value)
 end
 
 set_hl({ 'String', 'TSString' }, {
-  fg = '#cf8eb3',
+  fg = '#baa670',
 })
 
 set_hl({ 'TSComment', 'Comment' }, {
-  fg = '#909288',
+  fg = '#938f96',
   italic = true,
 })
 
 set_hl({ 'TSMethod', 'Method' }, {
-  fg = '#e6c4d7',
+  fg = '#d3c6a4',
 })
 
 set_hl({ 'TSFunction', 'Function' }, {
-  fg = '#c4c8b9',
+  fg = '#cac4ce',
 })
 
 set_hl({ 'Keyword', 'TSKeyword', 'TSKeywordFunction', 'TSRepeat' }, {
-  fg = '#576248',
+  fg = '#cac7d1',
 })
