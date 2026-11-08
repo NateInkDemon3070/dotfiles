@@ -1,28 +1,40 @@
-@define-color theme_fg_color #e6e1e3;
-@define-color theme_text_color #e6e1e3;
-@define-color theme_bg_color #141314;
-@define-color theme_base_color #201f21;
-@define-color theme_selected_bg_color #cbc3d9;
-@define-color theme_selected_fg_color #322e3f;
-@define-color insensitive_bg_color #141314;
-@define-color insensitive_fg_color #cac5cc;
-@define-color insensitive_base_color #201f21;
-@define-color theme_unfocused_fg_color #cac5cc;
-@define-color theme_unfocused_text_color #e6e1e3;
-@define-color theme_unfocused_bg_color #141314;
-@define-color theme_unfocused_base_color #141314;
-@define-color theme_unfocused_selected_bg_color #cbc3d9;
-@define-color theme_unfocused_selected_fg_color #322e3f;
-@define-color borders #938f96;
-@define-color unfocused_borders #48464c;
-@define-color warning_color #d3c6a4;
+@define-color theme_fg_color #efdfdc;
+@define-color theme_text_color #efdfdc;
+@define-color theme_bg_color #242424;
+@define-color theme_base_color #261e1c;
+@define-color theme_selected_bg_color #ffb4a6;
+@define-color theme_selected_fg_color #591c12;
+@define-color insensitive_bg_color #242424;
+@define-color insensitive_fg_color #dac1bd;
+@define-color insensitive_base_color #261e1c;
+@define-color theme_unfocused_fg_color #dac1bd;
+@define-color theme_unfocused_text_color #efdfdc;
+@define-color theme_unfocused_bg_color #242424;
+@define-color theme_unfocused_base_color #242424;
+@define-color theme_unfocused_selected_bg_color #ffb4a6;
+@define-color theme_unfocused_selected_fg_color #591c12;
+@define-color borders #a28c88;
+@define-color unfocused_borders #544340;
+@define-color warning_color #7cd7bf;
 @define-color error_color #ffb4ab;
-@define-color success_color #cac4ce;
-@define-color fg_color #e6e1e3;
-@define-color text_color #e6e1e3;
-@define-color bg_color #141314;
-@define-color base_color #201f21;
-@define-color selected_bg_color #cbc3d9;
-@define-color selected_fg_color #322e3f;
+@define-color success_color #eebbb1;
+@define-color fg_color #efdfdc;
+@define-color text_color #efdfdc;
+@define-color bg_color #242424;
+@define-color base_color #261e1c;
+@define-color selected_bg_color #ffb4a6;
+@define-color selected_fg_color #591c12;
 
-* { border-radius: 0 !important; }
+* {
+    border-radius: 0px !important;
+}
+
+window.decoration,
+.window-frame,
+.dialog-vbox,
+tooltip,
+menu,
+popover {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+}

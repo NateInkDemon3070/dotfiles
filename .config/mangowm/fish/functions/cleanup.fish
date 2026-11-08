@@ -3,7 +3,7 @@ function cleanup --description "Remove orphan packages and clean system cache"
     set -l orphans (pacman -Qtdq 2>/dev/null)
     if test -n "$orphans"
         echo "Removing orphan packages..."
-        doas pacman -Rns --noconfirm $orphans
+        sudo pacman -Rns --noconfirm $orphans
     else
         echo "No orphan packages found."
     end
@@ -11,9 +11,9 @@ function cleanup --description "Remove orphan packages and clean system cache"
     # Clean pacman cache
     echo "Cleaning pacman cache..."
     if command -v paccache &>/dev/null
-        doas paccache -rk1
-        doas paccache -ruk0
+        sudo paccache -rk1
+        sudo paccache -ruk0
     else
-        doas pacman -Scc --noconfirm
+        sudo pacman -Scc --noconfirm
     end
 end

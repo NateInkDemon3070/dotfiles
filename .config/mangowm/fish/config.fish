@@ -16,3 +16,6 @@ alias hora='date +%r'
 # proto
 set -gx PROTO_HOME "$HOME/.proto";
 set -gx PATH "$PROTO_HOME/shims" "$PROTO_HOME/bin" $PATH;
+
+# opencode
+fish_add_path /home/jpablo/.opencode/bin
