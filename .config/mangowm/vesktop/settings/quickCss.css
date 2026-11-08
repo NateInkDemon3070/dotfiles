@@ -1,0 +1,79 @@
+:root {
+    --font-primary: "JetBrainsMono Nerd Font", "gg sans", sans-serif !important;
+    --font-display: "JetBrainsMono Nerd Font", "gg sans", sans-serif !important;
+    --font-headline: "JetBrainsMono Nerd Font", "gg sans", sans-serif !important;
+}
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "gg sans", sans-serif !important;
+}
+
+body,
+[class*="appMount"],
+[class*="bg_"],
+[class*="platformWin"] {
+    background: transparent !important;
+}
+
+[class*="layer_"],
+[class*="baseLayer"] {
+    background: transparent !important;
+}
+
+.theme-dark,
+.theme-light {
+    --background-primary: color-mix(in srgb, var(--mt-bg, #000) 45%, transparent) !important;
+    --background-secondary: color-mix(in srgb, var(--mt-bg-2, #000) 35%, transparent) !important;
+    --background-secondary-alt: color-mix(in srgb, var(--mt-bg-2, #000) 40%, transparent) !important;
+    --background-tertiary: color-mix(in srgb, var(--mt-bg-3, #000) 25%, transparent) !important;
+    --background-floating: color-mix(in srgb, var(--mt-bg-4, #000) 60%, transparent) !important;
+    --background-modifier-hover: color-mix(in srgb, var(--mt-text, #fff) 3%, transparent) !important;
+    --background-modifier-active: color-mix(in srgb, var(--mt-text, #fff) 5%, transparent) !important;
+    --background-modifier-selected: color-mix(in srgb, var(--mt-text, #fff) 7%, transparent) !important;
+    --channeltextarea-background: color-mix(in srgb, var(--mt-bg-2, #000) 30%, transparent) !important;
+    --input-background: color-mix(in srgb, var(--mt-bg-2, #000) 30%, transparent) !important;
+    --modal-background: color-mix(in srgb, var(--mt-bg-4, #000) 50%, transparent) !important;
+    --home-background: transparent !important;
+    --deprecated-store-bg: transparent !important;
+}
+
+[class*="sidebarList"] > nav,
+nav[class*="privateChannels"],
+nav[class*="privateChannels"] [class*="scroller"],
+nav[class*="privateChannels"] [class*="headerContainer"] {
+    background: var(--mt-bg, #0d1512) !important;
+}
+
+[class*="message"]:hover {
+    background: color-mix(in srgb, var(--mt-text, #fff) 2%, transparent) !important;
+}
+
+[class*="buttonSection"] {
+    background: #000 !important;
+    border-color: #000 !important;
+    --control-secondary-background-default: transparent !important;
+    --control-secondary-background-hover: var(--mt-bg-4, #242c28) !important;
+    --control-secondary-background-active: var(--mt-bg-5, #2e3733) !important;
+    --control-icon-only-background-hover: var(--mt-bg-4, #242c28) !important;
+    --control-icon-only-background-active: var(--mt-bg-5, #2e3733) !important;
+    --control-critical-primary-background-default: #da373c !important;
+    --control-critical-primary-background-hover: #c62e37 !important;
+    --control-critical-primary-background-active: #b0272f !important;
+    --control-critical-primary-text-default: #fff !important;
+    --control-critical-primary-text-hover: #fff !important;
+    --control-critical-primary-icon-default: #fff !important;
+    --control-critical-primary-icon-hover: #fff !important;
+    --control-critical-primary-border-default: transparent !important;
+    --button-danger-background: #da373c !important;
+    --button-danger-background-hover: #c62e37 !important;
+    --button-danger-background-active: #b0272f !important;
+    --button-danger-text: #fff !important;
+}
+
+/* Ocultar "Clear Vision" en la barra superior */
+[class*="clearVision"],
+[class*="clear_vision"],
+[class*="themeInfo"],
+[class*="pluginNotice"] {
+    display: none !important;
+}

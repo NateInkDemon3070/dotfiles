@@ -1,0 +1,21 @@
+2026/11/07-17:19:26.910 119e Reusing MANIFEST /home/jpablo/.config/vesktop/sessionData/Local Storage/leveldb/MANIFEST-000001
+2026/11/07-17:19:26.920 119e Recovering log #740
+2026/11/07-17:19:26.925 119e Reusing old log /home/jpablo/.config/vesktop/sessionData/Local Storage/leveldb/000740.log 
+2026/11/07-17:21:27.345 11c4 Level-0 table #744: started
+2026/11/07-17:21:27.347 11c4 Level-0 table #744: 61270 bytes OK
+2026/11/07-17:21:27.350 11c4 Delete type=0 #740
+2026/11/07-17:21:27.350 11c4 Compacting 4@0 + 1@1 files
+2026/11/07-17:21:27.353 11c4 Generated table #745@0: 85 keys, 55019 bytes
+2026/11/07-17:21:27.353 11c4 Compacted 4@0 + 1@1 files => 55019 bytes
+2026/11/07-17:21:27.356 11c4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/11/07-17:21:27.356 11c4 Delete type=2 #735
+2026/11/07-17:21:27.356 11c4 Delete type=2 #737
+2026/11/07-17:21:27.356 11c4 Delete type=2 #739
+2026/11/07-17:21:27.356 11c4 Delete type=2 #741
+2026/11/07-17:21:27.356 11c4 Delete type=2 #744
+2026/11/07-17:27:27.345 11c4 Level-0 table #747: started
+2026/11/07-17:27:27.348 11c4 Level-0 table #747: 30062 bytes OK
+2026/11/07-17:27:27.351 11c4 Delete type=0 #743
+2026/11/07-17:34:59.655 11c4 Level-0 table #749: started
+2026/11/07-17:34:59.678 11c4 Level-0 table #749: 30495 bytes OK
+2026/11/07-17:34:59.682 11c4 Delete type=0 #746
