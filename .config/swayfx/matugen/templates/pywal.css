@@ -1,0 +1,8 @@
+:root {
+    --colorBg: {{ colors.surface.hex }} !important;
+    --colorFg: {{ colors.on_surface.hex }} !important;
+    --colorAccentBg: {{ colors.primary.hex }} !important;
+    --colorAccentFg: {{ colors.surface.hex }} !important;
+    --colorWindowBg: {{ colors.surface.hex }} !important;
+    --colorHighlightBg: {{ colors.primary.hex }} !important;
+}

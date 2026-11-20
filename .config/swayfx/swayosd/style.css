@@ -1,0 +1,60 @@
+@import url("/home/jpablo/.cache/wal/colors-waybar.css");
+
+window#osd {
+  background: alpha(@color0, 0.75);
+  border: 2px solid @color4;
+  border-radius: 0;
+  padding: 0;
+}
+
+#container {
+  margin: 8px;
+}
+
+image {
+  font-size: 16px;
+  -gtk-icon-size: 16px;
+}
+
+label {
+  color: @foreground;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+progressbar:disabled,
+image:disabled {
+  opacity: 0.5;
+}
+
+progressbar,
+segmentedprogress {
+  min-height: 4px;
+  border-radius: 0;
+  background: transparent;
+  border: 1px solid @color8;
+}
+
+trough,
+segment {
+  min-height: inherit;
+  border-radius: 0;
+  border: none;
+  background: alpha(@foreground, 0.3);
+}
+
+progress,
+segment.active {
+  min-height: inherit;
+  border-radius: 0;
+  border: none;
+  background: @color4;
+}
+
+segment {
+  margin-left: 4px;
+}
+
+segment:first-child {
+  margin-left: 0;
+}

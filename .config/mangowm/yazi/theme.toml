@@ -1,0 +1,202 @@
+# : Manager [[[
+
+[mgr]
+cwd = { fg = "#e6e2df" }
+
+# Find
+find_keyword  = { fg = "#cac4cf", bold = true, italic = true, underline = true }
+find_position = { fg = "#cac4cf", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "#cec6b5", bg = "#cec6b5" }
+marker_cut      = { fg = "#ccc6bd", bg = "#ccc6bd" }
+marker_marked   = { fg = "#ffb4ab", bg = "#ffb4ab" }
+marker_selected = { fg = "#cac4cf", bg = "#cac4cf" }
+
+# Count
+count_copied   = { fg = "#353024", bg = "#cec6b5" }
+count_cut      = { fg = "#33302a", bg = "#ccc6bd" }
+count_selected = { fg = "#322f38", bg = "#cac4cf" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#969086" }
+
+# : ]]]
+
+
+# : Indicator [[[
+
+[indicator]
+padding = { open = "", close = "" }
+
+# : ]]]
+
+
+# : Tabs [[[
+
+[tabs]
+active    = { fg = "#cec6b5", bold = true, bg = "#141312" }
+inactive  = { fg = "#ccc6bb", bg = "#141312" }
+sep_inner = { open = "[", close = "]" }
+
+# : ]]]
+
+
+# : Mode [[[
+
+[mode]
+# Mode
+normal_main = { bg = "#cec6b5", fg = "#353024", bold = true }
+normal_alt  = { bg = "#4a463e", fg = "#ccc6bb" }
+
+# Select mode
+select_main = { bg = "#ccc6bd", fg = "#33302a", bold = true }
+select_alt  = { bg = "#4a463e", fg = "#ccc6bb" }
+
+# Unset mode
+unset_main = { bg = "#cac4cf", fg = "#322f38", bold = true }
+unset_alt  = { bg = "#4a463e", fg = "#ccc6bb" }
+
+# : ]]]
+
+
+# : Status [[[
+
+[status]
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Permissions
+perm_type  = { fg = "#cac4cf" }
+perm_write = { fg = "#cec6b5" }
+perm_read  = { fg = "#ffb4ab" }
+perm_exec  = { fg = "#ccc6bd" }
+perm_sep   = { fg = "#969086" }
+
+# Progress
+progress_label  = { bold = true }
+progress_normal = { fg = "#cec6b5", bg = "#4a463e" }
+progress_error  = { fg = "#ffb4ab", bg = "#4a463e" }
+
+# : ]]]
+
+
+# : Which [[[
+
+[which]
+cols = 3
+mask = { bg = "#4a463e" }
+cand = { fg = "#cec6b5" }
+rest = { fg = "#000000" }
+desc = { fg = "#e6e2df" }
+separator = " ▶ "
+separator_style = { fg = "#e6e2df" }
+
+# : ]]]
+
+
+# : Notify [[[
+
+[notify]
+title_info  = { fg = "#ccc6bd" }
+title_warn  = { fg = "#cac4cf" }
+title_error = { fg = "#ffb4ab" }
+
+# : ]]]
+
+
+# : Picker [[[
+
+[pick]
+border = { fg = "#969086" }
+active = { fg = "#cec6b5", bold = true }
+inactive = {}
+
+# : ]]]
+
+
+# : Input [[[
+
+[input]
+border = { fg = "#969086" }
+value  = { fg = "#e6e2df" }
+
+# : ]]]
+
+
+# : Completion [[[
+
+[cmp]
+border = { fg = "#969086", bg = "#141312" }
+
+# : ]]]
+
+
+# : Tasks [[[
+
+[tasks]
+border  = { fg = "#969086" }
+title   = {}
+hovered = { fg = "#cec6b5", underline = true }
+
+# : ]]]
+
+
+# : Help [[[
+
+[help]
+on     = { fg = "#e6e2df" }
+run    = { fg = "#e6e2df" }
+footer = { fg = "#33302a", bg = "#ccc6bd" }
+
+# : ]]]
+
+
+# : File-specific styles [[[
+
+[filetype]
+
+rules = [
+    # Images
+    { mime = "image/*", fg = "#cac4cf" },
+
+    # Media
+    { mime = "{audio,video}/*", fg = "#ccc6bd" },
+
+    # Archives
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ffb4ab" },
+
+    # Documents
+    { mime = "application/{pdf,doc,rtf}", fg = "#cec6b5" },
+
+    # Special files
+    { url = "*", is = "orphan", bg = "#93000a" },
+    { url = "*", is = "exec", fg = "#ffb4ab" },
+
+    # Fallback
+    { url = "*", fg = "#e6e2df" },
+    { url = "*/", fg = "#cec6b5" },
+]
+
+# : ]]]
+
+
+# : Iconos personalizados XDG dirs en español + Juegos [[[
+[icon]
+prepend_dirs = [
+    { name = "Escritorio", text = "", fg = "#cec6b5" },
+    { name = "Descargas", text = "", fg = "#cec6b5" },
+    { name = "Documentos", text = "", fg = "#cec6b5" },
+    { name = "Música", text = "", fg = "#cec6b5" },
+    { name = "Imagenes", text = "", fg = "#cec6b5" },
+    { name = "Vídeos", text = "", fg = "#cec6b5" },
+    { name = "Plantillas", text = "", fg = "#cec6b5" },
+    { name = "Público", text = "", fg = "#cec6b5" },
+    { name = "Juegos", text = "", fg = "#cec6b5" },
+]
+prepend_conds = [
+    { if = "dir & hovered", text = "", fg = "#cec6b5" },
+    { if = "dir", text = "", fg = "#cec6b5" },
+]
+# : ]]]

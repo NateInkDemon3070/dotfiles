@@ -1,0 +1,71 @@
+/* =====================================================================
+   ANULACIÓN TOTAL DE BORDES REDONDEADOS PARA ZEN BROWSER
+   ===================================================================== */
+
+/* 1. RESET DE VARIABLES NUCLEARES (Firefox + Zen) */
+:root,
+:root[zen-theme="true"],
+#main-window,
+page,
+window {
+  /* Variables nativas */
+  --border-radius-small: 0px !important;
+  --border-radius-medium: 0px !important;
+  --border-radius-large: 0px !important;
+  --border-radius-circle: 0px !important;
+  --tab-border-radius: 0px !important;
+  --toolbarbutton-border-radius: 0px !important;
+  --toolbarbutton-border-radius-dynamic: 0px !important;
+  --urlbar-border-radius: 0px !important;
+  --urlbar-icon-border-radius: 0px !important;
+  --arrowpanel-border-radius: 0px !important;
+  --panel-border-radius: 0px !important;
+  --button-border-radius: 0px !important;
+  --arrowpanel-menuitem-border-radius: 0px !important;
+  --subviewbutton-border-radius: 0px !important;
+
+  /* Variables exclusivas de Zen Browser */
+  --zen-border-radius: 0px !important;
+  --zen-element-separation: 0px !important;
+  --zen-namespace-border-radius: 0px !important;
+  --zen-toolbar-height-rounded: 0px !important;
+  --uc-border-radius: 0px !important;
+  --uc-radius: 0px !important;
+}
+
+/* 2. SELECTORES ESPECÍFICOS DE LA INTERFAZ DE ZEN */
+#tabbrowser-tabpanels,
+#tabbrowser-tabpanels .browserSidebarContainer,
+#tabbrowser-tabpanels browser[type="content"],
+#zen-sidebar-web-panels,
+#zen-sidebar-icons-wrapper,
+#zen-essential-tabs,
+#zen-current-workspace-indicator,
+.zen-workspace-tab-group,
+#zen-workspaces-button,
+#zen-sidebar-top-buttons,
+#zen-search-container,
+#zen-search-box,
+#urlbar,
+#urlbar-background,
+#urlbar-input-container,
+.urlbarView,
+.urlbarView-body-inner,
+.urlbarView-row,
+.urlbarView-row-inner,
+.browserStack,
+.browserContainer,
+#appcontent,
+#browser,
+#navigator-toolbox {
+  border-radius: 0px !important;
+  /* Zen usa clip-path para forzar recortes redondos cuando falla el border-radius, esto lo desactiva */
+  clip-path: none !important; 
+}
+
+/* 3. REGLA UNIVERSAL (Para atrapar cualquier submenú o elemento rebelde) */
+*,
+*::before,
+*::after {
+  border-radius: 0px !important;
+}

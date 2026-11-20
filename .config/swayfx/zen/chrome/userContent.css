@@ -1,0 +1,42 @@
+/* =====================================================================
+   userContent.css — ZEN BROWSER (Bordes cuadrados para páginas internas)
+   Objetivo: Eliminar curvas en about:config, preferencias y nueva pestaña.
+   ===================================================================== */
+
+/* 1. RESET DE VARIABLES NUCLEARES (Firefox + Zen) */
+:root,
+:root[zen-theme="true"],
+page,
+window {
+  /* Variables nativas del motor */
+  --border-radius-small: 0px !important;
+  --border-radius-medium: 0px !important;
+  --border-radius-large: 0px !important;
+  --border-radius-circle: 0px !important;
+  --tab-border-radius: 0px !important;
+  --toolbarbutton-border-radius: 0px !important;
+  --toolbarbutton-border-radius-dynamic: 0px !important;
+  --urlbar-border-radius: 0px !important;
+  --urlbar-icon-border-radius: 0px !important;
+  --arrowpanel-border-radius: 0px !important;
+  --panel-border-radius: 0px !important;
+  --button-border-radius: 0px !important;
+  --arrowpanel-menuitem-border-radius: 0px !important;
+  --subviewbutton-border-radius: 0px !important;
+
+  /* Variables exclusivas de Zen Browser */
+  --zen-border-radius: 0px !important;
+  --zen-element-separation: 0px !important;
+  --zen-namespace-border-radius: 0px !important;
+  --zen-toolbar-height-rounded: 0px !important;
+  --uc-border-radius: 0px !important;
+  --uc-radius: 0px !important;
+}
+
+/* 2. REGLA UNIVERSAL INTERNA 
+   (Aplica a cajas de texto, barras de búsqueda, tarjetas y botones internos) */
+*,
+*::before,
+*::after {
+  border-radius: 0px !important;
+}

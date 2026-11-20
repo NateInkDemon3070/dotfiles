@@ -1,0 +1,4 @@
+# generado por matugen para mangowm (formato 0xRRGGBBAA)
+focus_color=0x{{ colors.secondary_fixed_dim.default.hex | replace: "#", "" }}ff
+border_color=0x{{ base16.base03.default.hex | replace: "#", "" }}ff
+urgent_color=0x{{ colors.error.default.hex | replace: "#", "" }}ff

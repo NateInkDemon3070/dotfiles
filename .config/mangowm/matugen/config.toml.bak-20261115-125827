@@ -1,0 +1,84 @@
+[config]
+prefer = "saturation"
+mode = "dark"
+type = "scheme-fidelity"
+
+[templates.waybar_swaync]
+input_path = "~/.config/matugen/templates/colors-waybar.css"
+output_path = "~/.cache/wal/colors-waybar.css"
+post_hook = "pkill -SIGUSR2 waybar; timeout 5 swaync-client -rs || true"
+
+[templates.mango_border]
+input_path = "~/.config/matugen/templates/colors-mango-border"
+output_path = "~/.config/mango/colors.conf"
+post_hook = "mmsg dispatch reload_config"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/colors-rofi-dark.rasi"
+output_path = "~/.cache/wal/colors-rofi-dark.rasi"
+
+[templates.fuzzel]
+input_path = "~/.config/matugen/templates/fuzzel.ini"
+output_path = "~/.config/fuzzel/fuzzel.ini"
+
+[templates.colors_sh]
+input_path = "~/.config/matugen/templates/colors.sh"
+output_path = "~/.cache/wal/colors.sh"
+
+[templates.colors_css]
+input_path = "~/.config/matugen/templates/colors.css"
+output_path = "~/.cache/wal/colors.css"
+
+[templates.gtk3]
+input_path = "~/.config/matugen/templates/gtk3.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk4.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
+[templates.gtk4_dark]
+input_path = "~/.config/matugen/templates/gtk4.css"
+output_path = "~/.config/gtk-4.0/gtk-dark.css"
+
+[templates.yazi]
+input_path = "~/.config/matugen/templates/yazi.toml"
+output_path = "~/.config/yazi/theme.toml"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/colors-cava.conf"
+output_path = "~/.config/cava/config"
+
+[templates.eww]
+input_path = "~/.config/matugen/templates/colors-eww.scss"
+output_path = "~/.cache/wal/colors-eww.scss"
+post_hook = "timeout 5 eww reload || true"
+
+[templates.violite]
+input_path = "~/.config/matugen/templates/violite.ron"
+output_path = "~/.config/rmpc/violite.ron"
+post_hook = "touch ~/.config/rmpc/violite.ron"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/colors-kitty.conf"
+output_path = "~/.cache/wal/colors-kitty.conf"
+post_hook = "bash $HOME/.config/matugen/scripts/reload-kitty.sh"
+
+[templates.fastfetch]
+input_path = "~/.config/matugen/templates/fastfetch.jsonc"
+output_path = "~/.config/fastfetch/config.jsonc"
+post_hook = "fastfetch"
+
+[templates.limusic]
+input_path = "~/.config/matugen/templates/limusic.css"
+output_path = "~/.config/limusic/matugen.css"
+
+[templates.vesktop]
+input_path = "~/.config/matugen/templates/vesktop.css"
+output_path = "~/.config/vesktop/themes/matugen.theme.css"
+
+[templates.nvim]
+input_path = "~/.config/matugen/templates/nvim.lua"
+output_path = "~/.config/nvim/colors/matugen.lua"
+
+

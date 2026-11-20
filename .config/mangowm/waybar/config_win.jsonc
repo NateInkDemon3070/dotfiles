@@ -1,0 +1,60 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 38,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 0,
+
+"modules-center": [
+        "mango/workspaces"
+    ],
+    "modules-right": [
+        "custom/notification",
+        "tray",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "custom/battery",
+        "clock"
+    ],
+
+    "mango/workspaces": {
+        "format": "{value}",
+        "hide-empty": true,
+        "on-click": "activate",
+        "on-click-right": "toggle",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e calcurse"
+    },
+    "tray": { "icon-size": 18, "spacing": 10 },
+    "custom/notification": {
+        "format": "{icon}",
+        "return-type": "json",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e ncpamixer"
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e bluetui"
+    },
+    "network": { "format-wifi": "", "format-ethernet": "󰈁", "format-disconnected": "󰖪",         "on-click": "/home/jpablo/.config/mango/scripts/launch-float.sh kitty -e nmtui" },
+    "custom/battery": {
+        "exec": "/home/jpablo/.config/waybar/scripts/battery.sh compact",
+        "interval": 1,
+        "return-type": "json",
+        "tooltip": true
+    }
+}

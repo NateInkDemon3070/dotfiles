@@ -1,0 +1,28 @@
+@define-color theme_fg_color #f6ddd8;
+@define-color theme_text_color #f6ddd8;
+@define-color theme_bg_color #1d100e;
+@define-color theme_base_color #2a1c19;
+@define-color theme_selected_bg_color #ffb4a4;
+@define-color theme_selected_fg_color #640e00;
+@define-color insensitive_bg_color #1d100e;
+@define-color insensitive_fg_color #e1bfb8;
+@define-color insensitive_base_color #2a1c19;
+@define-color theme_unfocused_fg_color #e1bfb8;
+@define-color theme_unfocused_text_color #f6ddd8;
+@define-color theme_unfocused_bg_color #1d100e;
+@define-color theme_unfocused_base_color #1d100e;
+@define-color theme_unfocused_selected_bg_color #ffb4a4;
+@define-color theme_unfocused_selected_fg_color #640e00;
+@define-color borders #a88a83;
+@define-color unfocused_borders #59413c;
+@define-color warning_color #8aceff;
+@define-color error_color #ffb4ab;
+@define-color success_color #ffb4a4;
+@define-color fg_color #f6ddd8;
+@define-color text_color #f6ddd8;
+@define-color bg_color #1d100e;
+@define-color base_color #2a1c19;
+@define-color selected_bg_color #ffb4a4;
+@define-color selected_fg_color #640e00;
+
+* { border-radius: 0 !important; }

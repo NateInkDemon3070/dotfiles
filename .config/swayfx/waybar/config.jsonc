@@ -1,0 +1,76 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "margin-left": 4,
+    "margin-right": 4,
+    "margin-top": 4,
+    "margin-bottom": 0,
+    "spacing": 0,
+
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "custom/notification", "custom/audio", "bluetooth", "network", "battery"],
+
+    "sway/workspaces": {
+        "on-click": "activate",
+        "format": "{name}"
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip": false
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󱅫",
+            "dnd-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+
+    "custom/audio": {
+        "exec": "pamixer --get-volume-human || echo muted",
+        "interval": 5,
+        "signal": 1,
+        "format": "󰕾 {}",
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot ncpamixer"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot bluetui"
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈁",
+        "format-disconnected": "󰖪 ",
+        "on-click": "/home/jpablo/.config/sway/scripts/launch-float.sh foot nmtui"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}%",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰂉", "󰂊", "󰂋", "󰂅"]
+        }
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    }
+}

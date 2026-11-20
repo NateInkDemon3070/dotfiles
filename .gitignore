@@ -1,0 +1,12 @@
+# Vesktop: solo se versionan los temas. sessionData y demas datos del perfil
+# contienen sesiones/cookies y no deben subirse nunca.
+.config/mangowm/vesktop/*
+!.config/mangowm/vesktop/themes/
+.config/swayfx/vesktop/*
+!.config/swayfx/vesktop/themes/
+
+# Nombres antiguos que ya no se usan
+.config/mangowm/pear-desktop/
+.config/swayfx/pear-desktop/
+.config/mangowm/equibop/
+.config/swayfx/equibop/
